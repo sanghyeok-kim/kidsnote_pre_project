@@ -30,6 +30,7 @@
 		1E86BAFA2AF4CAAD00469B6E /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAF92AF4CAAD00469B6E /* DataMapper.swift */; };
 		1E86BAFC2AF4CABF00469B6E /* AnyDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAFB2AF4CABF00469B6E /* AnyDataMapper.swift */; };
 		1E86BAFE2AF4CAEB00469B6E /* Rx+transformMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAFD2AF4CAEB00469B6E /* Rx+transformMap.swift */; };
+		1E86BB012AF4CFB700469B6E /* BookSearchResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB002AF4CFB700469B6E /* BookSearchResultDTO.swift */; };
 		2F5BFB33E4E4243A7E767759 /* Pods_Kidsnote_Pre_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -466,6 +467,7 @@
 				1E86BAE22AF4C7A300469B6E /* HTTPMethod.swift in Sources */,
 				1E86BAFC2AF4CABF00469B6E /* AnyDataMapper.swift in Sources */,
 				1E86BAEA2AF4C95500469B6E /* NetworkService.swift in Sources */,
+				1E86BB012AF4CFB700469B6E /* BookSearchResultDTO.swift in Sources */,
 				1E86BAEC2AF4C98D00469B6E /* URLSessionNetworkService.swift in Sources */,
 				1E86BAF22AF4C9F600469B6E /* NetworkError.swift in Sources */,
 				1E86BAF62AF4CA6A00469B6E /* Rx+extractData.swift in Sources */,
