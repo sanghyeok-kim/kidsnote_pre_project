@@ -89,10 +89,26 @@
 		1E825F032AF799DB00AC1AAA /* DIContainer */ = {
 			isa = PBXGroup;
 			children = (
-				1E825F042AF799E500AC1AAA /* DIContainer.swift */,
-				1E825F062AF799F700AC1AAA /* Injected.swift */,
+				1E825F092AF79BB700AC1AAA /* PropertyWrapper */,
+				1E825F082AF79BB100AC1AAA /* Interface */,
 			);
 			path = DIContainer;
+			sourceTree = "<group>";
+		};
+		1E825F082AF79BB100AC1AAA /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				1E825F042AF799E500AC1AAA /* DIContainer.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		1E825F092AF79BB700AC1AAA /* PropertyWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				1E825F062AF799F700AC1AAA /* Injected.swift */,
+			);
+			path = PropertyWrapper;
 			sourceTree = "<group>";
 		};
 		1E86BA9A2AF4A6CC00469B6E = {
