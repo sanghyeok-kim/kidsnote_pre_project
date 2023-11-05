@@ -17,11 +17,13 @@
 		1E86BAA92AF4A6CC00469B6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAA82AF4A6CC00469B6E /* SceneDelegate.swift */; };
 		1E86BAB02AF4A6CD00469B6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E86BAAF2AF4A6CD00469B6E /* Assets.xcassets */; };
 		1E86BAB32AF4A6CD00469B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E86BAB12AF4A6CD00469B6E /* LaunchScreen.storyboard */; };
+		1E86BAC52AF4B74900469B6E /* SearchHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAC42AF4B74900469B6E /* SearchHomeViewController.swift */; };
 		1E86BAC92AF4B86A00469B6E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAC82AF4B86A00469B6E /* Logger.swift */; };
 		1E86BACB2AF4B88E00469B6E /* OSLog+category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BACA2AF4B88E00469B6E /* OSLog+category.swift */; };
 		1E86BACD2AF4B8EA00469B6E /* Rx+logErrorIfDetected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BACC2AF4B8EA00469B6E /* Rx+logErrorIfDetected.swift */; };
 		1E86BAD12AF4B92800469B6E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAD02AF4B92800469B6E /* Constant.swift */; };
 		1E86BAD52AF4B9A500469B6E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAD42AF4B9A500469B6E /* BaseViewController.swift */; };
+		1E86BAD72AF4BA2E00469B6E /* SearchHomeReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAD62AF4BA2E00469B6E /* SearchHomeReactor.swift */; };
 		1E86BADC2AF4C6D000469B6E /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BADB2AF4C6D000469B6E /* TargetType.swift */; };
 		1E86BADE2AF4C6E800469B6E /* GoogleBooksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BADD2AF4C6E800469B6E /* GoogleBooksAPI.swift */; };
 		1E86BAE22AF4C7A300469B6E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAE12AF4C7A300469B6E /* HTTPMethod.swift */; };
@@ -56,11 +58,13 @@
 		1E86BAAF2AF4A6CD00469B6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E86BAB22AF4A6CD00469B6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E86BAB42AF4A6CD00469B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Kidsnote_Pre_Project/Resources/PropertyLists/Info.plist; sourceTree = SOURCE_ROOT; };
+		1E86BAC42AF4B74900469B6E /* SearchHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHomeViewController.swift; sourceTree = "<group>"; };
 		1E86BAC82AF4B86A00469B6E /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		1E86BACA2AF4B88E00469B6E /* OSLog+category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+category.swift"; sourceTree = "<group>"; };
 		1E86BACC2AF4B8EA00469B6E /* Rx+logErrorIfDetected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+logErrorIfDetected.swift"; sourceTree = "<group>"; };
 		1E86BAD02AF4B92800469B6E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		1E86BAD42AF4B9A500469B6E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1E86BAD62AF4BA2E00469B6E /* SearchHomeReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHomeReactor.swift; sourceTree = "<group>"; };
 		1E86BADB2AF4C6D000469B6E /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		1E86BADD2AF4C6E800469B6E /* GoogleBooksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksAPI.swift; sourceTree = "<group>"; };
 		1E86BAE12AF4C7A300469B6E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				1E86BAD32AF4B99C00469B6E /* Base */,
+				1E86BAC12AF4B73000469B6E /* SearchHome */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -237,6 +242,15 @@
 				1E86BAB12AF4A6CD00469B6E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		1E86BAC12AF4B73000469B6E /* SearchHome */ = {
+			isa = PBXGroup;
+			children = (
+				1E86BAC42AF4B74900469B6E /* SearchHomeViewController.swift */,
+				1E86BAD62AF4BA2E00469B6E /* SearchHomeReactor.swift */,
+			);
+			path = SearchHome;
 			sourceTree = "<group>";
 		};
 		1E86BAC62AF4B85500469B6E /* Utils */ = {
@@ -558,6 +572,7 @@
 				1E86BADC2AF4C6D000469B6E /* TargetType.swift in Sources */,
 				1E86BAD12AF4B92800469B6E /* Constant.swift in Sources */,
 				1E86BACB2AF4B88E00469B6E /* OSLog+category.swift in Sources */,
+				1E86BAD72AF4BA2E00469B6E /* SearchHomeReactor.swift in Sources */,
 				1E825F0D2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift in Sources */,
 				1E86BB0F2AF62C3500469B6E /* BookEntityMapper.swift in Sources */,
 				1E86BAF42AF4CA4400469B6E /* Rx+decodeMap.swift in Sources */,
@@ -575,6 +590,7 @@
 				1E86BB012AF4CFB700469B6E /* BookSearchResultDTO.swift in Sources */,
 				1E86BAEC2AF4C98D00469B6E /* URLSessionNetworkService.swift in Sources */,
 				1E86BAD52AF4B9A500469B6E /* BaseViewController.swift in Sources */,
+				1E86BAC52AF4B74900469B6E /* SearchHomeViewController.swift in Sources */,
 				1E86BAF22AF4C9F600469B6E /* NetworkError.swift in Sources */,
 				1E825F0B2AF79C1F00AC1AAA /* AppDIContainer.swift in Sources */,
 				1E86BAF62AF4CA6A00469B6E /* Rx+extractData.swift in Sources */,
