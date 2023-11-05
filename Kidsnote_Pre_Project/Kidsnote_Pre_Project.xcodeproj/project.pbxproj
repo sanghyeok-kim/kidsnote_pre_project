@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E825F022AF799B800AC1AAA /* SearchBookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F012AF799B800AC1AAA /* SearchBookRepository.swift */; };
 		1E825F052AF799E500AC1AAA /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F042AF799E500AC1AAA /* DIContainer.swift */; };
 		1E825F072AF799F700AC1AAA /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F062AF799F700AC1AAA /* Injected.swift */; };
 		1E825F0B2AF79C1F00AC1AAA /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F0A2AF79C1F00AC1AAA /* AppDIContainer.swift */; };
+		1E825F0D2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F0C2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift */; };
+		1E825F0F2AF7A23700AC1AAA /* SearchBookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F0E2AF7A23700AC1AAA /* SearchBookUseCase.swift */; };
 		1E86BAA72AF4A6CC00469B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAA62AF4A6CC00469B6E /* AppDelegate.swift */; };
 		1E86BAA92AF4A6CC00469B6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAA82AF4A6CC00469B6E /* SceneDelegate.swift */; };
 		1E86BAAB2AF4A6CC00469B6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAAA2AF4A6CC00469B6E /* ViewController.swift */; };
@@ -34,15 +37,19 @@
 		1E86BAFC2AF4CABF00469B6E /* AnyDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAFB2AF4CABF00469B6E /* AnyDataMapper.swift */; };
 		1E86BAFE2AF4CAEB00469B6E /* Rx+transformMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAFD2AF4CAEB00469B6E /* Rx+transformMap.swift */; };
 		1E86BB012AF4CFB700469B6E /* BookSearchResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB002AF4CFB700469B6E /* BookSearchResultDTO.swift */; };
+		1E86BB042AF4DD3300469B6E /* DefaultSearchBookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB032AF4DD3300469B6E /* DefaultSearchBookRepository.swift */; };
 		1E86BB0D2AF6299F00469B6E /* BookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB0C2AF6299F00469B6E /* BookEntity.swift */; };
 		1E86BB0F2AF62C3500469B6E /* BookEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB0E2AF62C3500469B6E /* BookEntityMapper.swift */; };
 		2F5BFB33E4E4243A7E767759 /* Pods_Kidsnote_Pre_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E825F012AF799B800AC1AAA /* SearchBookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookRepository.swift; sourceTree = "<group>"; };
 		1E825F042AF799E500AC1AAA /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		1E825F062AF799F700AC1AAA /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
 		1E825F0A2AF79C1F00AC1AAA /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		1E825F0C2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSearchBookUseCase.swift; sourceTree = "<group>"; };
+		1E825F0E2AF7A23700AC1AAA /* SearchBookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookUseCase.swift; sourceTree = "<group>"; };
 		1E86BAA32AF4A6CC00469B6E /* Kidsnote_Pre_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kidsnote_Pre_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E86BAA62AF4A6CC00469B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E86BAA82AF4A6CC00469B6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +76,7 @@
 		1E86BAFB2AF4CABF00469B6E /* AnyDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDataMapper.swift; sourceTree = "<group>"; };
 		1E86BAFD2AF4CAEB00469B6E /* Rx+transformMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+transformMap.swift"; sourceTree = "<group>"; };
 		1E86BB002AF4CFB700469B6E /* BookSearchResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchResultDTO.swift; sourceTree = "<group>"; };
+		1E86BB032AF4DD3300469B6E /* DefaultSearchBookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSearchBookRepository.swift; sourceTree = "<group>"; };
 		1E86BB0C2AF6299F00469B6E /* BookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEntity.swift; sourceTree = "<group>"; };
 		1E86BB0E2AF62C3500469B6E /* BookEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEntityMapper.swift; sourceTree = "<group>"; };
 		535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kidsnote_Pre_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +96,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E825EFF2AF7999F00AC1AAA /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				1E825F102AF7A23C00AC1AAA /* Interface */,
+				1E825F002AF799A400AC1AAA /* RepositoryInterface */,
+				1E825F0C2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		1E825F002AF799A400AC1AAA /* RepositoryInterface */ = {
+			isa = PBXGroup;
+			children = (
+				1E825F012AF799B800AC1AAA /* SearchBookRepository.swift */,
+			);
+			path = RepositoryInterface;
+			sourceTree = "<group>";
+		};
 		1E825F032AF799DB00AC1AAA /* DIContainer */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +138,14 @@
 				1E825F062AF799F700AC1AAA /* Injected.swift */,
 			);
 			path = PropertyWrapper;
+			sourceTree = "<group>";
+		};
+		1E825F102AF7A23C00AC1AAA /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				1E825F0E2AF7A23700AC1AAA /* SearchBookUseCase.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		1E86BA9A2AF4A6CC00469B6E = {
@@ -171,6 +205,7 @@
 		1E86BABD2AF4A85000469B6E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				1E825EFF2AF7999F00AC1AAA /* UseCase */,
 				1E86BB022AF4DD0E00469B6E /* Repository */,
 				1E86BAD82AF4C68900469B6E /* Core */,
 				1E86BAC62AF4B85500469B6E /* Utils */,
@@ -360,6 +395,14 @@
 			path = DTO;
 			sourceTree = "<group>";
 		};
+		1E86BB022AF4DD0E00469B6E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				1E86BB032AF4DD3300469B6E /* DefaultSearchBookRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		1E86BB0B2AF6281400469B6E /* CoreEntity */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,17 +547,21 @@
 				1E86BAFA2AF4CAAD00469B6E /* DataMapper.swift in Sources */,
 				1E86BADE2AF4C6E800469B6E /* GoogleBooksAPI.swift in Sources */,
 				1E86BB0D2AF6299F00469B6E /* BookEntity.swift in Sources */,
+				1E825F022AF799B800AC1AAA /* SearchBookRepository.swift in Sources */,
 				1E86BADC2AF4C6D000469B6E /* TargetType.swift in Sources */,
 				1E86BAD12AF4B92800469B6E /* Constant.swift in Sources */,
 				1E86BACB2AF4B88E00469B6E /* OSLog+category.swift in Sources */,
+				1E825F0D2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift in Sources */,
 				1E86BB0F2AF62C3500469B6E /* BookEntityMapper.swift in Sources */,
 				1E86BAF42AF4CA4400469B6E /* Rx+decodeMap.swift in Sources */,
 				1E86BAA72AF4A6CC00469B6E /* AppDelegate.swift in Sources */,
 				1E86BAE42AF4C7B900469B6E /* NetworkResult.swift in Sources */,
 				1E86BACD2AF4B8EA00469B6E /* Rx+logErrorIfDetected.swift in Sources */,
 				1E825F072AF799F700AC1AAA /* Injected.swift in Sources */,
+				1E825F0F2AF7A23700AC1AAA /* SearchBookUseCase.swift in Sources */,
 				1E86BAA92AF4A6CC00469B6E /* SceneDelegate.swift in Sources */,
 				1E86BAE22AF4C7A300469B6E /* HTTPMethod.swift in Sources */,
+				1E86BB042AF4DD3300469B6E /* DefaultSearchBookRepository.swift in Sources */,
 				1E86BAFC2AF4CABF00469B6E /* AnyDataMapper.swift in Sources */,
 				1E86BAEA2AF4C95500469B6E /* NetworkService.swift in Sources */,
 				1E825F052AF799E500AC1AAA /* DIContainer.swift in Sources */,

@@ -16,6 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let initialVC = ViewController()
+        AppDIContainer.shared.registerDependencies()
         
         window?.rootViewController = initialVC
         window?.makeKeyAndVisible()
