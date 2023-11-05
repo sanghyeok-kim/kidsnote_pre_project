@@ -17,6 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         AppDIContainer.shared.registerDependencies()
         
+        let searchHomeViewController = SearchHomeViewController()
+        let searchHomeReactor = SearchHomeReactor()
+        searchHomeViewController.reactor = searchHomeReactor
+        
+        let rootNavigationViewController = UINavigationController(rootViewController: searchHomeViewController)
+        window?.rootViewController = rootNavigationViewController
         window?.makeKeyAndVisible()
     }
 }
