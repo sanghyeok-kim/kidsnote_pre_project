@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E825EEF2AF67DB300AC1AAA /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */; };
 		1E825F022AF799B800AC1AAA /* SearchBookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F012AF799B800AC1AAA /* SearchBookRepository.swift */; };
 		1E825F052AF799E500AC1AAA /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F042AF799E500AC1AAA /* DIContainer.swift */; };
 		1E825F072AF799F700AC1AAA /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F062AF799F700AC1AAA /* Injected.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		1E825F012AF799B800AC1AAA /* SearchBookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookRepository.swift; sourceTree = "<group>"; };
 		1E825F042AF799E500AC1AAA /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		1E825F062AF799F700AC1AAA /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				1E86BB172AF65D1200469B6E /* SeparatorView.swift */,
+				1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				1E86BB182AF65D1200469B6E /* SeparatorView.swift in Sources */,
 				1E86BB0F2AF62C3500469B6E /* BookEntityMapper.swift in Sources */,
 				1E86BAF42AF4CA4400469B6E /* Rx+decodeMap.swift in Sources */,
+				1E825EEF2AF67DB300AC1AAA /* ShadowView.swift in Sources */,
 				1E86BAA72AF4A6CC00469B6E /* AppDelegate.swift in Sources */,
 				1E86BAE42AF4C7B900469B6E /* NetworkResult.swift in Sources */,
 				1E86BACD2AF4B8EA00469B6E /* Rx+logErrorIfDetected.swift in Sources */,
