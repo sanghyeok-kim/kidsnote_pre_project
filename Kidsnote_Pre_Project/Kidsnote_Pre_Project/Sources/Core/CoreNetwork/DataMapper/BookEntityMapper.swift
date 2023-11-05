@@ -19,16 +19,16 @@ struct BookEntityMapper: DataMapper {
             return BookEntity(
                 id: dtoItem.id,
                 title: dtoItem.volumeInfo?.title ?? "",
-                authors: dtoItem.volumeInfo?.authors ?? [],
-                publishedDate: dtoItem.volumeInfo?.publishedDate,
-                description: dtoItem.volumeInfo?.description,
-                isbn13Identifier: isbn13Identifier,
-                pageCount: dtoItem.volumeInfo?.pageCount,
+                authors: dtoItem.volumeInfo?.authors?.joined(separator: ", ") ?? "",
+                publishedDate: dtoItem.volumeInfo?.publishedDate ?? "",
+                description: dtoItem.volumeInfo?.description ?? "",
+                isbn13Identifier: isbn13Identifier ?? "",
+                pageCount: dtoItem.volumeInfo?.pageCount ?? .zero,
                 shareURL: dtoItem.volumeInfo?.canonicalVolumeLink,
                 smallThumbnailURL: smallThumbnailURL,
                 thumbnailURL: thumbnailURL,
-                isEbook: isEbook,
-                buyLink: buyLink,
+                isEbook: isEbook ?? false,
+                buyLinkURL: buyLink,
                 sampleURL: sampleURL
             )
         }
