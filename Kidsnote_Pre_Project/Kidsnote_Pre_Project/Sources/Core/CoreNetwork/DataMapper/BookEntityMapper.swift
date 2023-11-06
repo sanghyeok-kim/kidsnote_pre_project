@@ -9,7 +9,7 @@ import Foundation
 
 struct BookEntityMapper: DataMapper {
     func transform(_ dto: BookSearchResultDTO) throws -> [BookEntity] {
-        return dto.items.map { dtoItem -> BookEntity in
+        return dto.items?.map { dtoItem -> BookEntity in
             let isbn13Identifier = dtoItem.volumeInfo?.industryIdentifiers?.first { $0.type == "ISBN_13" }?.identifier
             let smallThumbnailURL = dtoItem.volumeInfo?.imageLinks?.smallThumbnail
             let thumbnailURL = dtoItem.volumeInfo?.imageLinks?.thumbnail
@@ -31,6 +31,6 @@ struct BookEntityMapper: DataMapper {
                 buyLinkURL: buyLink,
                 sampleURL: sampleURL
             )
-        }
+        } ?? []
     }
 }
