@@ -15,10 +15,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let initialVC = ViewController()
         AppDIContainer.shared.registerDependencies()
         
-        window?.rootViewController = initialVC
+        let searchHomeViewController = SearchHomeViewController()
+        let searchHomeReactor = SearchHomeReactor()
+        searchHomeViewController.reactor = searchHomeReactor
+        
+        let rootNavigationViewController = UINavigationController(rootViewController: searchHomeViewController)
+        window?.rootViewController = rootNavigationViewController
         window?.makeKeyAndVisible()
     }
 }

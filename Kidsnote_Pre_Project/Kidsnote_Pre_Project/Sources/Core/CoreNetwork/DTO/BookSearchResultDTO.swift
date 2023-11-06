@@ -8,9 +8,9 @@
 import Foundation
 
 struct BookSearchResultDTO: Decodable {
-    let kind: String
-    let totalItems: Int
-    let items: [BookDTO]
+    let kind: String?
+    let totalItems: Int?
+    let items: [BookDTO]?
 }
 
 extension BookSearchResultDTO {
