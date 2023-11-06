@@ -183,6 +183,16 @@ private extension SearchHomeViewController {
             .debug()
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
+        
+        searchView.searchBookTextField.rx.textChanged
+            .map { Reactor.Action.searchTextFieldDidEdit($0) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        searchView.searchBookTextField.rx.controlEvent(.editingDidEndOnExit)
+            .map { Reactor.Action.searchTextFieldDidEndEditing }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
     
     func bindState(reactor: SearchHomeReactor) {
@@ -199,6 +209,12 @@ private extension SearchHomeViewController {
             .bind(onNext: toggleSearchView(shouldExpand:))
             .disposed(by: disposeBag)
         
+        reactor.state.map { $0.fetchedBookSearchResult }
+            .distinctUntilChanged()
+            .observe(on: MainScheduler.asyncInstance)
+            .bind(onNext: bookSearchDiffableDataSource.update(with:))
+            .disposed(by: disposeBag)
+        
         reactor.state.map { $0.isBookSearchCollectionViewHidden }
             .distinctUntilChanged()
             .bind(to: bookSearchCollectionView.rx.isHidden)
@@ -208,6 +224,36 @@ private extension SearchHomeViewController {
             .distinctUntilChanged()
             .bind(to: bookSearchCollectionView.rx.isHidden)
             .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isLoadingIndicatorAnimating }
+            .distinctUntilChanged()
+            .bind(to: loadingIndicator.rx.isAnimating)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.shouldHideFetchResultEmptyLabel }
+            .distinctUntilChanged()
+            .observe(on: MainScheduler.asyncInstance)
+            .bind(onNext: searchResultEmptyLabel.setVisibility(shouldHide:))
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isLoadingIndicatorAnimating }
+            .distinctUntilChanged()
+            .bind(to: loadingIndicator.rx.isAnimating)
+            .disposed(by: disposeBag)
+        
+        reactor.pulse(\.$shouldClearTextFieldText)
+            .filter { $0 }
+            .map { _ in "" }
+            .bind(to: searchView.searchBookTextField.rx.text)
+            .disposed(by: disposeBag)
+        
+        reactor.pulse(\.$toastMessage)
+            .compactMap { $0 }
+            .observe(on: MainScheduler.asyncInstance)
+            .bind(onNext: toastLabel.show(message:))
+            .disposed(by: disposeBag)
+    }
+}
 
 // MARK: - Animating Methods
 
