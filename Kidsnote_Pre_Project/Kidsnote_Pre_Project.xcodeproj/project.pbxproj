@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1E825EEF2AF67DB300AC1AAA /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */; };
+		1E825EF12AF67DC500AC1AAA /* SearchBookTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */; };
+		1E825EF42AF696D400AC1AAA /* Reactive+BookSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF32AF696D400AC1AAA /* Reactive+BookSearchBar.swift */; };
+		1E825EF62AF6B16B00AC1AAA /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF52AF6B16B00AC1AAA /* SearchView.swift */; };
+		1E825EF82AF71F0800AC1AAA /* BookSearchCollectionViewDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF72AF71F0800AC1AAA /* BookSearchCollectionViewDiffableDataSource.swift */; };
+		1E825EFA2AF7209C00AC1AAA /* BookSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF92AF7209C00AC1AAA /* BookSearchCollectionViewCell.swift */; };
+		1E825EFC2AF727FB00AC1AAA /* BookSearchCollectionViewSectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EFB2AF727FB00AC1AAA /* BookSearchCollectionViewSectionLayout.swift */; };
+		1E825EFE2AF78F7A00AC1AAA /* BookSearchTypeCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EFD2AF78F7A00AC1AAA /* BookSearchTypeCollectionHeaderView.swift */; };
 		1E825F022AF799B800AC1AAA /* SearchBookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F012AF799B800AC1AAA /* SearchBookRepository.swift */; };
 		1E825F052AF799E500AC1AAA /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F042AF799E500AC1AAA /* DIContainer.swift */; };
 		1E825F072AF799F700AC1AAA /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F062AF799F700AC1AAA /* Injected.swift */; };
@@ -25,6 +32,8 @@
 		1E825F452AF898CE00AC1AAA /* ShadowImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F442AF898CE00AC1AAA /* ShadowImageView.swift */; };
 		1E825F482AF8999000AC1AAA /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F472AF8999000AC1AAA /* UIImage+.swift */; };
 		1E825F4A2AF8BF0D00AC1AAA /* Fadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F492AF8BF0D00AC1AAA /* Fadable.swift */; };
+		1E825F4C2AF8C30700AC1AAA /* SearchResultEmptyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F4B2AF8C30700AC1AAA /* SearchResultEmptyLabel.swift */; };
+		1E825F4E2AF8FA2F00AC1AAA /* CollectionViewSectionProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F4D2AF8FA2F00AC1AAA /* CollectionViewSectionProvidable.swift */; };
 		1E86BAA72AF4A6CC00469B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAA62AF4A6CC00469B6E /* AppDelegate.swift */; };
 		1E86BAA92AF4A6CC00469B6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAA82AF4A6CC00469B6E /* SceneDelegate.swift */; };
 		1E86BAB02AF4A6CD00469B6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E86BAAF2AF4A6CD00469B6E /* Assets.xcassets */; };
@@ -55,12 +64,21 @@
 		1E86BB0D2AF6299F00469B6E /* BookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB0C2AF6299F00469B6E /* BookEntity.swift */; };
 		1E86BB0F2AF62C3500469B6E /* BookEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB0E2AF62C3500469B6E /* BookEntityMapper.swift */; };
 		1E86BB112AF63C9800469B6E /* Rx+viewDidLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB102AF63C9800469B6E /* Rx+viewDidLoad.swift */; };
+		1E86BB142AF65CCB00469B6E /* BookSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB132AF65CCB00469B6E /* BookSearchBar.swift */; };
+		1E86BB162AF65CEC00469B6E /* BookTypeSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB152AF65CEC00469B6E /* BookTypeSegmentControl.swift */; };
 		1E86BB182AF65D1200469B6E /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB172AF65D1200469B6E /* SeparatorView.swift */; };
 		2F5BFB33E4E4243A7E767759 /* Pods_Kidsnote_Pre_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookTextField.swift; sourceTree = "<group>"; };
+		1E825EF32AF696D400AC1AAA /* Reactive+BookSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+BookSearchBar.swift"; sourceTree = "<group>"; };
+		1E825EF52AF6B16B00AC1AAA /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		1E825EF72AF71F0800AC1AAA /* BookSearchCollectionViewDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchCollectionViewDiffableDataSource.swift; sourceTree = "<group>"; };
+		1E825EF92AF7209C00AC1AAA /* BookSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		1E825EFB2AF727FB00AC1AAA /* BookSearchCollectionViewSectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchCollectionViewSectionLayout.swift; sourceTree = "<group>"; };
+		1E825EFD2AF78F7A00AC1AAA /* BookSearchTypeCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchTypeCollectionHeaderView.swift; sourceTree = "<group>"; };
 		1E825F012AF799B800AC1AAA /* SearchBookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookRepository.swift; sourceTree = "<group>"; };
 		1E825F042AF799E500AC1AAA /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		1E825F062AF799F700AC1AAA /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
@@ -78,6 +96,8 @@
 		1E825F442AF898CE00AC1AAA /* ShadowImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowImageView.swift; sourceTree = "<group>"; };
 		1E825F472AF8999000AC1AAA /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		1E825F492AF8BF0D00AC1AAA /* Fadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fadable.swift; sourceTree = "<group>"; };
+		1E825F4B2AF8C30700AC1AAA /* SearchResultEmptyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultEmptyLabel.swift; sourceTree = "<group>"; };
+		1E825F4D2AF8FA2F00AC1AAA /* CollectionViewSectionProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewSectionProvidable.swift; sourceTree = "<group>"; };
 		1E86BAA32AF4A6CC00469B6E /* Kidsnote_Pre_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kidsnote_Pre_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E86BAA62AF4A6CC00469B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E86BAA82AF4A6CC00469B6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +130,8 @@
 		1E86BB0C2AF6299F00469B6E /* BookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEntity.swift; sourceTree = "<group>"; };
 		1E86BB0E2AF62C3500469B6E /* BookEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEntityMapper.swift; sourceTree = "<group>"; };
 		1E86BB102AF63C9800469B6E /* Rx+viewDidLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+viewDidLoad.swift"; sourceTree = "<group>"; };
+		1E86BB132AF65CCB00469B6E /* BookSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchBar.swift; sourceTree = "<group>"; };
+		1E86BB152AF65CEC00469B6E /* BookTypeSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTypeSegmentControl.swift; sourceTree = "<group>"; };
 		1E86BB172AF65D1200469B6E /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kidsnote_Pre_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7346A071D1F3E63762B06374 /* Pods-Kidsnote_Pre_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kidsnote_Pre_Project.debug.xcconfig"; path = "Target Support Files/Pods-Kidsnote_Pre_Project/Pods-Kidsnote_Pre_Project.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +153,7 @@
 		1E825EF22AF696C800AC1AAA /* Reactive */ = {
 			isa = PBXGroup;
 			children = (
+				1E825EF32AF696D400AC1AAA /* Reactive+BookSearchBar.swift */,
 				1E825F112AF7C82200AC1AAA /* Reactive+UITextField.swift */,
 			);
 			path = Reactive;
@@ -199,6 +222,10 @@
 		1E825F402AF895F000AC1AAA /* BookSearchCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				1E825EF72AF71F0800AC1AAA /* BookSearchCollectionViewDiffableDataSource.swift */,
+				1E825EF92AF7209C00AC1AAA /* BookSearchCollectionViewCell.swift */,
+				1E825EFB2AF727FB00AC1AAA /* BookSearchCollectionViewSectionLayout.swift */,
+				1E825EFD2AF78F7A00AC1AAA /* BookSearchTypeCollectionHeaderView.swift */,
 				1E825F3C2AF895A800AC1AAA /* BookItem.swift */,
 				1E825F3E2AF895D600AC1AAA /* BookSearchSection.swift */,
 			);
@@ -210,6 +237,7 @@
 			children = (
 				1E825F422AF8962700AC1AAA /* ReuseIdentifiable.swift */,
 				1E825F492AF8BF0D00AC1AAA /* Fadable.swift */,
+				1E825F4D2AF8FA2F00AC1AAA /* CollectionViewSectionProvidable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -318,6 +346,7 @@
 		1E86BAC12AF4B73000469B6E /* SearchHome */ = {
 			isa = PBXGroup;
 			children = (
+				1E825F402AF895F000AC1AAA /* BookSearchCollectionView */,
 				1E86BAC42AF4B74900469B6E /* SearchHomeViewController.swift */,
 				1E86BAD62AF4BA2E00469B6E /* SearchHomeReactor.swift */,
 			);
@@ -512,12 +541,17 @@
 				1E825F412AF8962000AC1AAA /* Protocol */,
 				1E825F352AF7EEEE00AC1AAA /* Enum */,
 				1E825EF22AF696C800AC1AAA /* Reactive */,
+				1E86BB132AF65CCB00469B6E /* BookSearchBar.swift */,
+				1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */,
+				1E86BB152AF65CEC00469B6E /* BookTypeSegmentControl.swift */,
 				1E86BB172AF65D1200469B6E /* SeparatorView.swift */,
 				1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */,
 				1E825F442AF898CE00AC1AAA /* ShadowImageView.swift */,
+				1E825EF52AF6B16B00AC1AAA /* SearchView.swift */,
 				1E825F332AF7EE8F00AC1AAA /* ToastLabel.swift */,
 				1E825F382AF7EF0500AC1AAA /* RoundedPaddingLabel.swift */,
 				1E825F3A2AF7EF2300AC1AAA /* PaddingLabel.swift */,
+				1E825F4B2AF8C30700AC1AAA /* SearchResultEmptyLabel.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -655,6 +689,7 @@
 			files = (
 				1E86BAEF2AF4C9CA00469B6E /* Rx+validateStatusCode.swift in Sources */,
 				1E86BAFA2AF4CAAD00469B6E /* DataMapper.swift in Sources */,
+				1E825EFA2AF7209C00AC1AAA /* BookSearchCollectionViewCell.swift in Sources */,
 				1E86BADE2AF4C6E800469B6E /* GoogleBooksAPI.swift in Sources */,
 				1E86BB0D2AF6299F00469B6E /* BookEntity.swift in Sources */,
 				1E86BB112AF63C9800469B6E /* Rx+viewDidLoad.swift in Sources */,
@@ -664,18 +699,23 @@
 				1E86BAD12AF4B92800469B6E /* Constant.swift in Sources */,
 				1E86BACB2AF4B88E00469B6E /* OSLog+category.swift in Sources */,
 				1E825F3D2AF895A800AC1AAA /* BookItem.swift in Sources */,
+				1E825EF12AF67DC500AC1AAA /* SearchBookTextField.swift in Sources */,
 				1E86BAD72AF4BA2E00469B6E /* SearchHomeReactor.swift in Sources */,
 				1E825F0D2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift in Sources */,
 				1E825F4A2AF8BF0D00AC1AAA /* Fadable.swift in Sources */,
 				1E825F432AF8962700AC1AAA /* ReuseIdentifiable.swift in Sources */,
+				1E825EF62AF6B16B00AC1AAA /* SearchView.swift in Sources */,
 				1E86BB182AF65D1200469B6E /* SeparatorView.swift in Sources */,
+				1E825EFC2AF727FB00AC1AAA /* BookSearchCollectionViewSectionLayout.swift in Sources */,
 				1E825F122AF7C82200AC1AAA /* Reactive+UITextField.swift in Sources */,
 				1E86BB0F2AF62C3500469B6E /* BookEntityMapper.swift in Sources */,
 				1E86BAF42AF4CA4400469B6E /* Rx+decodeMap.swift in Sources */,
 				1E825EEF2AF67DB300AC1AAA /* ShadowView.swift in Sources */,
 				1E86BAA72AF4A6CC00469B6E /* AppDelegate.swift in Sources */,
+				1E86BB142AF65CCB00469B6E /* BookSearchBar.swift in Sources */,
 				1E86BAE42AF4C7B900469B6E /* NetworkResult.swift in Sources */,
 				1E86BACD2AF4B8EA00469B6E /* Rx+logErrorIfDetected.swift in Sources */,
+				1E825EF42AF696D400AC1AAA /* Reactive+BookSearchBar.swift in Sources */,
 				1E825F072AF799F700AC1AAA /* Injected.swift in Sources */,
 				1E825F0F2AF7A23700AC1AAA /* SearchBookUseCase.swift in Sources */,
 				1E825F452AF898CE00AC1AAA /* ShadowImageView.swift in Sources */,
@@ -683,6 +723,8 @@
 				1E86BAE22AF4C7A300469B6E /* HTTPMethod.swift in Sources */,
 				1E825F342AF7EE8F00AC1AAA /* ToastLabel.swift in Sources */,
 				1E825F482AF8999000AC1AAA /* UIImage+.swift in Sources */,
+				1E825F4E2AF8FA2F00AC1AAA /* CollectionViewSectionProvidable.swift in Sources */,
+				1E825F4C2AF8C30700AC1AAA /* SearchResultEmptyLabel.swift in Sources */,
 				1E86BB042AF4DD3300469B6E /* DefaultSearchBookRepository.swift in Sources */,
 				1E86BAFC2AF4CABF00469B6E /* AnyDataMapper.swift in Sources */,
 				1E86BAEA2AF4C95500469B6E /* NetworkService.swift in Sources */,
@@ -690,10 +732,13 @@
 				1E86BB012AF4CFB700469B6E /* BookSearchResultDTO.swift in Sources */,
 				1E86BAEC2AF4C98D00469B6E /* URLSessionNetworkService.swift in Sources */,
 				1E825F3B2AF7EF2300AC1AAA /* PaddingLabel.swift in Sources */,
+				1E825EFE2AF78F7A00AC1AAA /* BookSearchTypeCollectionHeaderView.swift in Sources */,
 				1E86BAD52AF4B9A500469B6E /* BaseViewController.swift in Sources */,
 				1E825F392AF7EF0500AC1AAA /* RoundedPaddingLabel.swift in Sources */,
 				1E86BAC52AF4B74900469B6E /* SearchHomeViewController.swift in Sources */,
+				1E86BB162AF65CEC00469B6E /* BookTypeSegmentControl.swift in Sources */,
 				1E86BAF22AF4C9F600469B6E /* NetworkError.swift in Sources */,
+				1E825EF82AF71F0800AC1AAA /* BookSearchCollectionViewDiffableDataSource.swift in Sources */,
 				1E825F0B2AF79C1F00AC1AAA /* AppDIContainer.swift in Sources */,
 				1E86BAF62AF4CA6A00469B6E /* Rx+extractData.swift in Sources */,
 				1E86BAC92AF4B86A00469B6E /* Logger.swift in Sources */,
