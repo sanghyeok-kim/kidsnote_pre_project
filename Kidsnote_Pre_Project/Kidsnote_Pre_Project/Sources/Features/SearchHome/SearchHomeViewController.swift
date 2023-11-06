@@ -13,13 +13,87 @@ import RxSwift
 
 final class SearchHomeViewController: BaseViewController, View {
     
-    var reactor: SearchHomeReactor?
-    var disposeBag = DisposeBag()
+    private let dimmingSearchBackgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .darkGray
+        view.alpha = .zero
+        return view
+    }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
+    private let expandableSearchBackgroundView = ShadowView()
+    
+    private let searchView: SearchView = {
+        let view = SearchView()
+        view.alpha = .zero
+        return view
+    }()
+    
+    private let bookSearchBar = BookSearchBar()
+    
+    private let bookSearchRefreshControl = UIRefreshControl()
+    
+    private lazy var bookSearchDiffableDataSource = BookSearchDiffableDataSource(
+        collectionView: bookSearchCollectionView
+    )
+    private let bookSearchCollectionViewSectionLayout = BookSearchCollectionViewSectionLayout()
+    private lazy var bookSearchCollectionViewLayout: UICollectionViewCompositionalLayout = {
+        let configuration = UICollectionViewCompositionalLayoutConfiguration()
+        let compositionalLayout = UICollectionViewCompositionalLayout(
+            sectionProvider: bookSearchCollectionViewSectionLayout.sectionProvider,
+            configuration: configuration
+        )
+        return compositionalLayout
+    }()
+    private lazy var bookSearchCollectionView: UICollectionView = {
+        let collectionView = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: bookSearchCollectionViewLayout
+        )
+        collectionView.register(
+            BookSearchCollectionViewCell.self,
+            forCellWithReuseIdentifier: BookSearchCollectionViewCell.identifier
+        )
+        collectionView.register(
+            BookSearchTypeCollectionHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: BookSearchTypeCollectionHeaderView.identifier
+        )
+        collectionView.refreshControl = bookSearchRefreshControl
+        collectionView.isHidden = true
+        return collectionView
+    }()
+    
+    private let searchResultEmptyLabel = SearchResultEmptyLabel()
+    
+    private let loadingIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
+    }()
+    
+    private let toastLabel = ToastLabel()
+    
+    // MARK: - Constraint Properties
+    
+    lazy var searchBackgroundViewExpandedConstraints: [NSLayoutConstraint] = {
+        return [
+            expandableSearchBackgroundView.topAnchor.constraint(equalTo: view.topAnchor),
+            expandableSearchBackgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            expandableSearchBackgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            expandableSearchBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ]
+    }()
+    
+    lazy var searchBackgroundViewCollapsedConstraints: [NSLayoutConstraint] = {
+        return [
+            expandableSearchBackgroundView.topAnchor.constraint(equalTo: bookSearchBar.topAnchor),
+            expandableSearchBackgroundView.leadingAnchor.constraint(equalTo: bookSearchBar.leadingAnchor),
+            expandableSearchBackgroundView.trailingAnchor.constraint(equalTo: bookSearchBar.trailingAnchor),
+            expandableSearchBackgroundView.bottomAnchor.constraint(equalTo: bookSearchBar.bottomAnchor)
+        ]
+    }()
+    
+    var disposeBag = DisposeBag()
     
     // MARK: - Bind Reactor
     
@@ -40,6 +114,52 @@ final class SearchHomeViewController: BaseViewController, View {
     override func layoutUI() {
         super.layoutUI()
         
+        view.addSubview(dimmingSearchBackgroundView)
+        searchView.addSubview(bookSearchCollectionView)
+        view.addSubview(expandableSearchBackgroundView)
+        view.addSubview(bookSearchBar)
+        view.addSubview(searchView)
+        bookSearchCollectionView.addSubview(searchResultEmptyLabel)
+        view.addSubview(loadingIndicator)
+        view.addSubview(toastLabel)
+        
+        dimmingSearchBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+        dimmingSearchBackgroundView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        dimmingSearchBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        dimmingSearchBackgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        dimmingSearchBackgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        expandableSearchBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(searchBackgroundViewCollapsedConstraints)
+        
+        searchView.translatesAutoresizingMaskIntoConstraints = false
+        searchView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        searchView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        searchView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        searchView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        bookSearchBar.translatesAutoresizingMaskIntoConstraints = false
+        bookSearchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 64).isActive = true
+        bookSearchBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 12).isActive = true
+        bookSearchBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -12).isActive = true
+        
+        bookSearchCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        bookSearchCollectionView.topAnchor.constraint(equalTo: bookSearchBar.bottomAnchor).isActive = true
+        bookSearchCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        bookSearchCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        bookSearchCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        toastLabel.translatesAutoresizingMaskIntoConstraints = false
+        toastLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        toastLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32).isActive = true
+        
+        loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
+        loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        searchResultEmptyLabel.translatesAutoresizingMaskIntoConstraints = false
+        searchResultEmptyLabel.centerXAnchor.constraint(equalTo: bookSearchCollectionView.centerXAnchor).isActive = true
+        searchResultEmptyLabel.topAnchor.constraint(equalTo: bookSearchCollectionView.topAnchor, constant: 200).isActive = true
     }
 }
 
