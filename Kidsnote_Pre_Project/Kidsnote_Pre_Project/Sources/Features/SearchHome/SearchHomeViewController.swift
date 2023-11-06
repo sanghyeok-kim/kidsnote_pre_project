@@ -167,10 +167,49 @@ final class SearchHomeViewController: BaseViewController, View {
 
 private extension SearchHomeViewController {
     func bindAction(reactor: SearchHomeReactor) {
+        rx.viewDidLoad
+            .map { Reactor.Action.viewDidLoad }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         
+        
+        bookSearchBar.rx.tap
+            .map { Reactor.Action.bookSearchBarDidTap }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
     
     func bindState(reactor: SearchHomeReactor) {
         
+        
+        reactor.state.map { $0.isSearchTextFieldFirstResonder }
+            .distinctUntilChanged()
+            .bind(to: searchView.searchBookTextField.rx.shouldBecomeFirstResponder)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isSearchBackgroundViewExpanded }
+            .distinctUntilChanged()
+            .observe(on: MainScheduler.asyncInstance)
+            .bind(onNext: toggleSearchView(shouldExpand:))
+            .disposed(by: disposeBag)
+
+// MARK: - Animating Methods
+
+private extension SearchHomeViewController {
+    func toggleSearchView(shouldExpand: Bool) {
+        if shouldExpand {
+            NSLayoutConstraint.deactivate(searchBackgroundViewCollapsedConstraints)
+            NSLayoutConstraint.activate(searchBackgroundViewExpandedConstraints)
+        } else {
+            NSLayoutConstraint.deactivate(searchBackgroundViewExpandedConstraints)
+            NSLayoutConstraint.activate(searchBackgroundViewCollapsedConstraints)
+        }
+        
+        UIView.animate(withDuration: 0.35) { [weak self] in
+            self?.searchView.alpha = shouldExpand ? 1.0 : .zero
+            self?.dimmingSearchBackgroundView.alpha = shouldExpand ? 0.5 : .zero
+            self?.bookSearchBar.alpha = shouldExpand ? .zero : 1.0
+            self?.view.layoutIfNeeded()
+        }
     }
 }

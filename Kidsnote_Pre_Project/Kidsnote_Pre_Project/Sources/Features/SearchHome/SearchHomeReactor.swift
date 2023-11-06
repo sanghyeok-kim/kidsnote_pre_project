@@ -12,14 +12,18 @@ final class SearchHomeReactor: Reactor {
     
     enum Action {
         case viewDidLoad
+        case bookSearchBarDidTap
     }
     
     enum Mutation {
-        
+        case setSearchTextFieldFirstResponder(Bool)
+        case setSearchBackgroundViewExpand(Bool)
     }
     
     struct State {
         
+        var isSearchTextFieldFirstResonder: Bool = false
+        var isSearchBackgroundViewExpanded: Bool = false
     }
     
     let initialState = State()
@@ -30,13 +34,22 @@ final class SearchHomeReactor: Reactor {
         switch action {
         case .viewDidLoad:
             return .empty()
+        case .bookSearchBarDidTap:
+            return .concat(
+                .just(.setSearchBackgroundViewExpand(true)),
+                .just(.setSearchTextFieldFirstResponder(true))
+                .delay(.milliseconds(300), scheduler: MainScheduler.asyncInstance)
+            )
         }
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
         switch mutation {
-            
+        case .setSearchTextFieldFirstResponder(let isFirstResponder):
+            newState.isSearchTextFieldFirstResonder = isFirstResponder
+        case .setSearchBackgroundViewExpand(let isExpanded):
+            newState.isSearchBackgroundViewExpanded = isExpanded
         }
         return newState
     }
