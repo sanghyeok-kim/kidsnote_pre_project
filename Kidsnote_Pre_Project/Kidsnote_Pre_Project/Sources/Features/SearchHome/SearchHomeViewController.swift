@@ -177,6 +177,12 @@ private extension SearchHomeViewController {
             .map { Reactor.Action.bookSearchBarDidTap }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
+        
+        searchView.backButton.rx.tap
+            .map { Reactor.Action.backButtonDidTap }
+            .debug()
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
     
     func bindState(reactor: SearchHomeReactor) {
@@ -191,6 +197,16 @@ private extension SearchHomeViewController {
             .distinctUntilChanged()
             .observe(on: MainScheduler.asyncInstance)
             .bind(onNext: toggleSearchView(shouldExpand:))
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isBookSearchCollectionViewHidden }
+            .distinctUntilChanged()
+            .bind(to: bookSearchCollectionView.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isBookSearchCollectionViewHidden }
+            .distinctUntilChanged()
+            .bind(to: bookSearchCollectionView.rx.isHidden)
             .disposed(by: disposeBag)
 
 // MARK: - Animating Methods
