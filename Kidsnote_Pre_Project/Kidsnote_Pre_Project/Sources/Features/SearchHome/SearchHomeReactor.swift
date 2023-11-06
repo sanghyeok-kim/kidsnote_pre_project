@@ -12,6 +12,7 @@ final class SearchHomeReactor: Reactor {
     
     enum Action {
         case viewDidLoad
+        case viewDidRefresh
         case bookSearchBarDidTap
         case backButtonDidTap
         case searchTextFieldDidEdit(String)
@@ -20,6 +21,7 @@ final class SearchHomeReactor: Reactor {
     
     enum Mutation {
         case setSearchTextFieldFirstResponder(Bool)
+        case setRefreshControlIsRefreshing(Bool)
         case setSearchBackgroundViewExpand(Bool)
         case setSearchKeyword(String)
         case setSearchKeywordIsEdited(Bool)
@@ -33,6 +35,7 @@ final class SearchHomeReactor: Reactor {
     }
     
     struct State {
+        var isRefreshControlRefreshing: Bool = false
         var isSearchTextFieldFirstResonder: Bool = false
         var isSearchBackgroundViewExpanded: Bool = false
         var isSearchKeywordEdited: Bool = false
@@ -53,6 +56,12 @@ final class SearchHomeReactor: Reactor {
         switch action {
         case .viewDidLoad:
             return .empty()
+        case .viewDidRefresh:
+            let keyword = currentState.searchKeyword
+            return .concat(
+                .just(.setRefreshControlIsRefreshing(true)),
+                fetchBookSearchResult(keyword: keyword)
+            )
         case .bookSearchBarDidTap:
             return .concat(
                 .just(.setSearchBackgroundViewExpand(true)),
@@ -94,6 +103,8 @@ final class SearchHomeReactor: Reactor {
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
         switch mutation {
+        case .setRefreshControlIsRefreshing(let isRefreshing):
+            newState.isRefreshControlRefreshing = isRefreshing
         case .setSearchTextFieldFirstResponder(let isFirstResponder):
             newState.isSearchTextFieldFirstResonder = isFirstResponder
         case .setSearchBackgroundViewExpand(let isExpanded):
@@ -133,6 +144,7 @@ private extension SearchHomeReactor {
                     return .concat(
                         .just(.setFetchResultIsEmpty(true)),
                         .just(.setFetchResultEmptyLabelHidden(false)),
+                        .just(.setRefreshControlIsRefreshing(false)),
                         .just(.setLoadingIndicatorAnimating(false))
                     )
                 } else {
@@ -146,6 +158,7 @@ private extension SearchHomeReactor {
             .catch { error in
                 .concat(
                     .just(.setToastMessage("검색에 실패했습니다")),
+                    .just(.setRefreshControlIsRefreshing(false)),
                     .just(.setLoadingIndicatorAnimating(false))
                 )
             }

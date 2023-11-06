@@ -172,6 +172,10 @@ private extension SearchHomeViewController {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+        bookSearchRefreshControl.rx.controlEvent(.valueChanged)
+            .map { Reactor.Action.viewDidRefresh }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         
         bookSearchBar.rx.tap
             .map { Reactor.Action.bookSearchBarDidTap }
@@ -197,6 +201,10 @@ private extension SearchHomeViewController {
     
     func bindState(reactor: SearchHomeReactor) {
         
+        reactor.state.map { $0.isRefreshControlRefreshing }
+            .distinctUntilChanged()
+            .bind(to: bookSearchRefreshControl.rx.isRefreshing)
+            .disposed(by: disposeBag)
         
         reactor.state.map { $0.isSearchTextFieldFirstResonder }
             .distinctUntilChanged()
