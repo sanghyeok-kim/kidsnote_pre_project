@@ -7,7 +7,7 @@
 
 import UIKit
 
-public final class ToastLabel: RoundedPaddingLabel {
+public final class ToastLabel: RoundedPaddingLabel, Fadable {
     public override init(padding: Padding = .medium) {
         super.init(padding: padding)
         configureUI()
@@ -42,23 +42,5 @@ private extension ToastLabel {
         backgroundColor = UIColor.black.withAlphaComponent(0.6)
         numberOfLines = .zero
         lineBreakMode = .byWordWrapping
-    }
-}
-
-// MARK: - Supporting Methods
-
-private extension ToastLabel {
-    func fadeIn(completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.5, animations: { [weak self] in
-            self?.alpha = 1.0
-        }, completion: { _ in
-            completion()
-        })
-    }
-    
-    func delayedFadeOut() {
-        UIView.animate(withDuration: 0.5, delay: 2.5, options: .curveEaseIn, animations: { [weak self] in
-            self?.alpha = .zero
-        })
     }
 }
