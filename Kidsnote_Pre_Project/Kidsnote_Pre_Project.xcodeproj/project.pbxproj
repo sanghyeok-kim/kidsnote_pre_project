@@ -11,6 +11,7 @@
 		1E825EF12AF67DC500AC1AAA /* SearchBookTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */; };
 		1E825EF42AF696D400AC1AAA /* Reactive+BookSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF32AF696D400AC1AAA /* Reactive+BookSearchBar.swift */; };
 		1E825EF62AF6B16B00AC1AAA /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF52AF6B16B00AC1AAA /* SearchView.swift */; };
+		1E825EF82AF71F0800AC1AAA /* BookSearchCollectionViewDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF72AF71F0800AC1AAA /* BookSearchCollectionViewDiffableDataSource.swift */; };
 		1E825F022AF799B800AC1AAA /* SearchBookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F012AF799B800AC1AAA /* SearchBookRepository.swift */; };
 		1E825F052AF799E500AC1AAA /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F042AF799E500AC1AAA /* DIContainer.swift */; };
 		1E825F072AF799F700AC1AAA /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F062AF799F700AC1AAA /* Injected.swift */; };
@@ -70,6 +71,7 @@
 		1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookTextField.swift; sourceTree = "<group>"; };
 		1E825EF32AF696D400AC1AAA /* Reactive+BookSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+BookSearchBar.swift"; sourceTree = "<group>"; };
 		1E825EF52AF6B16B00AC1AAA /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		1E825EF72AF71F0800AC1AAA /* BookSearchCollectionViewDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchCollectionViewDiffableDataSource.swift; sourceTree = "<group>"; };
 		1E825F012AF799B800AC1AAA /* SearchBookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookRepository.swift; sourceTree = "<group>"; };
 		1E825F042AF799E500AC1AAA /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		1E825F062AF799F700AC1AAA /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		1E825F402AF895F000AC1AAA /* BookSearchCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				1E825EF72AF71F0800AC1AAA /* BookSearchCollectionViewDiffableDataSource.swift */,
 				1E825F3C2AF895A800AC1AAA /* BookItem.swift */,
 				1E825F3E2AF895D600AC1AAA /* BookSearchSection.swift */,
 			);
@@ -718,6 +721,7 @@
 				1E86BAC52AF4B74900469B6E /* SearchHomeViewController.swift in Sources */,
 				1E86BB162AF65CEC00469B6E /* BookTypeSegmentControl.swift in Sources */,
 				1E86BAF22AF4C9F600469B6E /* NetworkError.swift in Sources */,
+				1E825EF82AF71F0800AC1AAA /* BookSearchCollectionViewDiffableDataSource.swift in Sources */,
 				1E825F0B2AF79C1F00AC1AAA /* AppDIContainer.swift in Sources */,
 				1E86BAF62AF4CA6A00469B6E /* Rx+extractData.swift in Sources */,
 				1E86BAC92AF4B86A00469B6E /* Logger.swift in Sources */,
