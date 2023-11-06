@@ -14,6 +14,7 @@
 		1E825F0B2AF79C1F00AC1AAA /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F0A2AF79C1F00AC1AAA /* AppDIContainer.swift */; };
 		1E825F0D2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F0C2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift */; };
 		1E825F0F2AF7A23700AC1AAA /* SearchBookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F0E2AF7A23700AC1AAA /* SearchBookUseCase.swift */; };
+		1E825F122AF7C82200AC1AAA /* Reactive+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F112AF7C82200AC1AAA /* Reactive+UITextField.swift */; };
 		1E825F342AF7EE8F00AC1AAA /* ToastLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F332AF7EE8F00AC1AAA /* ToastLabel.swift */; };
 		1E825F372AF7EEFA00AC1AAA /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F362AF7EEFA00AC1AAA /* Padding.swift */; };
 		1E825F392AF7EF0500AC1AAA /* RoundedPaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F382AF7EF0500AC1AAA /* RoundedPaddingLabel.swift */; };
@@ -60,6 +61,7 @@
 		1E825F0A2AF79C1F00AC1AAA /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		1E825F0C2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSearchBookUseCase.swift; sourceTree = "<group>"; };
 		1E825F0E2AF7A23700AC1AAA /* SearchBookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookUseCase.swift; sourceTree = "<group>"; };
+		1E825F112AF7C82200AC1AAA /* Reactive+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UITextField.swift"; sourceTree = "<group>"; };
 		1E825F332AF7EE8F00AC1AAA /* ToastLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastLabel.swift; sourceTree = "<group>"; };
 		1E825F362AF7EEFA00AC1AAA /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
 		1E825F382AF7EF0500AC1AAA /* RoundedPaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedPaddingLabel.swift; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E825EF22AF696C800AC1AAA /* Reactive */ = {
+			isa = PBXGroup;
+			children = (
+				1E825F112AF7C82200AC1AAA /* Reactive+UITextField.swift */,
+			);
+			path = Reactive;
+			sourceTree = "<group>";
+		};
 		1E825EFF2AF7999F00AC1AAA /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +471,7 @@
 			isa = PBXGroup;
 			children = (
 				1E825F352AF7EEEE00AC1AAA /* Enum */,
+				1E825EF22AF696C800AC1AAA /* Reactive */,
 				1E86BB172AF65D1200469B6E /* SeparatorView.swift */,
 				1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */,
 				1E825F332AF7EE8F00AC1AAA /* ToastLabel.swift */,
@@ -613,6 +624,7 @@
 				1E86BAD72AF4BA2E00469B6E /* SearchHomeReactor.swift in Sources */,
 				1E825F0D2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift in Sources */,
 				1E86BB182AF65D1200469B6E /* SeparatorView.swift in Sources */,
+				1E825F122AF7C82200AC1AAA /* Reactive+UITextField.swift in Sources */,
 				1E86BB0F2AF62C3500469B6E /* BookEntityMapper.swift in Sources */,
 				1E86BAF42AF4CA4400469B6E /* Rx+decodeMap.swift in Sources */,
 				1E825EEF2AF67DB300AC1AAA /* ShadowView.swift in Sources */,
