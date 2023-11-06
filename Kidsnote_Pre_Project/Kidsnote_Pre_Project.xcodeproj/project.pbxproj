@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E825EEF2AF67DB300AC1AAA /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */; };
 		1E825EF12AF67DC500AC1AAA /* SearchBookTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */; };
+		1E825EF62AF6B16B00AC1AAA /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF52AF6B16B00AC1AAA /* SearchView.swift */; };
 		1E825F022AF799B800AC1AAA /* SearchBookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F012AF799B800AC1AAA /* SearchBookRepository.swift */; };
 		1E825F052AF799E500AC1AAA /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F042AF799E500AC1AAA /* DIContainer.swift */; };
 		1E825F072AF799F700AC1AAA /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F062AF799F700AC1AAA /* Injected.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookTextField.swift; sourceTree = "<group>"; };
+		1E825EF52AF6B16B00AC1AAA /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		1E825F012AF799B800AC1AAA /* SearchBookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookRepository.swift; sourceTree = "<group>"; };
 		1E825F042AF799E500AC1AAA /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		1E825F062AF799F700AC1AAA /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
@@ -524,6 +526,7 @@
 				1E86BB172AF65D1200469B6E /* SeparatorView.swift */,
 				1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */,
 				1E825F442AF898CE00AC1AAA /* ShadowImageView.swift */,
+				1E825EF52AF6B16B00AC1AAA /* SearchView.swift */,
 				1E825F332AF7EE8F00AC1AAA /* ToastLabel.swift */,
 				1E825F382AF7EF0500AC1AAA /* RoundedPaddingLabel.swift */,
 				1E825F3A2AF7EF2300AC1AAA /* PaddingLabel.swift */,
@@ -678,6 +681,7 @@
 				1E825F0D2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift in Sources */,
 				1E825F4A2AF8BF0D00AC1AAA /* Fadable.swift in Sources */,
 				1E825F432AF8962700AC1AAA /* ReuseIdentifiable.swift in Sources */,
+				1E825EF62AF6B16B00AC1AAA /* SearchView.swift in Sources */,
 				1E86BB182AF65D1200469B6E /* SeparatorView.swift in Sources */,
 				1E825F122AF7C82200AC1AAA /* Reactive+UITextField.swift in Sources */,
 				1E86BB0F2AF62C3500469B6E /* BookEntityMapper.swift in Sources */,
