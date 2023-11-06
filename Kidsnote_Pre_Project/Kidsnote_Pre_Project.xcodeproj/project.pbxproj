@@ -14,6 +14,7 @@
 		1E825F0B2AF79C1F00AC1AAA /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F0A2AF79C1F00AC1AAA /* AppDIContainer.swift */; };
 		1E825F0D2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F0C2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift */; };
 		1E825F0F2AF7A23700AC1AAA /* SearchBookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F0E2AF7A23700AC1AAA /* SearchBookUseCase.swift */; };
+		1E825F342AF7EE8F00AC1AAA /* ToastLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F332AF7EE8F00AC1AAA /* ToastLabel.swift */; };
 		1E825F372AF7EEFA00AC1AAA /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F362AF7EEFA00AC1AAA /* Padding.swift */; };
 		1E825F392AF7EF0500AC1AAA /* RoundedPaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F382AF7EF0500AC1AAA /* RoundedPaddingLabel.swift */; };
 		1E825F3B2AF7EF2300AC1AAA /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F3A2AF7EF2300AC1AAA /* PaddingLabel.swift */; };
@@ -59,6 +60,7 @@
 		1E825F0A2AF79C1F00AC1AAA /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		1E825F0C2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSearchBookUseCase.swift; sourceTree = "<group>"; };
 		1E825F0E2AF7A23700AC1AAA /* SearchBookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookUseCase.swift; sourceTree = "<group>"; };
+		1E825F332AF7EE8F00AC1AAA /* ToastLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastLabel.swift; sourceTree = "<group>"; };
 		1E825F362AF7EEFA00AC1AAA /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
 		1E825F382AF7EF0500AC1AAA /* RoundedPaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedPaddingLabel.swift; sourceTree = "<group>"; };
 		1E825F3A2AF7EF2300AC1AAA /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 				1E825F352AF7EEEE00AC1AAA /* Enum */,
 				1E86BB172AF65D1200469B6E /* SeparatorView.swift */,
 				1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */,
+				1E825F332AF7EE8F00AC1AAA /* ToastLabel.swift */,
 				1E825F382AF7EF0500AC1AAA /* RoundedPaddingLabel.swift */,
 				1E825F3A2AF7EF2300AC1AAA /* PaddingLabel.swift */,
 			);
@@ -620,6 +623,7 @@
 				1E825F0F2AF7A23700AC1AAA /* SearchBookUseCase.swift in Sources */,
 				1E86BAA92AF4A6CC00469B6E /* SceneDelegate.swift in Sources */,
 				1E86BAE22AF4C7A300469B6E /* HTTPMethod.swift in Sources */,
+				1E825F342AF7EE8F00AC1AAA /* ToastLabel.swift in Sources */,
 				1E86BB042AF4DD3300469B6E /* DefaultSearchBookRepository.swift in Sources */,
 				1E86BAFC2AF4CABF00469B6E /* AnyDataMapper.swift in Sources */,
 				1E86BAEA2AF4C95500469B6E /* NetworkService.swift in Sources */,
