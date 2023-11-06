@@ -1,13 +1,13 @@
 //
-//  ShadowView.swift
+//  ShadowImageView.swift
 //  Kidsnote_Pre_Project
 //
-//  Created by 김상혁 on 2023/11/04.
+//  Created by 김상혁 on 2023/11/06.
 //
 
 import UIKit
 
-class ShadowView: UIView {
+class ShadowImageView: UIImageView {
     
     init() {
         super.init(frame: .zero)
@@ -29,7 +29,6 @@ class ShadowView: UIView {
     }
     
     private func configureUI() {
-        backgroundColor = .systemBackground
         layer.cornerRadius = 10
     }
     
