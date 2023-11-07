@@ -24,6 +24,9 @@ final class SearchBookTextField: UITextField {
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18),
             NSAttributedString.Key.foregroundColor: UIColor.darkGray
         ]
-        attributedPlaceholder = NSAttributedString(string: "Play 북에서 검색", attributes: textAttributedString)
+        attributedPlaceholder = NSAttributedString(
+            string: Literal.Text.sarchInPlayBook,
+            attributes: textAttributedString
+        )
     }
 }

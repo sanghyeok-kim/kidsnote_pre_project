@@ -11,7 +11,7 @@ final class BookSearchTypeCollectionHeaderView: UICollectionReusableView {
     
     private let bookTypeSegmentControl: BookTypeSegmentControl = {
         let segmentControl = BookTypeSegmentControl()
-        segmentControl.setTitles(["전체 eBook", "무료 eBook"])
+        segmentControl.setTitles([Literal.Text.allEbooks, Literal.Text.freeEbooks])
         segmentControl.selectSegment(at: .zero)
         return segmentControl
     }()
@@ -20,7 +20,7 @@ final class BookSearchTypeCollectionHeaderView: UICollectionReusableView {
     
     private let searchResultLabel: UILabel = {
         let label = UILabel()
-        label.text = "Google Play 검색결과"
+        label.text = Literal.Text.googlePlaySearchResult
         label.font = .systemFont(ofSize: 18, weight: .medium)
         return label
     }()
