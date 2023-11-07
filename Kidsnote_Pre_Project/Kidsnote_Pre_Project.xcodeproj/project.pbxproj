@@ -63,7 +63,7 @@
 		1E86BB042AF4DD3300469B6E /* DefaultSearchBookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB032AF4DD3300469B6E /* DefaultSearchBookRepository.swift */; };
 		1E86BB0D2AF6299F00469B6E /* BookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB0C2AF6299F00469B6E /* BookEntity.swift */; };
 		1E86BB0F2AF62C3500469B6E /* BookEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB0E2AF62C3500469B6E /* BookEntityMapper.swift */; };
-		1E86BB112AF63C9800469B6E /* Rx+viewDidLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB102AF63C9800469B6E /* Rx+viewDidLoad.swift */; };
+		1E86BB112AF63C9800469B6E /* Reactive+UIViewController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB102AF63C9800469B6E /* Reactive+UIViewController.swift.swift */; };
 		1E86BB142AF65CCB00469B6E /* BookSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB132AF65CCB00469B6E /* BookSearchBar.swift */; };
 		1E86BB162AF65CEC00469B6E /* BookTypeSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB152AF65CEC00469B6E /* BookTypeSegmentControl.swift */; };
 		1E86BB182AF65D1200469B6E /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BB172AF65D1200469B6E /* SeparatorView.swift */; };
@@ -129,7 +129,7 @@
 		1E86BB032AF4DD3300469B6E /* DefaultSearchBookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSearchBookRepository.swift; sourceTree = "<group>"; };
 		1E86BB0C2AF6299F00469B6E /* BookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEntity.swift; sourceTree = "<group>"; };
 		1E86BB0E2AF62C3500469B6E /* BookEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEntityMapper.swift; sourceTree = "<group>"; };
-		1E86BB102AF63C9800469B6E /* Rx+viewDidLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+viewDidLoad.swift"; sourceTree = "<group>"; };
+		1E86BB102AF63C9800469B6E /* Reactive+UIViewController.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UIViewController.swift.swift"; sourceTree = "<group>"; };
 		1E86BB132AF65CCB00469B6E /* BookSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchBar.swift; sourceTree = "<group>"; };
 		1E86BB152AF65CEC00469B6E /* BookTypeSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTypeSegmentControl.swift; sourceTree = "<group>"; };
 		1E86BB172AF65D1200469B6E /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
@@ -393,7 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				1E86BACC2AF4B8EA00469B6E /* Rx+logErrorIfDetected.swift */,
-				1E86BB102AF63C9800469B6E /* Rx+viewDidLoad.swift */,
 			);
 			path = "Rx+";
 			sourceTree = "<group>";
@@ -692,7 +691,7 @@
 				1E825EFA2AF7209C00AC1AAA /* BookSearchCollectionViewCell.swift in Sources */,
 				1E86BADE2AF4C6E800469B6E /* GoogleBooksAPI.swift in Sources */,
 				1E86BB0D2AF6299F00469B6E /* BookEntity.swift in Sources */,
-				1E86BB112AF63C9800469B6E /* Rx+viewDidLoad.swift in Sources */,
+				1E86BB112AF63C9800469B6E /* Reactive+UIViewController.swift.swift in Sources */,
 				1E825F022AF799B800AC1AAA /* SearchBookRepository.swift in Sources */,
 				1E86BADC2AF4C6D000469B6E /* TargetType.swift in Sources */,
 				1E825F3F2AF895D600AC1AAA /* BookSearchSection.swift in Sources */,
