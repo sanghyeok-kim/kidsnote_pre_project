@@ -7,6 +7,8 @@
 
 import UIKit
 
+import RxSwift
+
 final class BookSearchCollectionViewCell: UICollectionViewCell {
     
     private let titleLabel: UILabel = {
@@ -49,6 +51,9 @@ final class BookSearchCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
+    @Injected(AppDIContainer.shared) private var imageLoadService: ImageLoadService
+    private var disposeBag = DisposeBag()
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         layoutUI()
@@ -66,47 +71,22 @@ final class BookSearchCollectionViewCell: UICollectionViewCell {
         authorLabel.text = nil
         ebookLabel.text = nil
         thumbnailImageView.image = nil
+        disposeBag = DisposeBag()
     }
 }
 
 // MARK: - Supporting Methods
 
 extension BookSearchCollectionViewCell {
-    
-    // TODO: 이미지 로더 타입을 별도로 구현하여 코드 개선
     func configure(with book: BookEntity) {
         titleLabel.text = book.title
         authorLabel.text = book.authors
         ebookLabel.isHidden = !book.isEbook
         
-        guard let imageURL = book.smallThumbnailURL else {
-            layoutIfNeeded()
-            let emptyCoverImage =  UIImage(named: "EmptyBookCover")
-            thumbnailImageView.image = emptyCoverImage?.resizeAspectFit(width: self.thumbnailImageView.frame.width)
-            return
-        }
-        
-        if let url = URL(string: imageURL) {
-            downloadImage(from: url) { downloadImage in
-                self.thumbnailImageView.image = downloadImage?.resizeAspectFit(width: self.thumbnailImageView.frame.width)
-            }
-        }
-    }
-    
-    func downloadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
-        DispatchQueue.main.async {
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                guard let data = data, error == nil, let image = UIImage(data: data) else {
-                    DispatchQueue.main.async {
-                        completion(nil)
-                    }
-                    return
-                }
-                DispatchQueue.main.async {
-                    completion(image)
-                }
-            }.resume()
-        }
+        imageLoadService.fetchImage(from: book.thumbnailURL)
+            .catchErrorReturnImage(invalidURLErrorImage: ImageAsset.emptyBookCover)
+            .bind(to: thumbnailImageView.rx.resizedWidthImage)
+            .disposed(by: disposeBag)
     }
 }
 
