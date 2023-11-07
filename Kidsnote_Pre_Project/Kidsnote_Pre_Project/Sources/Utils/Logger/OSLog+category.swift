@@ -21,15 +21,15 @@ public extension OSLog {
         var value: String {
             switch self {
             case .`default`:
-                return Constant.OSLogCategory.`default`
+                return Literal.OSLogCategory.`default`
             case .bundle:
-                return Constant.OSLogCategory.bundle
+                return Literal.OSLogCategory.bundle
             case .deallocation:
-                return Constant.OSLogCategory.deallocation
+                return Literal.OSLogCategory.deallocation
             case .network:
-                return Constant.OSLogCategory.network
+                return Literal.OSLogCategory.network
             case .storage:
-                return Constant.OSLogCategory.storage
+                return Literal.OSLogCategory.storage
             }
         }
     }

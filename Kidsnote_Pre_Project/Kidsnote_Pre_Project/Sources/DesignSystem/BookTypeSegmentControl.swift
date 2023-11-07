@@ -37,7 +37,7 @@ final class BookTypeSegmentControl: UIControl {
     
     private var titles: [String] = []
     private let deselectedTitleColor = UIColor.systemGray
-    private let selectedTitleColor = UIColor(red: 25 / 255, green: 115 / 255, blue: 230 / 255, alpha: 1.0)
+    private let selectedTitleColor = ColorAsset.BookTypeSegmentControl.selectedTitle
     private let animatingDuration: Double = 0.3
     
     private(set) var selectedSegmentIndex: Int?

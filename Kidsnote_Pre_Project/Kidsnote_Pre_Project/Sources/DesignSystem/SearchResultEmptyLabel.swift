@@ -29,7 +29,7 @@ final class SearchResultEmptyLabel: UILabel, Fadable {
     }
     
     private func configureUI() {
-        text = "검색결과 없음"
+        text = Literal.Text.searchResultEmpty
         font = .systemFont(ofSize: 16, weight: .medium)
         alpha = .zero
     }

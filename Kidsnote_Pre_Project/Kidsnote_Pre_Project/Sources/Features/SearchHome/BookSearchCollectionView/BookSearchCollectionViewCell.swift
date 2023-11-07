@@ -29,7 +29,7 @@ final class BookSearchCollectionViewCell: UICollectionViewCell {
     
     private let ebookLabel: UILabel = {
         let label = UILabel()
-        label.text = "eBook"
+        label.text = Literal.Text.eBook
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 12)
