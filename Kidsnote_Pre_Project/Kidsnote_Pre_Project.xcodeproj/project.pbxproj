@@ -57,7 +57,7 @@
 		1E86BAC92AF4B86A00469B6E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAC82AF4B86A00469B6E /* Logger.swift */; };
 		1E86BACB2AF4B88E00469B6E /* OSLog+category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BACA2AF4B88E00469B6E /* OSLog+category.swift */; };
 		1E86BACD2AF4B8EA00469B6E /* Rx+logErrorIfDetected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BACC2AF4B8EA00469B6E /* Rx+logErrorIfDetected.swift */; };
-		1E86BAD12AF4B92800469B6E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAD02AF4B92800469B6E /* Constant.swift */; };
+		1E86BAD12AF4B92800469B6E /* Literal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAD02AF4B92800469B6E /* Literal.swift */; };
 		1E86BAD52AF4B9A500469B6E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAD42AF4B9A500469B6E /* BaseViewController.swift */; };
 		1E86BAD72AF4BA2E00469B6E /* SearchHomeReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAD62AF4BA2E00469B6E /* SearchHomeReactor.swift */; };
 		1E86BADC2AF4C6D000469B6E /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BADB2AF4C6D000469B6E /* TargetType.swift */; };
@@ -138,7 +138,7 @@
 		1E86BAC82AF4B86A00469B6E /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		1E86BACA2AF4B88E00469B6E /* OSLog+category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+category.swift"; sourceTree = "<group>"; };
 		1E86BACC2AF4B8EA00469B6E /* Rx+logErrorIfDetected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+logErrorIfDetected.swift"; sourceTree = "<group>"; };
-		1E86BAD02AF4B92800469B6E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		1E86BAD02AF4B92800469B6E /* Literal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literal.swift; sourceTree = "<group>"; };
 		1E86BAD42AF4B9A500469B6E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1E86BAD62AF4BA2E00469B6E /* SearchHomeReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHomeReactor.swift; sourceTree = "<group>"; };
 		1E86BADB2AF4C6D000469B6E /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
@@ -464,7 +464,7 @@
 		1E86BACF2AF4B91E00469B6E /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				1E86BAD02AF4B92800469B6E /* Constant.swift */,
+				1E86BAD02AF4B92800469B6E /* Literal.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -782,7 +782,7 @@
 				1E825F022AF799B800AC1AAA /* SearchBookRepository.swift in Sources */,
 				1E86BADC2AF4C6D000469B6E /* TargetType.swift in Sources */,
 				1E825F3F2AF895D600AC1AAA /* BookSearchSection.swift in Sources */,
-				1E86BAD12AF4B92800469B6E /* Constant.swift in Sources */,
+				1E86BAD12AF4B92800469B6E /* Literal.swift in Sources */,
 				1E86BACB2AF4B88E00469B6E /* OSLog+category.swift in Sources */,
 				1E54D2CA2AF9CE38005B6C1E /* URLSessionURLDataService.swift in Sources */,
 				1E825F3D2AF895A800AC1AAA /* BookItem.swift in Sources */,
