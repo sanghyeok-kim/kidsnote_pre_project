@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E54D2CA2AF9CE38005B6C1E /* URLSessionURLDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2C92AF9CE38005B6C1E /* URLSessionURLDataService.swift */; };
+		1E54D2CC2AF9CE49005B6C1E /* URLDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2CB2AF9CE49005B6C1E /* URLDataService.swift */; };
 		1E825EEF2AF67DB300AC1AAA /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */; };
 		1E825EF12AF67DC500AC1AAA /* SearchBookTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */; };
 		1E825EF42AF696D400AC1AAA /* Reactive+BookSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF32AF696D400AC1AAA /* Reactive+BookSearchBar.swift */; };
@@ -72,6 +74,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E54D2C92AF9CE38005B6C1E /* URLSessionURLDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionURLDataService.swift; sourceTree = "<group>"; };
+		1E54D2CB2AF9CE49005B6C1E /* URLDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDataService.swift; sourceTree = "<group>"; };
 		1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookTextField.swift; sourceTree = "<group>"; };
 		1E825EF32AF696D400AC1AAA /* Reactive+BookSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+BookSearchBar.swift"; sourceTree = "<group>"; };
@@ -470,6 +474,7 @@
 			children = (
 				1E86BAE82AF4C94800469B6E /* Interface */,
 				1E86BAEB2AF4C98D00469B6E /* URLSessionNetworkService.swift */,
+				1E54D2C92AF9CE38005B6C1E /* URLSessionURLDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -478,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				1E86BAE92AF4C95500469B6E /* NetworkService.swift */,
+				1E54D2CB2AF9CE49005B6C1E /* URLDataService.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -707,10 +713,12 @@
 				1E825F3F2AF895D600AC1AAA /* BookSearchSection.swift in Sources */,
 				1E86BAD12AF4B92800469B6E /* Constant.swift in Sources */,
 				1E86BACB2AF4B88E00469B6E /* OSLog+category.swift in Sources */,
+				1E54D2CA2AF9CE38005B6C1E /* URLSessionURLDataService.swift in Sources */,
 				1E825F3D2AF895A800AC1AAA /* BookItem.swift in Sources */,
 				1E825EF12AF67DC500AC1AAA /* SearchBookTextField.swift in Sources */,
 				1E86BAD72AF4BA2E00469B6E /* SearchHomeReactor.swift in Sources */,
 				1E825F0D2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift in Sources */,
+				1E54D2CC2AF9CE49005B6C1E /* URLDataService.swift in Sources */,
 				1E825F4A2AF8BF0D00AC1AAA /* Fadable.swift in Sources */,
 				1E825F432AF8962700AC1AAA /* ReuseIdentifiable.swift in Sources */,
 				1E825EF62AF6B16B00AC1AAA /* SearchView.swift in Sources */,
