@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E54D2CA2AF9CE38005B6C1E /* URLSessionURLDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2C92AF9CE38005B6C1E /* URLSessionURLDataService.swift */; };
 		1E54D2CC2AF9CE49005B6C1E /* URLDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2CB2AF9CE49005B6C1E /* URLDataService.swift */; };
+		1E54D2DE2AFA2C81005B6C1E /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2DD2AFA2C81005B6C1E /* ImageAsset.swift */; };
 		1E825EEF2AF67DB300AC1AAA /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */; };
 		1E825EF12AF67DC500AC1AAA /* SearchBookTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */; };
 		1E825EF42AF696D400AC1AAA /* Reactive+BookSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF32AF696D400AC1AAA /* Reactive+BookSearchBar.swift */; };
@@ -80,6 +81,7 @@
 /* Begin PBXFileReference section */
 		1E54D2C92AF9CE38005B6C1E /* URLSessionURLDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionURLDataService.swift; sourceTree = "<group>"; };
 		1E54D2CB2AF9CE49005B6C1E /* URLDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDataService.swift; sourceTree = "<group>"; };
+		1E54D2DD2AFA2C81005B6C1E /* ImageAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
 		1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookTextField.swift; sourceTree = "<group>"; };
 		1E825EF32AF696D400AC1AAA /* Reactive+BookSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+BookSearchBar.swift"; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E54D2DC2AFA2C4E005B6C1E /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				1E54D2DD2AFA2C81005B6C1E /* ImageAsset.swift */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
 		1E825EF22AF696C800AC1AAA /* Reactive */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +599,7 @@
 		1E86BB122AF65C9F00469B6E /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				1E54D2DC2AFA2C4E005B6C1E /* Asset */,
 				1E825F462AF8998000AC1AAA /* Extension */,
 				1E825F412AF8962000AC1AAA /* Protocol */,
 				1E825F352AF7EEEE00AC1AAA /* Enum */,
@@ -770,6 +781,7 @@
 				1E86BAA72AF4A6CC00469B6E /* AppDelegate.swift in Sources */,
 				1E86BB142AF65CCB00469B6E /* BookSearchBar.swift in Sources */,
 				1E86BAE42AF4C7B900469B6E /* NetworkResult.swift in Sources */,
+				1E54D2DE2AFA2C81005B6C1E /* ImageAsset.swift in Sources */,
 				1E86BACD2AF4B8EA00469B6E /* Rx+logErrorIfDetected.swift in Sources */,
 				1E825EF42AF696D400AC1AAA /* Reactive+BookSearchBar.swift in Sources */,
 				1E825F572AF8FFFC00AC1AAA /* DiskCacheStorageService.swift in Sources */,
