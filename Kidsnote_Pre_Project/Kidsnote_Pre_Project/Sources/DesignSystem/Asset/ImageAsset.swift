@@ -10,4 +10,6 @@ import UIKit
 enum ImageAsset {
     static let emptyBookCover = UIImage(named: "EmptyBookCover")
     static let exclamationmarkTriangle = UIImage(systemName: "exclamationmark.triangle")
+    static let chevronLeft = UIImage(systemName: "chevron.left")
+    static let magnifyingglass = UIImage(systemName: "magnifyingglass")
 }
