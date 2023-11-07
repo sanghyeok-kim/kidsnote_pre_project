@@ -36,7 +36,11 @@
 		1E825F4A2AF8BF0D00AC1AAA /* Fadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F492AF8BF0D00AC1AAA /* Fadable.swift */; };
 		1E825F4C2AF8C30700AC1AAA /* SearchResultEmptyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F4B2AF8C30700AC1AAA /* SearchResultEmptyLabel.swift */; };
 		1E825F4E2AF8FA2F00AC1AAA /* CollectionViewSectionProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F4D2AF8FA2F00AC1AAA /* CollectionViewSectionProvidable.swift */; };
+		1E825F552AF8FFD300AC1AAA /* FileManagerDiskCacheStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F542AF8FFD300AC1AAA /* FileManagerDiskCacheStorageService.swift */; };
+		1E825F572AF8FFFC00AC1AAA /* DiskCacheStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F562AF8FFFC00AC1AAA /* DiskCacheStorageService.swift */; };
 		1E825F592AF9001B00AC1AAA /* FileSystemError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F582AF9001B00AC1AAA /* FileSystemError.swift */; };
+		1E825F5B2AF9003600AC1AAA /* NSCacheMemoryCacheStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F5A2AF9003600AC1AAA /* NSCacheMemoryCacheStorageService.swift */; };
+		1E825F5D2AF9004D00AC1AAA /* MemoryCacheStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825F5C2AF9004D00AC1AAA /* MemoryCacheStorageService.swift */; };
 		1E86BAA72AF4A6CC00469B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAA62AF4A6CC00469B6E /* AppDelegate.swift */; };
 		1E86BAA92AF4A6CC00469B6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86BAA82AF4A6CC00469B6E /* SceneDelegate.swift */; };
 		1E86BAB02AF4A6CD00469B6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E86BAAF2AF4A6CD00469B6E /* Assets.xcassets */; };
@@ -103,7 +107,11 @@
 		1E825F492AF8BF0D00AC1AAA /* Fadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fadable.swift; sourceTree = "<group>"; };
 		1E825F4B2AF8C30700AC1AAA /* SearchResultEmptyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultEmptyLabel.swift; sourceTree = "<group>"; };
 		1E825F4D2AF8FA2F00AC1AAA /* CollectionViewSectionProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewSectionProvidable.swift; sourceTree = "<group>"; };
+		1E825F542AF8FFD300AC1AAA /* FileManagerDiskCacheStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerDiskCacheStorageService.swift; sourceTree = "<group>"; };
+		1E825F562AF8FFFC00AC1AAA /* DiskCacheStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCacheStorageService.swift; sourceTree = "<group>"; };
 		1E825F582AF9001B00AC1AAA /* FileSystemError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemError.swift; sourceTree = "<group>"; };
+		1E825F5A2AF9003600AC1AAA /* NSCacheMemoryCacheStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCacheMemoryCacheStorageService.swift; sourceTree = "<group>"; };
+		1E825F5C2AF9004D00AC1AAA /* MemoryCacheStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCacheStorageService.swift; sourceTree = "<group>"; };
 		1E86BAA32AF4A6CC00469B6E /* Kidsnote_Pre_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kidsnote_Pre_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E86BAA62AF4A6CC00469B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E86BAA82AF4A6CC00469B6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -256,12 +264,40 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		1E825F4F2AF8FF8500AC1AAA /* CoreStorage */ = {
+			isa = PBXGroup;
+			children = (
+				1E825F512AF8FF9300AC1AAA /* Service */,
+				1E825F502AF8FF8E00AC1AAA /* Error */,
+			);
+			path = CoreStorage;
+			sourceTree = "<group>";
+		};
 		1E825F502AF8FF8E00AC1AAA /* Error */ = {
 			isa = PBXGroup;
 			children = (
 				1E825F582AF9001B00AC1AAA /* FileSystemError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		1E825F512AF8FF9300AC1AAA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1E825F522AF8FFA700AC1AAA /* Interface */,
+				1E825F542AF8FFD300AC1AAA /* FileManagerDiskCacheStorageService.swift */,
+				1E825F5A2AF9003600AC1AAA /* NSCacheMemoryCacheStorageService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1E825F522AF8FFA700AC1AAA /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				1E825F562AF8FFFC00AC1AAA /* DiskCacheStorageService.swift */,
+				1E825F5C2AF9004D00AC1AAA /* MemoryCacheStorageService.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		1E86BA9A2AF4A6CC00469B6E = {
@@ -422,6 +458,7 @@
 		1E86BAD82AF4C68900469B6E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1E825F4F2AF8FF8500AC1AAA /* CoreStorage */,
 				1E86BB0B2AF6281400469B6E /* CoreEntity */,
 				1E86BADF2AF4C78500469B6E /* CoreNetwork */,
 			);
@@ -708,6 +745,7 @@
 				1E86BADE2AF4C6E800469B6E /* GoogleBooksAPI.swift in Sources */,
 				1E86BB0D2AF6299F00469B6E /* BookEntity.swift in Sources */,
 				1E86BB112AF63C9800469B6E /* Reactive+UIViewController.swift.swift in Sources */,
+				1E825F5D2AF9004D00AC1AAA /* MemoryCacheStorageService.swift in Sources */,
 				1E825F022AF799B800AC1AAA /* SearchBookRepository.swift in Sources */,
 				1E86BADC2AF4C6D000469B6E /* TargetType.swift in Sources */,
 				1E825F3F2AF895D600AC1AAA /* BookSearchSection.swift in Sources */,
@@ -723,6 +761,7 @@
 				1E825F432AF8962700AC1AAA /* ReuseIdentifiable.swift in Sources */,
 				1E825EF62AF6B16B00AC1AAA /* SearchView.swift in Sources */,
 				1E86BB182AF65D1200469B6E /* SeparatorView.swift in Sources */,
+				1E825F5B2AF9003600AC1AAA /* NSCacheMemoryCacheStorageService.swift in Sources */,
 				1E825EFC2AF727FB00AC1AAA /* BookSearchCollectionViewSectionLayout.swift in Sources */,
 				1E825F122AF7C82200AC1AAA /* Reactive+UITextField.swift in Sources */,
 				1E86BB0F2AF62C3500469B6E /* BookEntityMapper.swift in Sources */,
@@ -733,6 +772,7 @@
 				1E86BAE42AF4C7B900469B6E /* NetworkResult.swift in Sources */,
 				1E86BACD2AF4B8EA00469B6E /* Rx+logErrorIfDetected.swift in Sources */,
 				1E825EF42AF696D400AC1AAA /* Reactive+BookSearchBar.swift in Sources */,
+				1E825F572AF8FFFC00AC1AAA /* DiskCacheStorageService.swift in Sources */,
 				1E825F072AF799F700AC1AAA /* Injected.swift in Sources */,
 				1E825F0F2AF7A23700AC1AAA /* SearchBookUseCase.swift in Sources */,
 				1E825F452AF898CE00AC1AAA /* ShadowImageView.swift in Sources */,
@@ -747,6 +787,7 @@
 				1E86BAFC2AF4CABF00469B6E /* AnyDataMapper.swift in Sources */,
 				1E86BAEA2AF4C95500469B6E /* NetworkService.swift in Sources */,
 				1E825F052AF799E500AC1AAA /* DIContainer.swift in Sources */,
+				1E825F552AF8FFD300AC1AAA /* FileManagerDiskCacheStorageService.swift in Sources */,
 				1E86BB012AF4CFB700469B6E /* BookSearchResultDTO.swift in Sources */,
 				1E86BAEC2AF4C98D00469B6E /* URLSessionNetworkService.swift in Sources */,
 				1E825F3B2AF7EF2300AC1AAA /* PaddingLabel.swift in Sources */,
