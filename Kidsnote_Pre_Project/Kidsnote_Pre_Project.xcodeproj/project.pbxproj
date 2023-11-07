@@ -13,6 +13,7 @@
 		1E54D2CE2AF9CE8A005B6C1E /* ImageLoadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2CD2AF9CE8A005B6C1E /* ImageLoadService.swift */; };
 		1E54D2D52AFA2A43005B6C1E /* Reactive+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2D42AFA2A43005B6C1E /* Reactive+UIImageView.swift */; };
 		1E54D2D72AFA2A79005B6C1E /* Reactive+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2D62AFA2A79005B6C1E /* Reactive+UIImage.swift */; };
+		1E54D2D92AFA2ADF005B6C1E /* URL+lastPathComponentWithQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2D82AFA2ADF005B6C1E /* URL+lastPathComponentWithQuery.swift */; };
 		1E54D2DE2AFA2C81005B6C1E /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2DD2AFA2C81005B6C1E /* ImageAsset.swift */; };
 		1E54D2E02AFA2DFA005B6C1E /* Reactive+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2DF2AFA2DFA005B6C1E /* Reactive+Data.swift */; };
 		1E825EEF2AF67DB300AC1AAA /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */; };
@@ -90,6 +91,7 @@
 		1E54D2CD2AF9CE8A005B6C1E /* ImageLoadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadService.swift; sourceTree = "<group>"; };
 		1E54D2D42AFA2A43005B6C1E /* Reactive+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UIImageView.swift"; sourceTree = "<group>"; };
 		1E54D2D62AFA2A79005B6C1E /* Reactive+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UIImage.swift"; sourceTree = "<group>"; };
+		1E54D2D82AFA2ADF005B6C1E /* URL+lastPathComponentWithQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+lastPathComponentWithQuery.swift"; sourceTree = "<group>"; };
 		1E54D2DD2AFA2C81005B6C1E /* ImageAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
 		1E54D2DF2AFA2DFA005B6C1E /* Reactive+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Data.swift"; sourceTree = "<group>"; };
 		1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 		1E86BACE2AF4B8F200469B6E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				1E54D2D82AFA2ADF005B6C1E /* URL+lastPathComponentWithQuery.swift */,
 				1E86BAD22AF4B98300469B6E /* Rx+ */,
 			);
 			path = Extension;
@@ -808,6 +811,7 @@
 				1E825F452AF898CE00AC1AAA /* ShadowImageView.swift in Sources */,
 				1E86BAA92AF4A6CC00469B6E /* SceneDelegate.swift in Sources */,
 				1E86BAE22AF4C7A300469B6E /* HTTPMethod.swift in Sources */,
+				1E54D2D92AFA2ADF005B6C1E /* URL+lastPathComponentWithQuery.swift in Sources */,
 				1E825F342AF7EE8F00AC1AAA /* ToastLabel.swift in Sources */,
 				1E825F482AF8999000AC1AAA /* UIImage+.swift in Sources */,
 				1E825F4E2AF8FA2F00AC1AAA /* CollectionViewSectionProvidable.swift in Sources */,
