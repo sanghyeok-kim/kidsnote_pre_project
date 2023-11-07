@@ -31,7 +31,7 @@ private extension CachedImageLoadService {
             return Single.error(NetworkError.invalidURL)
         }
         
-        let dataName = url.lastPathComponent
+        let dataName = url.lastPathComponentWithQuery
         
         return fetchFromMemoryCache(dataName: dataName)
             .catch { [weak self] _ in
