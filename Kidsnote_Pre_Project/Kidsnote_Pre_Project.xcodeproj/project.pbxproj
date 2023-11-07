@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E54D2C82AF9CDC6005B6C1E /* CachedImageLoadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2C72AF9CDC6005B6C1E /* CachedImageLoadService.swift */; };
 		1E54D2CA2AF9CE38005B6C1E /* URLSessionURLDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2C92AF9CE38005B6C1E /* URLSessionURLDataService.swift */; };
 		1E54D2CC2AF9CE49005B6C1E /* URLDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2CB2AF9CE49005B6C1E /* URLDataService.swift */; };
+		1E54D2CE2AF9CE8A005B6C1E /* ImageLoadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2CD2AF9CE8A005B6C1E /* ImageLoadService.swift */; };
 		1E54D2D52AFA2A43005B6C1E /* Reactive+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2D42AFA2A43005B6C1E /* Reactive+UIImageView.swift */; };
 		1E54D2D72AFA2A79005B6C1E /* Reactive+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2D62AFA2A79005B6C1E /* Reactive+UIImage.swift */; };
 		1E54D2DE2AFA2C81005B6C1E /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2DD2AFA2C81005B6C1E /* ImageAsset.swift */; };
@@ -82,8 +84,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E54D2C72AF9CDC6005B6C1E /* CachedImageLoadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageLoadService.swift; sourceTree = "<group>"; };
 		1E54D2C92AF9CE38005B6C1E /* URLSessionURLDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionURLDataService.swift; sourceTree = "<group>"; };
 		1E54D2CB2AF9CE49005B6C1E /* URLDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDataService.swift; sourceTree = "<group>"; };
+		1E54D2CD2AF9CE8A005B6C1E /* ImageLoadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadService.swift; sourceTree = "<group>"; };
 		1E54D2D42AFA2A43005B6C1E /* Reactive+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UIImageView.swift"; sourceTree = "<group>"; };
 		1E54D2D62AFA2A79005B6C1E /* Reactive+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UIImage.swift"; sourceTree = "<group>"; };
 		1E54D2DD2AFA2C81005B6C1E /* ImageAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
@@ -532,6 +536,7 @@
 				1E86BAE82AF4C94800469B6E /* Interface */,
 				1E86BAEB2AF4C98D00469B6E /* URLSessionNetworkService.swift */,
 				1E54D2C92AF9CE38005B6C1E /* URLSessionURLDataService.swift */,
+				1E54D2C72AF9CDC6005B6C1E /* CachedImageLoadService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -541,6 +546,7 @@
 			children = (
 				1E86BAE92AF4C95500469B6E /* NetworkService.swift */,
 				1E54D2CB2AF9CE49005B6C1E /* URLDataService.swift */,
+				1E54D2CD2AF9CE8A005B6C1E /* ImageLoadService.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -820,12 +826,14 @@
 				1E825F392AF7EF0500AC1AAA /* RoundedPaddingLabel.swift in Sources */,
 				1E86BAC52AF4B74900469B6E /* SearchHomeViewController.swift in Sources */,
 				1E86BB162AF65CEC00469B6E /* BookTypeSegmentControl.swift in Sources */,
+				1E54D2CE2AF9CE8A005B6C1E /* ImageLoadService.swift in Sources */,
 				1E54D2E02AFA2DFA005B6C1E /* Reactive+Data.swift in Sources */,
 				1E86BAF22AF4C9F600469B6E /* NetworkError.swift in Sources */,
 				1E825EF82AF71F0800AC1AAA /* BookSearchCollectionViewDiffableDataSource.swift in Sources */,
 				1E825F0B2AF79C1F00AC1AAA /* AppDIContainer.swift in Sources */,
 				1E86BAF62AF4CA6A00469B6E /* Rx+extractData.swift in Sources */,
 				1E86BAC92AF4B86A00469B6E /* Logger.swift in Sources */,
+				1E54D2C82AF9CDC6005B6C1E /* CachedImageLoadService.swift in Sources */,
 				1E86BAFE2AF4CAEB00469B6E /* Rx+transformMap.swift in Sources */,
 				1E86BAE62AF4C7D900469B6E /* EmptyBody.swift in Sources */,
 				1E825F372AF7EEFA00AC1AAA /* Padding.swift in Sources */,
