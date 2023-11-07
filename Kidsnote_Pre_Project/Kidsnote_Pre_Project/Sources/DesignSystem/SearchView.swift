@@ -11,7 +11,7 @@ final class SearchView: ShadowView {
     
     private(set) var backButton: UIButton = {
         let button = UIButton()
-        let image = UIImage(systemName: "chevron.left")?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+        let image = ImageAsset.chevronLeft?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
         button.setImage(image, for: .normal)
         return button
     }()

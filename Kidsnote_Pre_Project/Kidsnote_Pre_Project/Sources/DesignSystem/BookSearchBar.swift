@@ -13,7 +13,7 @@ final class BookSearchBar: ShadowView {
     
     private let searchIconImageView: UIImageView = {
         let imageView = UIImageView()
-        let image = UIImage(systemName: "magnifyingglass")?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+        let image = ImageAsset.magnifyingglass?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
         imageView.image = image
         imageView.contentMode = .scaleAspectFit
         return imageView
