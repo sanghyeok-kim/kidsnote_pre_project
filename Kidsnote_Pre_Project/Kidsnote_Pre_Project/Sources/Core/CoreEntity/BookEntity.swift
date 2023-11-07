@@ -16,9 +16,9 @@ struct BookEntity {
     let isbn13Identifier: String
     let pageCount: Int
     let shareURL: String?
-    let smallThumbnailURL: String?
-    let thumbnailURL: String?
+    let smallThumbnailURL: URL?
+    let thumbnailURL: URL?
     let isEbook: Bool
-    let buyLinkURL: String?
-    let sampleURL: String?
+    let buyLink: String?
+    let sampleURL: URL?
 }

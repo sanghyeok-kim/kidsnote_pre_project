@@ -17,22 +17,39 @@ final class AppDIContainer: DIContainer {
 
 extension AppDIContainer {
     func registerDependencies() {
-        // Core
+        
+        // MARK: - Register Core Service
+        
+        AppDIContainer.shared.register(service: URLDataService.self) {
+            URLSessionURLDataService.shared
+        }
         AppDIContainer.shared.register(service: URLSessionNetworkService.self) {
             URLSessionNetworkService.shared
         }
+        AppDIContainer.shared.register(service: ImageLoadService.self) {
+            CachedImageLoadService()
+        }
+        AppDIContainer.shared.register(service: MemoryCacheStorageService.self) {
+            NSCacheMemoryCacheStorageService.shared
+        }
+        AppDIContainer.shared.register(service: DiskCacheStorageService.self) {
+            FileManagerDiskCacheStorageService.shared
+        }
         
-        // DataMapper
+        // MARK: - Register DataMapper
+        
         AppDIContainer.shared.register(service: AnyDataMapper.self) {
             AnyDataMapper(BookEntityMapper())
         }
         
-        // Repository
+        // MARK: - Register Repository
+        
         AppDIContainer.shared.register(service: SearchBookRepository.self) {
             DefaultSearchBookRepository()
         }
         
-        // UseCase
+        // MARK: - Register UseCase
+        
         AppDIContainer.shared.register(service: SearchBookUseCase.self) {
             DefaultSearchBookUseCase()
         }

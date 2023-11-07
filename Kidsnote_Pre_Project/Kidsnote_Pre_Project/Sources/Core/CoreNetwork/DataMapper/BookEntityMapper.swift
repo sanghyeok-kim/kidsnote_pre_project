@@ -25,11 +25,11 @@ struct BookEntityMapper: DataMapper {
                 isbn13Identifier: isbn13Identifier ?? "",
                 pageCount: dtoItem.volumeInfo?.pageCount ?? .zero,
                 shareURL: dtoItem.volumeInfo?.canonicalVolumeLink,
-                smallThumbnailURL: smallThumbnailURL,
-                thumbnailURL: thumbnailURL,
+                smallThumbnailURL: URL(string: smallThumbnailURL ?? ""),
+                thumbnailURL: URL(string: thumbnailURL ?? ""),
                 isEbook: isEbook ?? false,
-                buyLinkURL: buyLink,
-                sampleURL: sampleURL
+                buyLink: buyLink,
+                sampleURL: URL(string: sampleURL ?? "")
             )
         } ?? []
     }
