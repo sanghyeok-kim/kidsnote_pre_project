@@ -20,6 +20,8 @@ final class SearchBookTextField: UITextField {
     }
     
     private func configureUI() {
+        clearButtonMode = .whileEditing
+        
         let textAttributedString = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18),
             NSAttributedString.Key.foregroundColor: UIColor.darkGray

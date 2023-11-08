@@ -12,6 +12,7 @@ final class SearchView: ShadowView {
     private(set) var backButton: UIButton = {
         let button = UIButton()
         let image = ImageAsset.chevronLeft?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+        button.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         button.setImage(image, for: .normal)
         return button
     }()
@@ -38,6 +39,7 @@ final class SearchView: ShadowView {
         searchBookTextField.translatesAutoresizingMaskIntoConstraints = false
         searchBookTextField.centerYAnchor.constraint(equalTo: backButton.centerYAnchor).isActive = true
         searchBookTextField.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: 24).isActive = true
+        searchBookTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24).isActive = true
         
         separaterView.translatesAutoresizingMaskIntoConstraints = false
         separaterView.topAnchor.constraint(equalTo: searchBookTextField.bottomAnchor, constant: 18).isActive = true
