@@ -15,10 +15,23 @@ final class DefaultSearchBookUseCase: SearchBookUseCase {
     
     init() { }
     
-    func searchBooks(keyword: String, startIndex: Int, maxResults: Int) -> Observable<[BookEntity]> {
-        return searchBookRepository
-            .searchBooks(keyword: keyword, startIndex: startIndex, maxResults: maxResults)
-            .logErrorIfDetected(category: .network)
-            .asObservable()
+    func searchBooks(
+        keyword: String,
+        bookSearchType: BookSearchType,
+        startIndex: Int,
+        maxResults: Int
+    ) -> Observable<[BookEntity]> {
+        switch bookSearchType {
+        case .allEbooks:
+            return searchBookRepository
+                .searchAllEbooks(keyword: keyword, startIndex: startIndex, maxResults: maxResults)
+                .logErrorIfDetected(category: .network)
+                .asObservable()
+        case .freeEbooks:
+            return searchBookRepository
+                .searchFreeEbooks(keyword: keyword, startIndex: startIndex, maxResults: maxResults)
+                .logErrorIfDetected(category: .network)
+                .asObservable()
+        }
     }
 }

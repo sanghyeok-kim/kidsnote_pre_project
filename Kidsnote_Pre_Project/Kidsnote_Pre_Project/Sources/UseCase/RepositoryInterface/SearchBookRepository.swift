@@ -10,5 +10,6 @@ import Foundation
 import RxSwift
 
 protocol SearchBookRepository {
-    func searchBooks(keyword: String, startIndex: Int, maxResults: Int) -> Single<[BookEntity]>
+    func searchAllEbooks(keyword: String, startIndex: Int, maxResults: Int) -> Single<[BookEntity]>
+    func searchFreeEbooks(keyword: String, startIndex: Int, maxResults: Int) -> Single<[BookEntity]>
 }

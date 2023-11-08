@@ -14,8 +14,18 @@ final class DefaultSearchBookRepository: SearchBookRepository {
     @Injected(AppDIContainer.shared) private var urlSessionNetworkService: URLSessionNetworkService
     @Injected(AppDIContainer.shared) private var bookEntityMapper: AnyDataMapper<BookSearchResultDTO, [BookEntity]>
     
-    func searchBooks(keyword: String, startIndex: Int, maxResults: Int) -> Single<[BookEntity]> {
-        return urlSessionNetworkService.fetchData(target: GoogleBooksAPI.searchBooks(
+    func searchAllEbooks(keyword: String, startIndex: Int, maxResults: Int) -> Single<[BookEntity]> {
+        return urlSessionNetworkService.fetchData(target: GoogleBooksAPI.searchAllEbooks(
+            keyword: keyword,
+            startIndex: startIndex,
+            maxResults: maxResults
+        ))
+        .decodeMap(BookSearchResultDTO.self)
+        .transformMap(bookEntityMapper)
+    }
+    
+    func searchFreeEbooks(keyword: String, startIndex: Int, maxResults: Int) -> Single<[BookEntity]> {
+        return urlSessionNetworkService.fetchData(target: GoogleBooksAPI.searchFreeEbooks(
             keyword: keyword,
             startIndex: startIndex,
             maxResults: maxResults
