@@ -18,6 +18,7 @@
 		1E54D2E02AFA2DFA005B6C1E /* Reactive+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2DF2AFA2DFA005B6C1E /* Reactive+Data.swift */; };
 		1E54D2E22AFA4099005B6C1E /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2E12AFA4099005B6C1E /* ColorAsset.swift */; };
 		1E54D2E42AFA6373005B6C1E /* BookSearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2E32AFA6373005B6C1E /* BookSearchType.swift */; };
+		1E54D2E62AFA7B51005B6C1E /* Reactive+BookTypeSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2E52AFA7B51005B6C1E /* Reactive+BookTypeSegmentControl.swift */; };
 		1E825EEF2AF67DB300AC1AAA /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */; };
 		1E825EF12AF67DC500AC1AAA /* SearchBookTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */; };
 		1E825EF42AF696D400AC1AAA /* Reactive+BookSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF32AF696D400AC1AAA /* Reactive+BookSearchBar.swift */; };
@@ -98,6 +99,7 @@
 		1E54D2DF2AFA2DFA005B6C1E /* Reactive+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Data.swift"; sourceTree = "<group>"; };
 		1E54D2E12AFA4099005B6C1E /* ColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
 		1E54D2E32AFA6373005B6C1E /* BookSearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchType.swift; sourceTree = "<group>"; };
+		1E54D2E52AFA7B51005B6C1E /* Reactive+BookTypeSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+BookTypeSegmentControl.swift"; sourceTree = "<group>"; };
 		1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookTextField.swift; sourceTree = "<group>"; };
 		1E825EF32AF696D400AC1AAA /* Reactive+BookSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+BookSearchBar.swift"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				1E54D2D62AFA2A79005B6C1E /* Reactive+UIImage.swift */,
 				1E86BB102AF63C9800469B6E /* Reactive+UIViewController.swift.swift */,
 				1E54D2DF2AFA2DFA005B6C1E /* Reactive+Data.swift */,
+				1E54D2E52AFA7B51005B6C1E /* Reactive+BookTypeSegmentControl.swift */,
 			);
 			path = Reactive;
 			sourceTree = "<group>";
@@ -782,6 +785,7 @@
 				1E86BB0D2AF6299F00469B6E /* BookEntity.swift in Sources */,
 				1E86BB112AF63C9800469B6E /* Reactive+UIViewController.swift.swift in Sources */,
 				1E825F5D2AF9004D00AC1AAA /* MemoryCacheStorageService.swift in Sources */,
+				1E54D2E62AFA7B51005B6C1E /* Reactive+BookTypeSegmentControl.swift in Sources */,
 				1E825F022AF799B800AC1AAA /* SearchBookRepository.swift in Sources */,
 				1E86BADC2AF4C6D000469B6E /* TargetType.swift in Sources */,
 				1E825F3F2AF895D600AC1AAA /* BookSearchSection.swift in Sources */,
