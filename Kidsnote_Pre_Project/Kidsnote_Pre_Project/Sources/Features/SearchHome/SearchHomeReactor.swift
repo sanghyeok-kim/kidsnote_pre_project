@@ -157,7 +157,7 @@ private extension SearchHomeReactor {
             }
             .catch { error in
                 .concat(
-                    .just(.setToastMessage("검색에 실패했습니다")),
+                    .just(.setToastMessage(ToastMessage.Search.failFetchingBookSearchResult)),
                     .just(.setRefreshControlIsRefreshing(false)),
                     .just(.setLoadingIndicatorAnimating(false))
                 )
