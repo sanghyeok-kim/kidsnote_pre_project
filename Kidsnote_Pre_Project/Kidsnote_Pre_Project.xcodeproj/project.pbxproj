@@ -17,6 +17,7 @@
 		1E54D2DE2AFA2C81005B6C1E /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2DD2AFA2C81005B6C1E /* ImageAsset.swift */; };
 		1E54D2E02AFA2DFA005B6C1E /* Reactive+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2DF2AFA2DFA005B6C1E /* Reactive+Data.swift */; };
 		1E54D2E22AFA4099005B6C1E /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2E12AFA4099005B6C1E /* ColorAsset.swift */; };
+		1E54D2E42AFA6373005B6C1E /* BookSearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2E32AFA6373005B6C1E /* BookSearchType.swift */; };
 		1E825EEF2AF67DB300AC1AAA /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */; };
 		1E825EF12AF67DC500AC1AAA /* SearchBookTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */; };
 		1E825EF42AF696D400AC1AAA /* Reactive+BookSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF32AF696D400AC1AAA /* Reactive+BookSearchBar.swift */; };
@@ -96,6 +97,7 @@
 		1E54D2DD2AFA2C81005B6C1E /* ImageAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
 		1E54D2DF2AFA2DFA005B6C1E /* Reactive+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Data.swift"; sourceTree = "<group>"; };
 		1E54D2E12AFA4099005B6C1E /* ColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
+		1E54D2E32AFA6373005B6C1E /* BookSearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchType.swift; sourceTree = "<group>"; };
 		1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookTextField.swift; sourceTree = "<group>"; };
 		1E825EF32AF696D400AC1AAA /* Reactive+BookSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+BookSearchBar.swift"; sourceTree = "<group>"; };
@@ -614,6 +616,7 @@
 			isa = PBXGroup;
 			children = (
 				1E86BB0C2AF6299F00469B6E /* BookEntity.swift */,
+				1E54D2E32AFA6373005B6C1E /* BookSearchType.swift */,
 			);
 			path = CoreEntity;
 			sourceTree = "<group>";
@@ -834,6 +837,7 @@
 				1E825F392AF7EF0500AC1AAA /* RoundedPaddingLabel.swift in Sources */,
 				1E86BAC52AF4B74900469B6E /* SearchHomeViewController.swift in Sources */,
 				1E86BB162AF65CEC00469B6E /* BookTypeSegmentControl.swift in Sources */,
+				1E54D2E42AFA6373005B6C1E /* BookSearchType.swift in Sources */,
 				1E54D2CE2AF9CE8A005B6C1E /* ImageLoadService.swift in Sources */,
 				1E54D2E02AFA2DFA005B6C1E /* Reactive+Data.swift in Sources */,
 				1E86BAF22AF4C9F600469B6E /* NetworkError.swift in Sources */,
