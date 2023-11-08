@@ -15,11 +15,13 @@ final class SearchHomeReactor: Reactor {
         case viewDidRefresh
         case bookSearchBarDidTap
         case backButtonDidTap
+        case bookSearchTypeDidSelect(BookSearchType)
         case searchTextFieldDidEdit(String)
         case searchTextFieldDidEndEditing
     }
     
     enum Mutation {
+        case setSelectedBookSearchType(BookSearchType)
         case setSearchTextFieldFirstResponder(Bool)
         case setRefreshControlIsRefreshing(Bool)
         case setSearchBackgroundViewExpand(Bool)
@@ -35,6 +37,7 @@ final class SearchHomeReactor: Reactor {
     }
     
     struct State {
+        var selectedBookSearchType: BookSearchType = .allEbooks
         var isRefreshControlRefreshing: Bool = false
         var isSearchTextFieldFirstResonder: Bool = false
         var isSearchBackgroundViewExpanded: Bool = false
@@ -49,13 +52,16 @@ final class SearchHomeReactor: Reactor {
     }
     
     let initialState = State()
+    private let disposeBag = DisposeBag()
     
     @Injected(AppDIContainer.shared) private var searchBookUseCase: SearchBookUseCase
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .viewDidLoad:
-            return .empty()
+            let reactor = BookSearchTypeCollectionHeaderReactor()
+            bind(bookSearchTypeCollectionHeaderReactor: reactor)
+            return .just(.setBookSearchTypeHeaderReactor(reactor))
         case .viewDidRefresh:
             let keyword = currentState.searchKeyword
             return .concat(
@@ -103,6 +109,10 @@ final class SearchHomeReactor: Reactor {
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
         switch mutation {
+        case .setBookSearchTypeHeaderReactor(let reactor):
+            newState.bookSearchTypeReactor = reactor
+        case .setSelectedBookSearchType(let type):
+            newState.selectedBookSearchType = type
         case .setRefreshControlIsRefreshing(let isRefreshing):
             newState.isRefreshControlRefreshing = isRefreshing
         case .setSearchTextFieldFirstResponder(let isFirstResponder):
@@ -129,6 +139,18 @@ final class SearchHomeReactor: Reactor {
             newState.toastMessage = message
         }
         return newState
+    }
+}
+
+private extension SearchHomeReactor {
+    func bind(bookSearchTypeCollectionHeaderReactor: BookSearchTypeCollectionHeaderReactor) {
+        bookSearchTypeCollectionHeaderReactor.state
+            .map { $0.selectedBookSearchType }
+            .distinctUntilChanged()
+            .observe(on: MainScheduler.asyncInstance)
+            .map { Action.bookSearchTypeDidSelect($0) }
+            .bind(to: action)
+            .disposed(by: disposeBag)
     }
 }
 
