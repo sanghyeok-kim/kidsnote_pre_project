@@ -19,6 +19,7 @@
 		1E54D2E22AFA4099005B6C1E /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2E12AFA4099005B6C1E /* ColorAsset.swift */; };
 		1E54D2E42AFA6373005B6C1E /* BookSearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2E32AFA6373005B6C1E /* BookSearchType.swift */; };
 		1E54D2E62AFA7B51005B6C1E /* Reactive+BookTypeSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2E52AFA7B51005B6C1E /* Reactive+BookTypeSegmentControl.swift */; };
+		1E54D2E82AFA7FEC005B6C1E /* BookSearchTypeCollectionHeaderReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54D2E72AFA7FEC005B6C1E /* BookSearchTypeCollectionHeaderReactor.swift */; };
 		1E825EEF2AF67DB300AC1AAA /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */; };
 		1E825EF12AF67DC500AC1AAA /* SearchBookTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */; };
 		1E825EF42AF696D400AC1AAA /* Reactive+BookSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E825EF32AF696D400AC1AAA /* Reactive+BookSearchBar.swift */; };
@@ -101,6 +102,7 @@
 		1E54D2E12AFA4099005B6C1E /* ColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
 		1E54D2E32AFA6373005B6C1E /* BookSearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchType.swift; sourceTree = "<group>"; };
 		1E54D2E52AFA7B51005B6C1E /* Reactive+BookTypeSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+BookTypeSegmentControl.swift"; sourceTree = "<group>"; };
+		1E54D2E72AFA7FEC005B6C1E /* BookSearchTypeCollectionHeaderReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchTypeCollectionHeaderReactor.swift; sourceTree = "<group>"; };
 		1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookTextField.swift; sourceTree = "<group>"; };
 		1E825EF32AF696D400AC1AAA /* Reactive+BookSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+BookSearchBar.swift"; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				1E825EF92AF7209C00AC1AAA /* BookSearchCollectionViewCell.swift */,
 				1E825EFB2AF727FB00AC1AAA /* BookSearchCollectionViewSectionLayout.swift */,
 				1E825EFD2AF78F7A00AC1AAA /* BookSearchTypeCollectionHeaderView.swift */,
+				1E54D2E72AFA7FEC005B6C1E /* BookSearchTypeCollectionHeaderReactor.swift */,
 				1E825F3C2AF895A800AC1AAA /* BookItem.swift */,
 				1E825F3E2AF895D600AC1AAA /* BookSearchSection.swift */,
 			);
@@ -832,6 +835,7 @@
 				1E825F4E2AF8FA2F00AC1AAA /* CollectionViewSectionProvidable.swift in Sources */,
 				1E825F4C2AF8C30700AC1AAA /* SearchResultEmptyLabel.swift in Sources */,
 				1E86BB042AF4DD3300469B6E /* DefaultSearchBookRepository.swift in Sources */,
+				1E54D2E82AFA7FEC005B6C1E /* BookSearchTypeCollectionHeaderReactor.swift in Sources */,
 				1E825F592AF9001B00AC1AAA /* FileSystemError.swift in Sources */,
 				1E86BAFC2AF4CABF00469B6E /* AnyDataMapper.swift in Sources */,
 				1E86BAEA2AF4C95500469B6E /* NetworkService.swift in Sources */,
