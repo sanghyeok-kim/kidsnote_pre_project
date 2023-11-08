@@ -249,6 +249,11 @@ private extension SearchHomeViewController {
             .bind(to: loadingIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
         
+        reactor.state.compactMap { $0.bookSearchTypeReactor }
+            .take(1)
+            .bind(onNext: bookSearchDiffableDataSource.configureHeaderView(reactor:))
+            .disposed(by: disposeBag)
+        
         reactor.pulse(\.$shouldClearTextFieldText)
             .filter { $0 }
             .map { _ in "" }
