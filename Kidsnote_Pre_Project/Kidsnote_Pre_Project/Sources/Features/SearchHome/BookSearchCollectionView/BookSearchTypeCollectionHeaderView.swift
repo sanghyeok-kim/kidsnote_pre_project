@@ -7,14 +7,11 @@
 
 import UIKit
 
-final class BookSearchTypeCollectionHeaderView: UICollectionReusableView {
+import ReactorKit
+
+final class BookSearchTypeCollectionHeaderView: UICollectionReusableView, View {
     
-    private let bookTypeSegmentControl: BookTypeSegmentControl = {
-        let segmentControl = BookTypeSegmentControl()
-        segmentControl.setTitles([Literal.Text.allEbooks, Literal.Text.freeEbooks])
-        segmentControl.selectSegment(at: .zero)
-        return segmentControl
-    }()
+    private let bookTypeSegmentControl = BookTypeSegmentControl()
     
     private let separatorView = SeparatorView()
     
@@ -25,6 +22,8 @@ final class BookSearchTypeCollectionHeaderView: UICollectionReusableView {
         return label
     }()
     
+    var disposeBag = DisposeBag()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         layoutUI()
@@ -33,6 +32,46 @@ final class BookSearchTypeCollectionHeaderView: UICollectionReusableView {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        bookTypeSegmentControl.clearSelection()
+        disposeBag = DisposeBag()
+    }
+    
+    // MARK: - Bind Reactor
+    
+    func bind(reactor: BookSearchTypeCollectionHeaderReactor) {
+        bindAction(reactor: reactor)
+        bindState(reactor: reactor)
+    }
+}
+
+// MARK: - Bind Reactor
+
+private extension BookSearchTypeCollectionHeaderView {
+    func bindAction(reactor: BookSearchTypeCollectionHeaderReactor) {
+        reactor.state.map { $0.bookSearchTitles }
+            .distinctUntilChanged()
+            .observe(on: MainScheduler.asyncInstance)
+            .bind(onNext: bookTypeSegmentControl.setTitles(_:))
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.selectedBookSearchType }
+            .distinctUntilChanged()
+            .observe(on: MainScheduler.asyncInstance)
+            .map { $0.index }
+            .bind(onNext: bookTypeSegmentControl.selectSegment(at:))
+            .disposed(by: disposeBag)
+    }
+    
+    func bindState(reactor: BookSearchTypeCollectionHeaderReactor) {
+        bookTypeSegmentControl.rx.selectedSegmentIndex
+            .distinctUntilChanged()
+            .map { Reactor.Action.bookSearchTypeDidSelect(index: $0) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
 }
 

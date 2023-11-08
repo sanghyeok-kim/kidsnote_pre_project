@@ -46,10 +46,19 @@ final class BookTypeSegmentControl: UIControl {
         return titles.count
     }
     
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: UIView.noIntrinsicMetric, height: 100)
+    }
+    
     func setTitles(_ titles: [String]) {
         self.titles = titles
         configureUI(with: titles)
         layoutUI()
+    }
+    
+    func clearSelection() {
+        selectedSegmentIndex = nil
+        selectedSegmentView.removeFromSuperview()
     }
     
     func selectSegment(at targetIndex: Int) {
@@ -139,7 +148,6 @@ private extension BookTypeSegmentControl {
     
     func layoutUI() {
         addSubview(backgroundButtonStackView)
-        addSubview(selectedSegmentView)
         addSubview(titleStackView)
         
         backgroundButtonStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -157,6 +165,8 @@ private extension BookTypeSegmentControl {
     }
     
     func layoutSelectedSegmentView(to index: Int) {
+        addSubview(selectedSegmentView)
+        
         selectedSegmentView.translatesAutoresizingMaskIntoConstraints = false
         selectedSegmentView.heightAnchor.constraint(equalToConstant: 3).isActive = true
         selectedSegmentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true

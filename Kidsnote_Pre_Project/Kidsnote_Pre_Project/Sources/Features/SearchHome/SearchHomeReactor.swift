@@ -15,11 +15,16 @@ final class SearchHomeReactor: Reactor {
         case viewDidRefresh
         case bookSearchBarDidTap
         case backButtonDidTap
+        case bookSearchTypeDidSelect(BookSearchType)
         case searchTextFieldDidEdit(String)
         case searchTextFieldDidEndEditing
     }
     
     enum Mutation {
+        case setBookSearchTypeHeaderReactor(BookSearchTypeCollectionHeaderReactor)
+        case setSelectedBookSearchType(BookSearchType)
+        case setBookItemsMap(forKey: BookSearchType, value: [BookItem])
+        case setBookItemsMapClear
         case setSearchTextFieldFirstResponder(Bool)
         case setRefreshControlIsRefreshing(Bool)
         case setSearchBackgroundViewExpand(Bool)
@@ -35,12 +40,15 @@ final class SearchHomeReactor: Reactor {
     }
     
     struct State {
+        var bookSearchTypeReactor: BookSearchTypeCollectionHeaderReactor?
+        var selectedBookSearchType: BookSearchType = .allEbooks
+        var fetchedBookItemsMap: [BookSearchType: [BookItem]] = [:]
+        var searchResultBookItemsToShow: [BookItem] = []
         var isRefreshControlRefreshing: Bool = false
         var isSearchTextFieldFirstResonder: Bool = false
         var isSearchBackgroundViewExpanded: Bool = false
         var isSearchKeywordEdited: Bool = false
         var searchKeyword: String = ""
-        var fetchedBookSearchResult: [BookItem] = []
         var isBookSearchCollectionViewHidden: Bool = true
         var isLoadingIndicatorAnimating: Bool = false
         var shouldHideFetchResultEmptyLabel: Bool = true
@@ -49,18 +57,21 @@ final class SearchHomeReactor: Reactor {
     }
     
     let initialState = State()
+    private let disposeBag = DisposeBag()
     
     @Injected(AppDIContainer.shared) private var searchBookUseCase: SearchBookUseCase
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .viewDidLoad:
-            return .empty()
+            let reactor = BookSearchTypeCollectionHeaderReactor()
+            bind(bookSearchTypeCollectionHeaderReactor: reactor)
+            return .just(.setBookSearchTypeHeaderReactor(reactor))
         case .viewDidRefresh:
             let keyword = currentState.searchKeyword
             return .concat(
                 .just(.setRefreshControlIsRefreshing(true)),
-                fetchBookSearchResult(keyword: keyword)
+                fetchBookSearchResult(keyword: keyword, bookSearchType: currentState.selectedBookSearchType)
             )
         case .bookSearchBarDidTap:
             return .concat(
@@ -75,6 +86,14 @@ final class SearchHomeReactor: Reactor {
                 .just(.setCollectionViewIsHidden(true)),
                 .just(.setSearchBackgroundViewExpand(false)),
                 .just(.setSearchTextFieldFirstResponder(false))
+            )
+        case .bookSearchTypeDidSelect(let bookSearchType):
+            if currentState.searchKeyword.isEmpty {
+                return .empty()
+            }
+            return .concat(
+                .just(.setSelectedBookSearchType(bookSearchType)),
+                fetchBookSearchReulstIfNeeded(of: bookSearchType)
             )
         case .searchTextFieldDidEdit(let keyword):
             return .concat(
@@ -92,10 +111,11 @@ final class SearchHomeReactor: Reactor {
             }
             
             return .concat(
+                .just(.setBookItemsMapClear),
                 .just(.setLoadingIndicatorAnimating(true)),
                 .just(.setSearchTextFieldFirstResponder(true)),
                 .just(.setCollectionViewIsHidden(false)),
-                fetchBookSearchResult(keyword: keyword)
+                fetchBookSearchResult(keyword: keyword, bookSearchType: currentState.selectedBookSearchType)
             )
         }
     }
@@ -103,6 +123,14 @@ final class SearchHomeReactor: Reactor {
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
         switch mutation {
+        case .setBookSearchTypeHeaderReactor(let reactor):
+            newState.bookSearchTypeReactor = reactor
+        case .setSelectedBookSearchType(let type):
+            newState.selectedBookSearchType = type
+        case .setBookItemsMap(let key, let value):
+            newState.fetchedBookItemsMap[key] = value
+        case .setBookItemsMapClear:
+            newState.fetchedBookItemsMap = [:]
         case .setRefreshControlIsRefreshing(let isRefreshing):
             newState.isRefreshControlRefreshing = isRefreshing
         case .setSearchTextFieldFirstResponder(let isFirstResponder):
@@ -114,7 +142,7 @@ final class SearchHomeReactor: Reactor {
         case .setSearchKeywordIsEdited(let isEdited):
             newState.isSearchKeywordEdited = isEdited
         case .setBookSearchResult(let bookItems):
-            newState.fetchedBookSearchResult = bookItems
+            newState.searchResultBookItemsToShow = bookItems
         case .setCollectionViewIsHidden(let isHidden):
             newState.isBookSearchCollectionViewHidden = isHidden
         case .setLoadingIndicatorAnimating(let isAnimating):
@@ -132,32 +160,53 @@ final class SearchHomeReactor: Reactor {
     }
 }
 
+private extension SearchHomeReactor {
+    func bind(bookSearchTypeCollectionHeaderReactor: BookSearchTypeCollectionHeaderReactor) {
+        bookSearchTypeCollectionHeaderReactor.state
+            .map { $0.selectedBookSearchType }
+            .distinctUntilChanged()
+            .observe(on: MainScheduler.asyncInstance)
+            .map { Action.bookSearchTypeDidSelect($0) }
+            .bind(to: action)
+            .disposed(by: disposeBag)
+    }
+}
+
 // MARK: - Side Effect Methods
 
 private extension SearchHomeReactor {
-    func fetchBookSearchResult(keyword: String) -> Observable<Mutation> {
+    func fetchBookSearchReulstIfNeeded(of bookSearchType: BookSearchType) -> Observable<Mutation> {
+        guard let existingFetchResult = currentState.fetchedBookItemsMap[bookSearchType] else {
+            return .concat(
+                .just(.setBookSearchResult([])),
+                .just(.setLoadingIndicatorAnimating(true)),
+                .just(.setFetchResultEmptyLabelHidden(true)),
+                fetchBookSearchResult(keyword: currentState.searchKeyword, bookSearchType: bookSearchType)
+            )
+        }
+        return .concat(
+            .just(.setFetchResultEmptyLabelHidden(!existingFetchResult.isEmpty)),
+            .just(.setBookSearchResult(existingFetchResult))
+        )
+    }
+    
+    func fetchBookSearchResult(keyword: String, bookSearchType: BookSearchType) -> Observable<Mutation> {
         return searchBookUseCase
-            .searchBooks(keyword: keyword, startIndex: 0, maxResults: 40)
+            .searchBooks(keyword: keyword, bookSearchType: bookSearchType, startIndex: 0, maxResults: 40)
             .map { $0.map { BookItem(bookEntity: $0) } }
             .flatMap { result -> Observable<Mutation> in
-                if result.isEmpty {
-                    return .concat(
-                        .just(.setFetchResultIsEmpty(true)),
-                        .just(.setFetchResultEmptyLabelHidden(false)),
-                        .just(.setRefreshControlIsRefreshing(false)),
-                        .just(.setLoadingIndicatorAnimating(false))
-                    )
-                } else {
-                    return .concat(
-                        .just(.setRefreshControlIsRefreshing(false)),
-                        .just(.setBookSearchResult(result)),
-                        .just(.setLoadingIndicatorAnimating(false))
-                    )
-                }
+                return .concat(
+                    .just(.setBookItemsMap(forKey: bookSearchType, value: result)),
+                    .just(.setBookSearchResult(result)),
+                    .just(.setFetchResultIsEmpty(result.isEmpty)),
+                    .just(.setFetchResultEmptyLabelHidden(!result.isEmpty)),
+                    .just(.setRefreshControlIsRefreshing(false)),
+                    .just(.setLoadingIndicatorAnimating(false))
+                )
             }
             .catch { error in
                 .concat(
-                    .just(.setToastMessage("검색에 실패했습니다")),
+                    .just(.setToastMessage(ToastMessage.search(.failFetchingBookSearchResult).text)),
                     .just(.setRefreshControlIsRefreshing(false)),
                     .just(.setLoadingIndicatorAnimating(false))
                 )

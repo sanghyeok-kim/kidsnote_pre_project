@@ -10,5 +10,10 @@ import Foundation
 import RxSwift
 
 protocol SearchBookUseCase {
-    func searchBooks(keyword: String, startIndex: Int, maxResults: Int) -> Observable<[BookEntity]>
+    func searchBooks(
+        keyword: String,
+        bookSearchType: BookSearchType,
+        startIndex: Int,
+        maxResults: Int
+    ) -> Observable<[BookEntity]>
 }
