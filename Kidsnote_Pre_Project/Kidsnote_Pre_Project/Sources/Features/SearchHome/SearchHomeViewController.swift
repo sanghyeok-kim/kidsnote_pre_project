@@ -217,7 +217,7 @@ private extension SearchHomeViewController {
             .bind(onNext: toggleSearchView(shouldExpand:))
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.fetchedBookSearchResult }
+        reactor.state.map { $0.searchResultBookItemsToShow }
             .distinctUntilChanged()
             .observe(on: MainScheduler.asyncInstance)
             .bind(onNext: bookSearchDiffableDataSource.update(with:))
