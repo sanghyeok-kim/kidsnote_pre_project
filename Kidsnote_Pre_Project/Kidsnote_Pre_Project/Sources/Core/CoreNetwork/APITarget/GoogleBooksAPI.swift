@@ -8,7 +8,8 @@
 import Foundation
 
 enum GoogleBooksAPI {
-    case searchBooks(keyword: String, startIndex: Int, maxResults: Int)
+    case searchAllEbooks(keyword: String, startIndex: Int, maxResults: Int)
+    case searchFreeEbooks(keyword: String, startIndex: Int, maxResults: Int)
 }
 
 extension GoogleBooksAPI: TargetType {
@@ -18,30 +19,37 @@ extension GoogleBooksAPI: TargetType {
     
     var path: String {
         switch self {
-        case .searchBooks:
+        case .searchAllEbooks, .searchFreeEbooks:
             return "books/v1/volumes"
         }
     }
-        
+    
     var method: HTTPMethod {
         switch self {
-        case .searchBooks:
+        case .searchAllEbooks, .searchFreeEbooks:
             return .get
         }
     }
     
     var headers: [String: String]? {
         switch self {
-        case .searchBooks:
+        case .searchAllEbooks, .searchFreeEbooks:
             return nil
         }
     }
     
     var parameters: [String: Any]? {
         switch self {
-        case .searchBooks(let keyword, let startIndex, let maxResults):
+        case .searchAllEbooks(let keyword, let startIndex, let maxResults):
             return [
                 "q": keyword,
+                "startIndex": startIndex,
+                "maxResults": maxResults,
+            ]
+        case .searchFreeEbooks(let keyword, let startIndex, let maxResults):
+            return [
+                "q": keyword,
+                "filter": "free-ebooks",
                 "startIndex": startIndex,
                 "maxResults": maxResults,
             ]
