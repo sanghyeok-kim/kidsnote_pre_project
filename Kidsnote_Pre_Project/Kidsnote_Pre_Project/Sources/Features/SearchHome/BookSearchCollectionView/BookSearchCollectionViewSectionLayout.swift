@@ -25,6 +25,20 @@ public final class BookSearchCollectionViewSectionLayout: CollectionViewSectionP
         return headerItem
     }()
     
+    private lazy var footerItem: NSCollectionLayoutBoundarySupplementaryItem = {
+        let footerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .estimated(30)
+        )
+        
+        let footerItem = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: footerSize,
+            elementKind: UICollectionView.elementKindSectionFooter,
+            alignment: .bottom
+        )
+        return footerItem
+    }()
+    
     private lazy var layoutItem: NSCollectionLayoutItem = {
         let layoutSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
@@ -54,7 +68,7 @@ public final class BookSearchCollectionViewSectionLayout: CollectionViewSectionP
             bottom: .zero,
             trailing: .zero
         )
-        sectionLayout.boundarySupplementaryItems = [headerItem]
+        sectionLayout.boundarySupplementaryItems = [headerItem, footerItem]
         return sectionLayout
     }()
 }

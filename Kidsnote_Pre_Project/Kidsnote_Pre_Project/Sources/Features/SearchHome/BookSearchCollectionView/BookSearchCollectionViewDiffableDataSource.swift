@@ -28,15 +28,30 @@ final class BookSearchDiffableDataSource: UICollectionViewDiffableDataSource<Boo
         super.init(collectionView: collectionView, cellProvider: cellProvider)
     }
     
-    func configureHeaderView(reactor: BookSearchTypeCollectionHeaderReactor) {
+    func configureHeaderView(
+        headerReactor: BookSearchTypeCollectionHeaderReactor,
+        footerReactor: BookSearchCollectionFooterReactor
+    ) {
         supplementaryViewProvider = { collectionView, kind, indexPath in
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(
-                ofKind: kind,
-                withReuseIdentifier: BookSearchTypeCollectionHeaderView.identifier,
-                for: indexPath
-            ) as? BookSearchTypeCollectionHeaderView else { return UICollectionReusableView() }
-            headerView.reactor = reactor
-            return headerView
+            if kind == UICollectionView.elementKindSectionHeader {
+                guard let headerView = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: BookSearchTypeCollectionHeaderView.identifier,
+                    for: indexPath
+                ) as? BookSearchTypeCollectionHeaderView else { return UICollectionReusableView() }
+                headerView.reactor = headerReactor
+                return headerView
+            }
+            else if kind == UICollectionView.elementKindSectionFooter {
+                guard let footerView = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: LoadingIndicatorFooterView.identifier,
+                    for: indexPath
+                ) as? LoadingIndicatorFooterView else { return UICollectionReusableView() }
+                footerView.reactor = footerReactor
+                return footerView
+            }
+            return UICollectionReusableView()
         }
     }
     

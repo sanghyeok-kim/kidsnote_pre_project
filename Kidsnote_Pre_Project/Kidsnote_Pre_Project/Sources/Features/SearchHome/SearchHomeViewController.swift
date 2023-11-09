@@ -58,6 +58,11 @@ final class SearchHomeViewController: BaseViewController, View {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: BookSearchTypeCollectionHeaderView.identifier
         )
+        collectionView.register(
+            LoadingIndicatorFooterView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: LoadingIndicatorFooterView.identifier
+        )
         collectionView.refreshControl = bookSearchRefreshControl
         collectionView.isHidden = true
         return collectionView
