@@ -28,7 +28,7 @@ final class BookSearchDiffableDataSource: UICollectionViewDiffableDataSource<Boo
         super.init(collectionView: collectionView, cellProvider: cellProvider)
     }
     
-    func configureHeaderView(
+    func configureSupplementaryView(
         headerReactor: BookSearchTypeCollectionHeaderReactor,
         footerReactor: BookSearchCollectionFooterReactor
     ) {

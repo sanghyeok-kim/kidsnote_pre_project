@@ -249,15 +249,14 @@ private extension SearchHomeViewController {
             .bind(onNext: searchResultEmptyLabel.setVisibility(shouldHide:))
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.isLoadingIndicatorAnimating }
-            .distinctUntilChanged()
-            .bind(to: loadingIndicator.rx.isAnimating)
-            .disposed(by: disposeBag)
-        
-        reactor.state.compactMap { $0.bookSearchTypeReactor }
-            .take(1)
-            .bind(onNext: bookSearchDiffableDataSource.configureHeaderView(reactor:))
-            .disposed(by: disposeBag)
+        Observable.zip(
+            reactor.state.map { $0.bookSearchTypeReactor }.compactMap { $0 },
+            reactor.state.map { $0.loadingIndicatorFooterReactor }.compactMap { $0 }
+        )
+        .take(1)
+        .observe(on: MainScheduler.instance)
+        .bind(onNext: bookSearchDiffableDataSource.configureSupplementaryView(headerReactor:footerReactor:))
+        .disposed(by: disposeBag)
         
         reactor.pulse(\.$shouldClearTextFieldText)
             .filter { $0 }
