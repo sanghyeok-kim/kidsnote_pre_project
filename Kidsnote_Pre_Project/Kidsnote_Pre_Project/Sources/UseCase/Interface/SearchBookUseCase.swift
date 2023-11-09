@@ -13,7 +13,6 @@ protocol SearchBookUseCase {
     func searchBooks(
         keyword: String,
         bookSearchType: BookSearchType,
-        startIndex: Int,
-        maxResults: Int
+        paginationState: PaginationState
     ) -> Observable<[BookEntity]>
 }

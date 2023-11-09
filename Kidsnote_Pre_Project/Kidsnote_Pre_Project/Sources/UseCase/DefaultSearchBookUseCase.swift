@@ -13,23 +13,28 @@ final class DefaultSearchBookUseCase: SearchBookUseCase {
     
     @Injected(AppDIContainer.shared) private var searchBookRepository: SearchBookRepository
     
-    init() { }
-    
     func searchBooks(
         keyword: String,
         bookSearchType: BookSearchType,
-        startIndex: Int,
-        maxResults: Int
+        paginationState: PaginationState
     ) -> Observable<[BookEntity]> {
         switch bookSearchType {
         case .allEbooks:
             return searchBookRepository
-                .searchAllEbooks(keyword: keyword, startIndex: startIndex, maxResults: maxResults)
+                .searchAllEbooks(
+                    keyword: keyword,
+                    startIndex: paginationState.currentIndex,
+                    maxResults: paginationState.maxResultCount
+                )
                 .logErrorIfDetected(category: .network)
                 .asObservable()
         case .freeEbooks:
             return searchBookRepository
-                .searchFreeEbooks(keyword: keyword, startIndex: startIndex, maxResults: maxResults)
+                .searchFreeEbooks(
+                    keyword: keyword,
+                    startIndex: paginationState.currentIndex,
+                    maxResults: paginationState.maxResultCount
+                )
                 .logErrorIfDetected(category: .network)
                 .asObservable()
         }
