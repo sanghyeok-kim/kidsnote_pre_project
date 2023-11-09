@@ -43,6 +43,7 @@ extension GoogleBooksAPI: TargetType {
         case .searchAllEbooks(let keyword, let startIndex, let maxResults):
             return [
                 "q": keyword,
+                "filter": "ebooks",
                 "startIndex": startIndex,
                 "maxResults": maxResults,
             ]

@@ -58,6 +58,11 @@ final class SearchHomeViewController: BaseViewController, View {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: BookSearchTypeCollectionHeaderView.identifier
         )
+        collectionView.register(
+            LoadingIndicatorFooterView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: LoadingIndicatorFooterView.identifier
+        )
         collectionView.refreshControl = bookSearchRefreshControl
         collectionView.isHidden = true
         return collectionView
@@ -184,7 +189,6 @@ private extension SearchHomeViewController {
         
         searchView.backButton.rx.tap
             .map { Reactor.Action.backButtonDidTap }
-            .debug()
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
@@ -195,6 +199,12 @@ private extension SearchHomeViewController {
         
         searchView.searchBookTextField.rx.controlEvent(.editingDidEndOnExit)
             .map { Reactor.Action.searchTextFieldDidEndEditing }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        bookSearchCollectionView.rx.willDisplayCell
+            .map { $0.at }
+            .map { Reactor.Action.bookSearchCollectionViewWillDisplay($0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
     }
@@ -228,11 +238,6 @@ private extension SearchHomeViewController {
             .bind(to: bookSearchCollectionView.rx.isHidden)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.isBookSearchCollectionViewHidden }
-            .distinctUntilChanged()
-            .bind(to: bookSearchCollectionView.rx.isHidden)
-            .disposed(by: disposeBag)
-        
         reactor.state.map { $0.isLoadingIndicatorAnimating }
             .distinctUntilChanged()
             .bind(to: loadingIndicator.rx.isAnimating)
@@ -244,15 +249,14 @@ private extension SearchHomeViewController {
             .bind(onNext: searchResultEmptyLabel.setVisibility(shouldHide:))
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.isLoadingIndicatorAnimating }
-            .distinctUntilChanged()
-            .bind(to: loadingIndicator.rx.isAnimating)
-            .disposed(by: disposeBag)
-        
-        reactor.state.compactMap { $0.bookSearchTypeReactor }
-            .take(1)
-            .bind(onNext: bookSearchDiffableDataSource.configureHeaderView(reactor:))
-            .disposed(by: disposeBag)
+        Observable.zip(
+            reactor.state.map { $0.bookSearchTypeReactor }.compactMap { $0 },
+            reactor.state.map { $0.loadingIndicatorFooterReactor }.compactMap { $0 }
+        )
+        .take(1)
+        .observe(on: MainScheduler.instance)
+        .bind(onNext: bookSearchDiffableDataSource.configureSupplementaryView(headerReactor:footerReactor:))
+        .disposed(by: disposeBag)
         
         reactor.pulse(\.$shouldClearTextFieldText)
             .filter { $0 }
