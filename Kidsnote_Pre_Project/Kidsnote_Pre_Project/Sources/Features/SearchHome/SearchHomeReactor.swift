@@ -23,17 +23,13 @@ final class SearchHomeReactor: Reactor {
     enum Mutation {
         case setBookSearchTypeHeaderReactor(BookSearchTypeCollectionHeaderReactor)
         case setSelectedBookSearchType(BookSearchType)
-        case setBookItemsMap(forKey: BookSearchType, value: [BookItem])
-        case setBookItemsMapClear
         case setSearchTextFieldFirstResponder(Bool)
         case setRefreshControlIsRefreshing(Bool)
         case setSearchBackgroundViewExpand(Bool)
         case setSearchKeyword(String)
         case setSearchKeywordIsEdited(Bool)
-        case setBookSearchResult([BookItem])
         case setCollectionViewIsHidden(Bool)
         case setLoadingIndicatorAnimating(Bool)
-        case setFetchResultIsEmpty(Bool)
         case setFetchResultEmptyLabelHidden(Bool)
         case setTextFieldEmpty
         case setToastMessage(String)
@@ -44,11 +40,11 @@ final class SearchHomeReactor: Reactor {
         var selectedBookSearchType: BookSearchType = .allEbooks
         var fetchedBookItemsMap: [BookSearchType: [BookItem]] = [:]
         var searchResultBookItemsToShow: [BookItem] = []
-        var isRefreshControlRefreshing: Bool = false
         var isSearchTextFieldFirstResonder: Bool = false
+        var isRefreshControlRefreshing: Bool = false
         var isSearchBackgroundViewExpanded: Bool = false
-        var isSearchKeywordEdited: Bool = false
         var searchKeyword: String = ""
+        var isSearchKeywordEdited: Bool = false
         var isBookSearchCollectionViewHidden: Bool = true
         var isLoadingIndicatorAnimating: Bool = false
         var shouldHideFetchResultEmptyLabel: Bool = true
@@ -127,28 +123,25 @@ final class SearchHomeReactor: Reactor {
             newState.bookSearchTypeReactor = reactor
         case .setSelectedBookSearchType(let type):
             newState.selectedBookSearchType = type
-        case .setBookItemsMap(let key, let value):
-            newState.fetchedBookItemsMap[key] = value
-        case .setBookItemsMapClear:
+        case .clearAllFetehedBookItemsMap:
             newState.fetchedBookItemsMap = [:]
-        case .setRefreshControlIsRefreshing(let isRefreshing):
-            newState.isRefreshControlRefreshing = isRefreshing
+        case .setFooterLoadingIndicatorLoading(let isLoading):
+            newState.isFooterLoadingIndicatorLoading = isLoading
+            
         case .setSearchTextFieldFirstResponder(let isFirstResponder):
             newState.isSearchTextFieldFirstResonder = isFirstResponder
+        case .setRefreshControlIsRefreshing(let isRefreshing):
+            newState.isRefreshControlRefreshing = isRefreshing
         case .setSearchBackgroundViewExpand(let isExpanded):
             newState.isSearchBackgroundViewExpanded = isExpanded
-        case .setSearchKeyword(let keyword):
-            newState.searchKeyword = keyword
         case .setSearchKeywordIsEdited(let isEdited):
             newState.isSearchKeywordEdited = isEdited
-        case .setBookSearchResult(let bookItems):
-            newState.searchResultBookItemsToShow = bookItems
+        case .setSearchKeyword(let keyword):
+            newState.searchKeyword = keyword
         case .setCollectionViewIsHidden(let isHidden):
             newState.isBookSearchCollectionViewHidden = isHidden
         case .setLoadingIndicatorAnimating(let isAnimating):
             newState.isLoadingIndicatorAnimating = isAnimating
-        case .setFetchResultIsEmpty(let isEmtpy):
-            newState.shouldHideFetchResultEmptyLabel = isEmtpy
         case .setFetchResultEmptyLabelHidden(let isHidden):
             newState.shouldHideFetchResultEmptyLabel = isHidden
         case .setTextFieldEmpty:
@@ -206,9 +199,9 @@ private extension SearchHomeReactor {
             }
             .catch { error in
                 .concat(
-                    .just(.setToastMessage(ToastMessage.search(.failFetchingBookSearchResult).text)),
                     .just(.setRefreshControlIsRefreshing(false)),
-                    .just(.setLoadingIndicatorAnimating(false))
+                    .just(.setLoadingIndicatorAnimating(false)),
+                    .just(.setToastMessage(ToastMessage.search(.failFetchingBookSearchResult).text)),
                 )
             }
             .startWith(
