@@ -189,7 +189,6 @@ private extension SearchHomeViewController {
         
         searchView.backButton.rx.tap
             .map { Reactor.Action.backButtonDidTap }
-            .debug()
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
@@ -200,6 +199,12 @@ private extension SearchHomeViewController {
         
         searchView.searchBookTextField.rx.controlEvent(.editingDidEndOnExit)
             .map { Reactor.Action.searchTextFieldDidEndEditing }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        bookSearchCollectionView.rx.willDisplayCell
+            .map { $0.at }
+            .map { Reactor.Action.bookSearchCollectionViewWillDisplay($0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
     }
@@ -226,11 +231,6 @@ private extension SearchHomeViewController {
             .distinctUntilChanged()
             .observe(on: MainScheduler.asyncInstance)
             .bind(onNext: bookSearchDiffableDataSource.update(with:))
-            .disposed(by: disposeBag)
-        
-        reactor.state.map { $0.isBookSearchCollectionViewHidden }
-            .distinctUntilChanged()
-            .bind(to: bookSearchCollectionView.rx.isHidden)
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.isBookSearchCollectionViewHidden }
