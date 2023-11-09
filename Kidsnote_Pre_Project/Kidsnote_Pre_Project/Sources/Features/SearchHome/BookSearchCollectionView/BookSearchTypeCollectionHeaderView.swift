@@ -52,6 +52,14 @@ final class BookSearchTypeCollectionHeaderView: UICollectionReusableView, View {
 
 private extension BookSearchTypeCollectionHeaderView {
     func bindAction(reactor: BookSearchTypeCollectionHeaderReactor) {
+        bookTypeSegmentControl.rx.selectedSegmentIndex
+            .distinctUntilChanged()
+            .map { Reactor.Action.bookSearchTypeDidSelect(index: $0) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+    }
+    
+    func bindState(reactor: BookSearchTypeCollectionHeaderReactor) {
         reactor.state.map { $0.bookSearchTitles }
             .distinctUntilChanged()
             .observe(on: MainScheduler.asyncInstance)
@@ -63,14 +71,6 @@ private extension BookSearchTypeCollectionHeaderView {
             .observe(on: MainScheduler.asyncInstance)
             .map { $0.index }
             .bind(onNext: bookTypeSegmentControl.selectSegment(at:))
-            .disposed(by: disposeBag)
-    }
-    
-    func bindState(reactor: BookSearchTypeCollectionHeaderReactor) {
-        bookTypeSegmentControl.rx.selectedSegmentIndex
-            .distinctUntilChanged()
-            .map { Reactor.Action.bookSearchTypeDidSelect(index: $0) }
-            .bind(to: reactor.action)
             .disposed(by: disposeBag)
     }
 }
