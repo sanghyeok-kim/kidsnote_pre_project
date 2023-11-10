@@ -10,13 +10,13 @@ import UIKit
 final class GooplePlayReadableNoticeStackView: UIView {
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "info.circle")?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+        imageView.image = ImageAsset.infoCircle?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
         return imageView
     }()
     
     private let infoLabel: UILabel = {
         let label = UILabel()
-        label.text = "Google Play 웹사이트에서 구매한 책을 이 앱에서 읽을 수 있습니다."
+        label.text = Literal.Text.readbleInGooglePlay.appString
         label.font = UIFont.systemFont(ofSize: 12.5)
         label.textColor = .darkGray
         label.numberOfLines = 0

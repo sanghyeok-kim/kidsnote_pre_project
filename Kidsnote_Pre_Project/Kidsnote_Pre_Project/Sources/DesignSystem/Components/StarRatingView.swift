@@ -19,7 +19,7 @@ final class StarRatingView: UIView {
     
     private let ratingDataSourceLabel: UILabel = {
         let label = UILabel()
-        label.text = "(평점 제공: 알라딘)"
+        label.text = Literal.Text.reviewRankProviderAladin.appString
         label.font = .systemFont(ofSize: 14, weight: .light)
         label.textColor = .darkGray
         return label

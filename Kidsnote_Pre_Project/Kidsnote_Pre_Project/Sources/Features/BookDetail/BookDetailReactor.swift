@@ -12,7 +12,6 @@ final class BookDetailReactor: Reactor {
     
     enum Action {
         case viewDidLoad
-        case shareButtonDidTap
         case sampleButtonDidTap
         case downloadButtonDidTap
         case descriptonViewDidTap
@@ -87,9 +86,6 @@ final class BookDetailReactor: Reactor {
                 fetchDescription(id: currentState.id),
                 fetchReviewRank(isbn13Id: currentState.isbn13Identifier)
             )
-        case .shareButtonDidTap:
-            let sharingURL = currentState.shareURL
-            return openActivityViewController(url: sharingURL)
         case .sampleButtonDidTap:
             let url = currentState.sampleURL
             return openSmapleURL(url)
@@ -161,8 +157,6 @@ private extension BookDetailReactor {
             .fetchBookRating(isbn13Id: isbn13Id)
             .flatMap { reviewInfo -> Observable<Mutation> in
                 let reviewRank = Double(reviewInfo.customerReviewRank) / 2.0
-                print(reviewRank)
-                print(reviewRank == .zero)
                 return .concat(
                     .just(.setIsReviewRankLoaded(true)),
                     .just(.setReviewRank(reviewRank)),
@@ -181,17 +175,17 @@ private extension BookDetailReactor {
     
     func openSmapleURL(_ url: URL?) -> Observable<Mutation> {
         guard let url else {
-            return .empty() // TODO: url 열 수 없을 때에 대한 mutation 리턴
+            return .just(.setToastMessage(ToastMessage.bookDetail(.failOpenSampleURL).text))
         }
         coordinator?.coordinate(by: .openURL(url))
         return .empty()
     }
     
-    func openActivityViewController(url: URL?) -> Observable<Mutation> {
+    func openDownloadURL(_ url: URL?) -> Observable<Mutation> {
         guard let url else {
-            return .empty() // TODO: url 열 수 없을 때에 대한 mutation 리턴
+            return .just(.setToastMessage(ToastMessage.bookDetail(.failOpenDownloadURL).text))
         }
-        coordinator?.coordinate(by: .openActivityViewController([url]))
+        coordinator?.coordinate(by: .openURL(url))
         return .empty()
     }
     

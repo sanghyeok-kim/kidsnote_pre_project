@@ -24,6 +24,6 @@ final class DotSeparatorLabel: UILabel {
 private extension DotSeparatorLabel {
     func configureUI() {
         font = .systemFont(ofSize: 15, weight: .light)
-        text = "•"
+        text = Literal.Text.dot.appString
     }
 }

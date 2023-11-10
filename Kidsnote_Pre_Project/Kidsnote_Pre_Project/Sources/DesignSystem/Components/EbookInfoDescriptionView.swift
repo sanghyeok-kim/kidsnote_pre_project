@@ -11,14 +11,14 @@ final class EbookInfoDescriptionView: TapInteractiveView {
 
     private let infoTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "eBook 정보"
+        label.text = Literal.Text.eBookInfo.appString
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         label.font = .systemFont(ofSize: 20, weight: .medium)
         return label
     }()
 
     private(set) var expandRightImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(systemName: "chevron.right"))
+        let imageView = UIImageView(image: ImageAsset.chevronRight)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -33,7 +33,7 @@ final class EbookInfoDescriptionView: TapInteractiveView {
     func setEmptyDescription() {
         let paragraphStyle = NSMutableParagraphStyle()
         let attributedString = NSMutableAttributedString(
-            string: "아직 설명이 작성되지 않았어요.",
+            string: Literal.Text.noDescriptionYet.appString,
             attributes: [
                 .font: UIFont.systemFont(ofSize: 15),
                 .foregroundColor: UIColor.darkGray

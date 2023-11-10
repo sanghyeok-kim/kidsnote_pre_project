@@ -45,7 +45,7 @@ class TapInteractiveView: UIControl {
     }
     
     private func animateBackground(isHighlighted: Bool) {
-        let highlightedColor = UIColor(red: 227 / 255, green: 225 / 255, blue: 228 / 255, alpha: 1.0)
+        let highlightedColor = ColorAsset.TapInteractionView.tapHighlighted
         let backgroundColor: UIColor = isHighlighted ? highlightedColor : .systemBackground
         UIView.animate(withDuration: 0.3) {
             self.backgroundColor = backgroundColor

@@ -13,16 +13,6 @@ import RxSwift
 
 final class BookDetailViewController: BaseViewController, View {
     
-    private let shareButton: UIBarButtonItem = {
-        let barButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "square.and.arrow.up")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal),
-            style: .plain,
-            target: nil,
-            action: nil
-        )
-        return barButtonItem
-    }()
-    
     private let scrollView = UIScrollView()
     private let scrollContentView = UIView()
     
@@ -114,8 +104,8 @@ final class BookDetailViewController: BaseViewController, View {
     
     private let sampleButton: UIButton = {
         let button = UIButton()
-        button.setTitle("샘플 읽기", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
+        button.setTitle(Literal.Text.readSample.appString, for: .normal)
+        button.setTitleColor(ColorAsset.BookDetail.blue, for: .normal)
         button.layer.borderColor = UIColor.systemGray4.cgColor
         button.layer.cornerRadius = 6
         button.layer.borderWidth = 1
@@ -125,9 +115,9 @@ final class BookDetailViewController: BaseViewController, View {
     
     private let downloadButton: UIButton = {
         let button = UIButton()
-        button.setTitle("다운로드", for: .normal)
+        button.setTitle(Literal.Text.download.appString, for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = ColorAsset.BookDetail.blue
         button.layer.cornerRadius = 6
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         return button
@@ -139,7 +129,7 @@ final class BookDetailViewController: BaseViewController, View {
     
     private let notReviewedYetLabel: UILabel = {
         let label = UILabel()
-        label.text = "아직 평점이 기록되지 않았어요"
+        label.text = Literal.Text.notReviewedYet.appString
         label.textColor = .darkGray
         label.font = .systemFont(ofSize: 18, weight: .medium)
         label.isHidden = true
@@ -162,7 +152,7 @@ final class BookDetailViewController: BaseViewController, View {
     
     private let publishInfoLabel: UILabel = {
         let label = UILabel()
-        label.text = "게시일"
+        label.text = Literal.Text.publishDate.appString
         label.font = .systemFont(ofSize: 20, weight: .medium)
         return label
     }()
@@ -229,13 +219,6 @@ final class BookDetailViewController: BaseViewController, View {
         bindState(reactor: reactor)
     }
     
-    // MARK: - Configure UI
-    
-    override func configureUI() {
-        super.configureUI()
-        navigationItem.rightBarButtonItem = shareButton
-    }
-    
     // MARK: - Layout UI
     
     override func layoutUI() {
@@ -300,7 +283,7 @@ final class BookDetailViewController: BaseViewController, View {
         sampleBuyButtonBottomSeparatorView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
         
         ratingView.translatesAutoresizingMaskIntoConstraints = false
-        ratingView.topAnchor.constraint(equalTo: sampleBuyButtonBottomSeparatorView.bottomAnchor, constant: 12).isActive = true
+        ratingView.topAnchor.constraint(equalTo: sampleBuyButtonBottomSeparatorView.bottomAnchor, constant: 16).isActive = true
         ratingView.leadingAnchor.constraint(equalTo: bookMainInfoStackView.leadingAnchor).isActive = true
         ratingView.trailingAnchor.constraint(equalTo: bookMainInfoStackView.trailingAnchor).isActive = true
         
@@ -343,11 +326,6 @@ private extension BookDetailViewController {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-        shareButton.rx.tap
-            .map { Reactor.Action.shareButtonDidTap }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
-        
         sampleButton.rx.tap
             .map { Reactor.Action.sampleButtonDidTap }
             .bind(to: reactor.action)
@@ -362,7 +340,6 @@ private extension BookDetailViewController {
             .map { Reactor.Action.descriptonViewDidTap }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
     }
     
     func bindState(reactor: BookDetailReactor) {
@@ -400,7 +377,7 @@ private extension BookDetailViewController {
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.pageCount }
-            .map { "\($0) 페이지" }
+            .map { Literal.Text.page($0).appString }
             .distinctUntilChanged()
             .bind(to: pageCountLabel.rx.text)
             .disposed(by: disposeBag)
@@ -419,7 +396,7 @@ private extension BookDetailViewController {
         
         reactor.state.map { $0.isEbook }
             .filter { $0 }
-            .map { _ in "eBook" }
+            .map { _ in Literal.Text.eBook.appString }
             .distinctUntilChanged()
             .bind(to: isEbookLabel.rx.text)
             .disposed(by: disposeBag)
@@ -427,9 +404,8 @@ private extension BookDetailViewController {
         reactor.state.compactMap { $0.reviewRank }
             .distinctUntilChanged()
             .observe(on: MainScheduler.asyncInstance)
-            .bind {
-                print($0)
-                self.ratingView.rating = $0
+            .bind(with: self) { `self`, reviewRank in
+                self.ratingView.rating = reviewRank
             }
             .disposed(by: disposeBag)
         

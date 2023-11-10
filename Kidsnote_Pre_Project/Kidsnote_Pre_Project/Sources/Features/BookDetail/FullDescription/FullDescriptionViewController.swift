@@ -22,7 +22,6 @@ final class FullDescriptionViewController: BaseViewController {
     init(title: String, description: String) {
         super.init(nibName: nil, bundle: nil)
         descriptionTextView.text = description
-        print(title)
         self.title = title
     }
 

@@ -12,5 +12,4 @@ enum SearchHomeCoordinateAction {
     case pushBookDetailViewController(BookEntity)
     case pushFullDescriptionViewController(title: String, description: String)
     case openURL(URL)
-    case openActivityViewController([Any])
 }

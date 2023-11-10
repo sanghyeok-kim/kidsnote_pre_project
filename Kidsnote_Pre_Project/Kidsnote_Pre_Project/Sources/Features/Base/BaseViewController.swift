@@ -18,7 +18,7 @@ class BaseViewController: UIViewController {
     func configureUI() {
         view.backgroundColor = .systemBackground
         self.navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: "뒤로",
+            title: Literal.Text.back.appString,
             style: .plain,
             target: nil,
             action: nil
