@@ -113,6 +113,10 @@
 		1ECE00B82AFDEC7C0054CEDF /* BookDetailInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00B72AFDEC7C0054CEDF /* BookDetailInfoRepository.swift */; };
 		1ECE00BA2AFDECD20054CEDF /* BookDetailInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00B92AFDECD20054CEDF /* BookDetailInfoUseCase.swift */; };
 		1ECE00BC2AFDECE60054CEDF /* DetaultBookDetailInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00BB2AFDECE60054CEDF /* DetaultBookDetailInfoUseCase.swift */; };
+		1ECE00BE2AFE21970054CEDF /* EbookInfoDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00BD2AFE21970054CEDF /* EbookInfoDescriptionView.swift */; };
+		1ECE00C02AFE21BA0054CEDF /* Reactive+EbookInfoDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00BF2AFE21BA0054CEDF /* Reactive+EbookInfoDescriptionView.swift */; };
+		1ECE00C22AFE21C60054CEDF /* TapInteractiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00C12AFE21C60054CEDF /* TapInteractiveView.swift */; };
+		1ECE00C42AFE21D50054CEDF /* Reactive+TapInteractiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00C32AFE21D50054CEDF /* Reactive+TapInteractiveView.swift */; };
 		1ECE00C62AFE21FA0054CEDF /* DotSeparatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00C52AFE21FA0054CEDF /* DotSeparatorLabel.swift */; };
 		1ECE00C82AFE22100054CEDF /* GooplePlayReadableNoticeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00C72AFE22100054CEDF /* GooplePlayReadableNoticeStackView.swift */; };
 		1ECE00CC2AFE42C50054CEDF /* FullDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00CB2AFE42C50054CEDF /* FullDescriptionViewController.swift */; };
@@ -230,6 +234,10 @@
 		1ECE00B72AFDEC7C0054CEDF /* BookDetailInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailInfoRepository.swift; sourceTree = "<group>"; };
 		1ECE00B92AFDECD20054CEDF /* BookDetailInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailInfoUseCase.swift; sourceTree = "<group>"; };
 		1ECE00BB2AFDECE60054CEDF /* DetaultBookDetailInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaultBookDetailInfoUseCase.swift; sourceTree = "<group>"; };
+		1ECE00BD2AFE21970054CEDF /* EbookInfoDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbookInfoDescriptionView.swift; sourceTree = "<group>"; };
+		1ECE00BF2AFE21BA0054CEDF /* Reactive+EbookInfoDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+EbookInfoDescriptionView.swift"; sourceTree = "<group>"; };
+		1ECE00C12AFE21C60054CEDF /* TapInteractiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapInteractiveView.swift; sourceTree = "<group>"; };
+		1ECE00C32AFE21D50054CEDF /* Reactive+TapInteractiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+TapInteractiveView.swift"; sourceTree = "<group>"; };
 		1ECE00C52AFE21FA0054CEDF /* DotSeparatorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSeparatorLabel.swift; sourceTree = "<group>"; };
 		1ECE00C72AFE22100054CEDF /* GooplePlayReadableNoticeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooplePlayReadableNoticeStackView.swift; sourceTree = "<group>"; };
 		1ECE00CB2AFE42C50054CEDF /* FullDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDescriptionViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +279,8 @@
 				1E86BB102AF63C9800469B6E /* Reactive+UIViewController.swift.swift */,
 				1E54D2DF2AFA2DFA005B6C1E /* Reactive+Data.swift */,
 				1E54D2E52AFA7B51005B6C1E /* Reactive+BookTypeSegmentControl.swift */,
+				1ECE00BF2AFE21BA0054CEDF /* Reactive+EbookInfoDescriptionView.swift */,
+				1ECE00C32AFE21D50054CEDF /* Reactive+TapInteractiveView.swift */,
 			);
 			path = Reactive;
 			sourceTree = "<group>";
@@ -739,6 +749,8 @@
 				1E825F382AF7EF0500AC1AAA /* RoundedPaddingLabel.swift */,
 				1E825F3A2AF7EF2300AC1AAA /* PaddingLabel.swift */,
 				1E825F4B2AF8C30700AC1AAA /* SearchResultEmptyLabel.swift */,
+				1ECE00BD2AFE21970054CEDF /* EbookInfoDescriptionView.swift */,
+				1ECE00C12AFE21C60054CEDF /* TapInteractiveView.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -929,6 +941,7 @@
 				1EADE4602AFB2E9900EFC051 /* ToastMessage.swift in Sources */,
 				1E86BADE2AF4C6E800469B6E /* GoogleBooksAPI.swift in Sources */,
 				1E86BB0D2AF6299F00469B6E /* BookEntity.swift in Sources */,
+				1ECE00BE2AFE21970054CEDF /* EbookInfoDescriptionView.swift in Sources */,
 				1E86BB112AF63C9800469B6E /* Reactive+UIViewController.swift.swift in Sources */,
 				1E825F5D2AF9004D00AC1AAA /* MemoryCacheStorageService.swift in Sources */,
 				1ECE00A62AFDC11E0054CEDF /* BookRatingRepository.swift in Sources */,
@@ -959,6 +972,7 @@
 				1E86BB0F2AF62C3500469B6E /* BookEntityMapper.swift in Sources */,
 				1E86BAF42AF4CA4400469B6E /* Rx+decodeMap.swift in Sources */,
 				1E825EEF2AF67DB300AC1AAA /* ShadowView.swift in Sources */,
+				1ECE00C42AFE21D50054CEDF /* Reactive+TapInteractiveView.swift in Sources */,
 				1E86BAA72AF4A6CC00469B6E /* AppDelegate.swift in Sources */,
 				1E86BB142AF65CCB00469B6E /* BookSearchBar.swift in Sources */,
 				1E86BAE42AF4C7B900469B6E /* NetworkResult.swift in Sources */,
@@ -1022,8 +1036,10 @@
 				1E825EF82AF71F0800AC1AAA /* BookSearchCollectionViewDiffableDataSource.swift in Sources */,
 				1E825F0B2AF79C1F00AC1AAA /* AppDIContainer.swift in Sources */,
 				1E86BAF62AF4CA6A00469B6E /* Rx+extractData.swift in Sources */,
+				1ECE00C22AFE21C60054CEDF /* TapInteractiveView.swift in Sources */,
 				1ECE00CE2AFE42D70054CEDF /* StarRatingView.swift in Sources */,
 				1E86BAC92AF4B86A00469B6E /* Logger.swift in Sources */,
+				1ECE00C02AFE21BA0054CEDF /* Reactive+EbookInfoDescriptionView.swift in Sources */,
 				1E54D2C82AF9CDC6005B6C1E /* CachedImageLoadService.swift in Sources */,
 				1E86BAFE2AF4CAEB00469B6E /* Rx+transformMap.swift in Sources */,
 				1E86BAE62AF4C7D900469B6E /* EmptyBody.swift in Sources */,
