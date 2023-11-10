@@ -41,17 +41,35 @@ extension AppDIContainer {
         AppDIContainer.shared.register(service: AnyDataMapper.self) {
             AnyDataMapper(BookEntityMapper())
         }
+        AppDIContainer.shared.register(service: AnyDataMapper.self) {
+            AnyDataMapper(BookReviewInfoEntityMapper())
+        }
+        AppDIContainer.shared.register(service: AnyDataMapper.self) {
+            AnyDataMapper(BookDetailInfoEntityMapper())
+        }
         
         // MARK: - Register Repository
         
         AppDIContainer.shared.register(service: SearchBookRepository.self) {
             DefaultSearchBookRepository()
         }
+        AppDIContainer.shared.register(service: BookRatingRepository.self) {
+            DefaultBookRatingRepository()
+        }
+        AppDIContainer.shared.register(service: BookDetailInfoRepository.self) {
+            DetaultBookDetailInfoRepository()
+        }
         
         // MARK: - Register UseCase
         
         AppDIContainer.shared.register(service: SearchBookUseCase.self) {
             DefaultSearchBookUseCase()
+        }
+        AppDIContainer.shared.register(service: BookRatingUseCase.self) {
+            DefaultBookRatingUseCase()
+        }
+        AppDIContainer.shared.register(service: BookDetailInfoUseCase.self) {
+            DetaultBookDetailInfoUseCase()
         }
     }
 }
