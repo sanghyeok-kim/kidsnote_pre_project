@@ -18,7 +18,7 @@ final class EbookInfoDescriptionView: TapInteractiveView {
     }()
 
     private(set) var expandRightImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(systemName: "chevron.right"))
+        let imageView = UIImageView(image: ImageAsset.chevronRight)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()

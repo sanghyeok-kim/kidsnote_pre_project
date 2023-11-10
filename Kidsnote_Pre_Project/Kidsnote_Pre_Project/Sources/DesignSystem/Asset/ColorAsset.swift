@@ -9,13 +9,11 @@ import UIKit
 
 enum ColorAsset {
     enum BookTypeSegmentControl {
-        static let selectedTitle = UIColor { traitCollection in
-            switch traitCollection.userInterfaceStyle {
-            case .dark:
-                return UIColor(red: 25 / 255, green: 115 / 255, blue: 230 / 255, alpha: 1.0)
-            default:
-                return UIColor(red: 25 / 255, green: 115 / 255, blue: 230 / 255, alpha: 1.0)
-            }
-        }
+        static let selectedTitle = UIColor(red: 25 / 255, green: 115 / 255, blue: 230 / 255, alpha: 1.0)
+    }
+    
+    enum TapInteractionView {
+        static let tapHighlighted = UIColor(red: 227 / 255, green: 225 / 255, blue: 228 / 255, alpha: 1.0)
+        
     }
 }

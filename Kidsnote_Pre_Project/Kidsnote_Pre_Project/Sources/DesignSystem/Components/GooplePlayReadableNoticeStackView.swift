@@ -10,7 +10,7 @@ import UIKit
 final class GooplePlayReadableNoticeStackView: UIView {
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "info.circle")?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+        imageView.image = ImageAsset.infoCircle?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
         return imageView
     }()
     

@@ -40,11 +40,14 @@ final class StarView: UIView {
     private func updateStarRatings() {
         for (index, imageView) in starImageViews.enumerated() {
             if rating >= Double(index) + 1 {
-                imageView.image = UIImage(systemName: "star.fill")?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+                imageView.image = ImageAsset.starFill?
+                    .withTintColor(.darkGray, renderingMode: .alwaysOriginal)
             } else if rating >= Double(index) + 0.5 {
-                imageView.image = UIImage(systemName: "star.leadinghalf.filled")?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+                imageView.image = ImageAsset.starLeadinghalfFilled?
+                    .withTintColor(.darkGray, renderingMode: .alwaysOriginal)
             } else {
-                imageView.image = UIImage(systemName: "star")?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+                imageView.image = ImageAsset.star?
+                    .withTintColor(.darkGray, renderingMode: .alwaysOriginal)
             }
         }
     }

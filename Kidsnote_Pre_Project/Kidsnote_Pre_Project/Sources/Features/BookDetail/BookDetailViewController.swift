@@ -15,7 +15,7 @@ final class BookDetailViewController: BaseViewController, View {
     
     private let shareButton: UIBarButtonItem = {
         let barButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "square.and.arrow.up")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal),
+            image: ImageAsset.squareAndArrowUp?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal),
             style: .plain,
             target: nil,
             action: nil
