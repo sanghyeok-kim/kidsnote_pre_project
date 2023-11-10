@@ -27,6 +27,8 @@ final class DefaultSearchHomeCoordinator: SearchHomeCoordinator {
             pushSearchHomeViewController()
         case .pushBookDetailViewController(let bookEntity):
             pushBookDetailViewController(bookEntity: bookEntity)
+        case .pushFullDescriptionViewController(let title, let description):
+            pushFullDescriptionViewController(title: title, description: description)
         case .openURL(let url):
             openURL(url)
         case .openActivityViewController(let items):
@@ -53,6 +55,11 @@ private extension DefaultSearchHomeCoordinator {
         let bookDetailViewController = BookDetailViewController()
         let bookDetailReactor = BookDetailReactor(coordinator: self, bookEntity: bookEntity)
         bookDetailViewController.reactor = bookDetailReactor
+        navigationController.pushViewController(bookDetailViewController, animated: true)
+    }
+    
+    func pushFullDescriptionViewController(title: String, description: String) {
+        let bookDetailViewController = FullDescriptionViewController(title: title, description: description)
         navigationController.pushViewController(bookDetailViewController, animated: true)
     }
     

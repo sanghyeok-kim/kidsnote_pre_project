@@ -10,6 +10,7 @@ import Foundation
 enum SearchHomeCoordinateAction {
     case appDidStart
     case pushBookDetailViewController(BookEntity)
+    case pushFullDescriptionViewController(title: String, description: String)
     case openURL(URL)
     case openActivityViewController([Any])
 }
