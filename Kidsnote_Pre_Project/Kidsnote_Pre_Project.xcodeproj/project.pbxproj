@@ -98,6 +98,7 @@
 		1EADE47A2AFCF8BA00EFC051 /* BookDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EADE4792AFCF8BA00EFC051 /* BookDetailReactor.swift */; };
 		1EADE47E2AFCFC2D00EFC051 /* AladinAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EADE47D2AFCFC2D00EFC051 /* AladinAPI.swift */; };
 		1EADE4822AFD45B400EFC051 /* AladinBookDetailInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EADE4812AFD45B400EFC051 /* AladinBookDetailInfoDTO.swift */; };
+		1ECE00A42AFDC08B0054CEDF /* Rx+decodeJsonStringMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00A32AFDC08B0054CEDF /* Rx+decodeJsonStringMap.swift */; };
 		2F5BFB33E4E4243A7E767759 /* Pods_Kidsnote_Pre_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -195,6 +196,7 @@
 		1EADE4792AFCF8BA00EFC051 /* BookDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailReactor.swift; sourceTree = "<group>"; };
 		1EADE47D2AFCFC2D00EFC051 /* AladinAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinAPI.swift; sourceTree = "<group>"; };
 		1EADE4812AFD45B400EFC051 /* AladinBookDetailInfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinBookDetailInfoDTO.swift; sourceTree = "<group>"; };
+		1ECE00A32AFDC08B0054CEDF /* Rx+decodeJsonStringMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+decodeJsonStringMap.swift"; sourceTree = "<group>"; };
 		535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kidsnote_Pre_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7346A071D1F3E63762B06374 /* Pods-Kidsnote_Pre_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kidsnote_Pre_Project.debug.xcconfig"; path = "Target Support Files/Pods-Kidsnote_Pre_Project/Pods-Kidsnote_Pre_Project.debug.xcconfig"; sourceTree = "<group>"; };
 		DF6B6C6C4CF80A08420DC458 /* Pods-Kidsnote_Pre_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kidsnote_Pre_Project.release.xcconfig"; path = "Target Support Files/Pods-Kidsnote_Pre_Project/Pods-Kidsnote_Pre_Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -604,6 +606,7 @@
 				1E86BAEE2AF4C9CA00469B6E /* Rx+validateStatusCode.swift */,
 				1E86BAFD2AF4CAEB00469B6E /* Rx+transformMap.swift */,
 				1E86BAF32AF4CA4400469B6E /* Rx+decodeMap.swift */,
+				1ECE00A32AFDC08B0054CEDF /* Rx+decodeJsonStringMap.swift */,
 				1E86BAF52AF4CA6A00469B6E /* Rx+extractData.swift */,
 			);
 			path = Extension;
@@ -901,6 +904,7 @@
 				1E825F452AF898CE00AC1AAA /* ShadowImageView.swift in Sources */,
 				1E86BAA92AF4A6CC00469B6E /* SceneDelegate.swift in Sources */,
 				1E86BAE22AF4C7A300469B6E /* HTTPMethod.swift in Sources */,
+				1ECE00A42AFDC08B0054CEDF /* Rx+decodeJsonStringMap.swift in Sources */,
 				1E54D2D92AFA2ADF005B6C1E /* URL+lastPathComponentWithQuery.swift in Sources */,
 				1EADE4662AFCDE6400EFC051 /* BookSearchCollectionFooterReactor.swift in Sources */,
 				1E825F342AF7EE8F00AC1AAA /* ToastLabel.swift in Sources */,
