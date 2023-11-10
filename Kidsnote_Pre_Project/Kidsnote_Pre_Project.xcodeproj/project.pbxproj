@@ -114,6 +114,7 @@
 		1ECE00BA2AFDECD20054CEDF /* BookDetailInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00B92AFDECD20054CEDF /* BookDetailInfoUseCase.swift */; };
 		1ECE00BC2AFDECE60054CEDF /* DetaultBookDetailInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00BB2AFDECE60054CEDF /* DetaultBookDetailInfoUseCase.swift */; };
 		1ECE00C62AFE21FA0054CEDF /* DotSeparatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00C52AFE21FA0054CEDF /* DotSeparatorLabel.swift */; };
+		1ECE00C82AFE22100054CEDF /* GooplePlayReadableNoticeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00C72AFE22100054CEDF /* GooplePlayReadableNoticeStackView.swift */; };
 		1ECE00CC2AFE42C50054CEDF /* FullDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00CB2AFE42C50054CEDF /* FullDescriptionViewController.swift */; };
 		2F5BFB33E4E4243A7E767759 /* Pods_Kidsnote_Pre_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */; };
 /* End PBXBuildFile section */
@@ -228,6 +229,7 @@
 		1ECE00B92AFDECD20054CEDF /* BookDetailInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailInfoUseCase.swift; sourceTree = "<group>"; };
 		1ECE00BB2AFDECE60054CEDF /* DetaultBookDetailInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaultBookDetailInfoUseCase.swift; sourceTree = "<group>"; };
 		1ECE00C52AFE21FA0054CEDF /* DotSeparatorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSeparatorLabel.swift; sourceTree = "<group>"; };
+		1ECE00C72AFE22100054CEDF /* GooplePlayReadableNoticeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooplePlayReadableNoticeStackView.swift; sourceTree = "<group>"; };
 		1ECE00CB2AFE42C50054CEDF /* FullDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDescriptionViewController.swift; sourceTree = "<group>"; };
 		535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kidsnote_Pre_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7346A071D1F3E63762B06374 /* Pods-Kidsnote_Pre_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kidsnote_Pre_Project.debug.xcconfig"; path = "Target Support Files/Pods-Kidsnote_Pre_Project/Pods-Kidsnote_Pre_Project.debug.xcconfig"; sourceTree = "<group>"; };
@@ -720,6 +722,7 @@
 				1E825EF22AF696C800AC1AAA /* Reactive */,
 				1E86BB132AF65CCB00469B6E /* BookSearchBar.swift */,
 				1ECE00C52AFE21FA0054CEDF /* DotSeparatorLabel.swift */,
+				1ECE00C72AFE22100054CEDF /* GooplePlayReadableNoticeStackView.swift */,
 				1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */,
 				1E86BB152AF65CEC00469B6E /* BookTypeSegmentControl.swift */,
 				1E86BB172AF65D1200469B6E /* SeparatorView.swift */,
@@ -987,6 +990,7 @@
 				1ECE00B42AFDEBAA0054CEDF /* BookDetailInfoEntityMapper.swift in Sources */,
 				1ECE00AC2AFDEA280054CEDF /* BookDetailInfoDTO.swift in Sources */,
 				1E825F052AF799E500AC1AAA /* DIContainer.swift in Sources */,
+				1ECE00C82AFE22100054CEDF /* GooplePlayReadableNoticeStackView.swift in Sources */,
 				1E825F552AF8FFD300AC1AAA /* FileManagerDiskCacheStorageService.swift in Sources */,
 				1E86BB012AF4CFB700469B6E /* BookSearchResultDTO.swift in Sources */,
 				1ECE00B62AFDEBFF0054CEDF /* DetaultBookDetailInfoRepository.swift in Sources */,
