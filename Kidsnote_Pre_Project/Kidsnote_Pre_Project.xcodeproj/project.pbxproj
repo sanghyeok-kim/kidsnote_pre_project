@@ -91,6 +91,9 @@
 		1EADE4662AFCDE6400EFC051 /* BookSearchCollectionFooterReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EADE4652AFCDE6400EFC051 /* BookSearchCollectionFooterReactor.swift */; };
 		1EADE4692AFCE99300EFC051 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EADE4682AFCE99300EFC051 /* Coordinator.swift */; };
 		1EADE46B2AFCE99700EFC051 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EADE46A2AFCE99700EFC051 /* CoordinatorType.swift */; };
+		1EADE46F2AFCEA0E00EFC051 /* SearchHomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EADE46E2AFCEA0E00EFC051 /* SearchHomeCoordinator.swift */; };
+		1EADE4722AFCEA2E00EFC051 /* DefaultSearchHomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EADE4712AFCEA2E00EFC051 /* DefaultSearchHomeCoordinator.swift */; };
+		1EADE4752AFCF71A00EFC051 /* SearchHomeCoordinateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EADE4742AFCF71A00EFC051 /* SearchHomeCoordinateAction.swift */; };
 		2F5BFB33E4E4243A7E767759 /* Pods_Kidsnote_Pre_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -181,6 +184,9 @@
 		1EADE4652AFCDE6400EFC051 /* BookSearchCollectionFooterReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchCollectionFooterReactor.swift; sourceTree = "<group>"; };
 		1EADE4682AFCE99300EFC051 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		1EADE46A2AFCE99700EFC051 /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
+		1EADE46E2AFCEA0E00EFC051 /* SearchHomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHomeCoordinator.swift; sourceTree = "<group>"; };
+		1EADE4712AFCEA2E00EFC051 /* DefaultSearchHomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSearchHomeCoordinator.swift; sourceTree = "<group>"; };
+		1EADE4742AFCF71A00EFC051 /* SearchHomeCoordinateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHomeCoordinateAction.swift; sourceTree = "<group>"; };
 		535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kidsnote_Pre_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7346A071D1F3E63762B06374 /* Pods-Kidsnote_Pre_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kidsnote_Pre_Project.debug.xcconfig"; path = "Target Support Files/Pods-Kidsnote_Pre_Project/Pods-Kidsnote_Pre_Project.debug.xcconfig"; sourceTree = "<group>"; };
 		DF6B6C6C4CF80A08420DC458 /* Pods-Kidsnote_Pre_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kidsnote_Pre_Project.release.xcconfig"; path = "Target Support Files/Pods-Kidsnote_Pre_Project/Pods-Kidsnote_Pre_Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -685,6 +691,16 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		1EADE4732AFCEA5700EFC051 /* SearchHome */ = {
+			isa = PBXGroup;
+			children = (
+				1EADE46E2AFCEA0E00EFC051 /* SearchHomeCoordinator.swift */,
+				1EADE4712AFCEA2E00EFC051 /* DefaultSearchHomeCoordinator.swift */,
+				1EADE4742AFCF71A00EFC051 /* SearchHomeCoordinateAction.swift */,
+			);
+			path = SearchHome;
+			sourceTree = "<group>";
+		};
 		2488D96014EC40E6B2C33D51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -818,6 +834,7 @@
 			files = (
 				1E86BAEF2AF4C9CA00469B6E /* Rx+validateStatusCode.swift in Sources */,
 				1E86BAFA2AF4CAAD00469B6E /* DataMapper.swift in Sources */,
+				1EADE4752AFCF71A00EFC051 /* SearchHomeCoordinateAction.swift in Sources */,
 				1E825EFA2AF7209C00AC1AAA /* BookSearchCollectionViewCell.swift in Sources */,
 				1EADE4602AFB2E9900EFC051 /* ToastMessage.swift in Sources */,
 				1E86BADE2AF4C6E800469B6E /* GoogleBooksAPI.swift in Sources */,
@@ -827,6 +844,7 @@
 				1E54D2E62AFA7B51005B6C1E /* Reactive+BookTypeSegmentControl.swift in Sources */,
 				1E825F022AF799B800AC1AAA /* SearchBookRepository.swift in Sources */,
 				1E86BADC2AF4C6D000469B6E /* TargetType.swift in Sources */,
+				1EADE46F2AFCEA0E00EFC051 /* SearchHomeCoordinator.swift in Sources */,
 				1E825F3F2AF895D600AC1AAA /* BookSearchSection.swift in Sources */,
 				1E86BAD12AF4B92800469B6E /* Literal.swift in Sources */,
 				1E86BACB2AF4B88E00469B6E /* OSLog+category.swift in Sources */,
