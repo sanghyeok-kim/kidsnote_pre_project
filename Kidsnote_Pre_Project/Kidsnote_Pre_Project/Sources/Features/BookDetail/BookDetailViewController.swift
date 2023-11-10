@@ -13,16 +13,6 @@ import RxSwift
 
 final class BookDetailViewController: BaseViewController, View {
     
-    private let shareButton: UIBarButtonItem = {
-        let barButtonItem = UIBarButtonItem(
-            image: ImageAsset.squareAndArrowUp?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal),
-            style: .plain,
-            target: nil,
-            action: nil
-        )
-        return barButtonItem
-    }()
-    
     private let scrollView = UIScrollView()
     private let scrollContentView = UIView()
     
@@ -229,13 +219,6 @@ final class BookDetailViewController: BaseViewController, View {
         bindState(reactor: reactor)
     }
     
-    // MARK: - Configure UI
-    
-    override func configureUI() {
-        super.configureUI()
-        navigationItem.rightBarButtonItem = shareButton
-    }
-    
     // MARK: - Layout UI
     
     override func layoutUI() {
@@ -340,11 +323,6 @@ private extension BookDetailViewController {
         
         rx.viewDidLoad
             .map { Reactor.Action.viewDidLoad }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
-        
-        shareButton.rx.tap
-            .map { Reactor.Action.shareButtonDidTap }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         

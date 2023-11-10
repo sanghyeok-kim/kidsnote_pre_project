@@ -12,7 +12,6 @@ final class BookDetailReactor: Reactor {
     
     enum Action {
         case viewDidLoad
-        case shareButtonDidTap
         case sampleButtonDidTap
         case downloadButtonDidTap
         case descriptonViewDidTap
@@ -87,9 +86,6 @@ final class BookDetailReactor: Reactor {
                 fetchDescription(id: currentState.id),
                 fetchReviewRank(isbn13Id: currentState.isbn13Identifier)
             )
-        case .shareButtonDidTap:
-            let sharingURL = currentState.shareURL
-            return openActivityViewController(url: sharingURL)
         case .sampleButtonDidTap:
             let url = currentState.sampleURL
             return openSmapleURL(url)
@@ -192,14 +188,6 @@ private extension BookDetailReactor {
             return .just(.setToastMessage(ToastMessage.bookDetail(.failOpenDownloadURL).text))
         }
         coordinator?.coordinate(by: .openURL(url))
-        return .empty()
-    }
-    
-    func openActivityViewController(url: URL?) -> Observable<Mutation> {
-        guard let url else {
-            return .empty()
-        }
-        coordinator?.coordinate(by: .openActivityViewController([url]))
         return .empty()
     }
     
