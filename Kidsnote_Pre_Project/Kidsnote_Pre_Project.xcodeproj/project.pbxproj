@@ -102,6 +102,8 @@
 		1ECE00A42AFDC08B0054CEDF /* Rx+decodeJsonStringMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00A32AFDC08B0054CEDF /* Rx+decodeJsonStringMap.swift */; };
 		1ECE00AC2AFDEA280054CEDF /* BookDetailInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00AB2AFDEA280054CEDF /* BookDetailInfoDTO.swift */; };
 		1ECE00AE2AFDEAC50054CEDF /* BookDetailInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00AD2AFDEAC50054CEDF /* BookDetailInfoEntity.swift */; };
+		1ECE00B02AFDEAD00054CEDF /* BookReviewInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00AF2AFDEAD00054CEDF /* BookReviewInfoEntity.swift */; };
+		1ECE00B22AFDEAE30054CEDF /* BookReviewInfoEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00B12AFDEAE30054CEDF /* BookReviewInfoEntityMapper.swift */; };
 		1ECE00B42AFDEBAA0054CEDF /* BookDetailInfoEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00B32AFDEBAA0054CEDF /* BookDetailInfoEntityMapper.swift */; };
 		1ECE00B82AFDEC7C0054CEDF /* BookDetailInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00B72AFDEC7C0054CEDF /* BookDetailInfoRepository.swift */; };
 		1ECE00BA2AFDECD20054CEDF /* BookDetailInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00B92AFDECD20054CEDF /* BookDetailInfoUseCase.swift */; };
@@ -206,6 +208,8 @@
 		1ECE00A32AFDC08B0054CEDF /* Rx+decodeJsonStringMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+decodeJsonStringMap.swift"; sourceTree = "<group>"; };
 		1ECE00AB2AFDEA280054CEDF /* BookDetailInfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailInfoDTO.swift; sourceTree = "<group>"; };
 		1ECE00AD2AFDEAC50054CEDF /* BookDetailInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailInfoEntity.swift; sourceTree = "<group>"; };
+		1ECE00AF2AFDEAD00054CEDF /* BookReviewInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewInfoEntity.swift; sourceTree = "<group>"; };
+		1ECE00B12AFDEAE30054CEDF /* BookReviewInfoEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewInfoEntityMapper.swift; sourceTree = "<group>"; };
 		1ECE00B32AFDEBAA0054CEDF /* BookDetailInfoEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailInfoEntityMapper.swift; sourceTree = "<group>"; };
 		1ECE00B52AFDEBFF0054CEDF /* DetaultBookDetailInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaultBookDetailInfoRepository.swift; sourceTree = "<group>"; };
 		1ECE00B72AFDEC7C0054CEDF /* BookDetailInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailInfoRepository.swift; sourceTree = "<group>"; };
@@ -642,6 +646,7 @@
 			isa = PBXGroup;
 			children = (
 				1E86BB0E2AF62C3500469B6E /* BookEntityMapper.swift */,
+				1ECE00B12AFDEAE30054CEDF /* BookReviewInfoEntityMapper.swift */,
 				1ECE00B32AFDEBAA0054CEDF /* BookDetailInfoEntityMapper.swift */,
 				1E86BAF82AF4CAA200469B6E /* Interface */,
 			);
@@ -682,6 +687,7 @@
 				1E86BB0C2AF6299F00469B6E /* BookEntity.swift */,
 				1E54D2E32AFA6373005B6C1E /* BookSearchType.swift */,
 				1ECE00AD2AFDEAC50054CEDF /* BookDetailInfoEntity.swift */,
+				1ECE00AF2AFDEAD00054CEDF /* BookReviewInfoEntity.swift */,
 			);
 			path = CoreEntity;
 			sourceTree = "<group>";
@@ -906,6 +912,7 @@
 				1E54D2CC2AF9CE49005B6C1E /* URLDataService.swift in Sources */,
 				1E825F4A2AF8BF0D00AC1AAA /* Fadable.swift in Sources */,
 				1E825F432AF8962700AC1AAA /* ReuseIdentifiable.swift in Sources */,
+				1ECE00B22AFDEAE30054CEDF /* BookReviewInfoEntityMapper.swift in Sources */,
 				1E825EF62AF6B16B00AC1AAA /* SearchView.swift in Sources */,
 				1E86BB182AF65D1200469B6E /* SeparatorView.swift in Sources */,
 				1E825F5B2AF9003600AC1AAA /* NSCacheMemoryCacheStorageService.swift in Sources */,
@@ -920,6 +927,7 @@
 				1EADE4692AFCE99300EFC051 /* Coordinator.swift in Sources */,
 				1E54D2DE2AFA2C81005B6C1E /* ImageAsset.swift in Sources */,
 				1E54D2E22AFA4099005B6C1E /* ColorAsset.swift in Sources */,
+				1ECE00B02AFDEAD00054CEDF /* BookReviewInfoEntity.swift in Sources */,
 				1E86BACD2AF4B8EA00469B6E /* Rx+logErrorIfDetected.swift in Sources */,
 				1E825EF42AF696D400AC1AAA /* Reactive+BookSearchBar.swift in Sources */,
 				1E825F572AF8FFFC00AC1AAA /* DiskCacheStorageService.swift in Sources */,
