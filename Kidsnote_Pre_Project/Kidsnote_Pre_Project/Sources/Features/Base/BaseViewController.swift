@@ -18,12 +18,11 @@ class BaseViewController: UIViewController {
     func configureUI() {
         view.backgroundColor = .systemBackground
         self.navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: "",
+            title: "뒤로",
             style: .plain,
             target: nil,
             action: nil
         )
-        self.navigationController?.navigationBar.tintColor = UIColor.darkGray
     }
     
     func layoutUI() { }

@@ -84,6 +84,8 @@ final class SearchHomeReactor: Reactor {
         self.coordinator = coordinator
     }
     
+    // MARK: - Mutate
+    
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .viewDidLoad:
@@ -198,6 +200,8 @@ final class SearchHomeReactor: Reactor {
             return pushBookDetailViewController(bookEntity: selectedBookEntity)
         }
     }
+    
+    // MARK: - Reduce
     
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state

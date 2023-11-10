@@ -103,6 +103,7 @@ final class SearchHomeViewController: BaseViewController, View {
     // MARK: - LifeCycle
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
     }
     
