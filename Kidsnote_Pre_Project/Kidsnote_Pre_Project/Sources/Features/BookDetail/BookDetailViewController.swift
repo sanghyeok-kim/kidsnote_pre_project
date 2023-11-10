@@ -283,7 +283,7 @@ final class BookDetailViewController: BaseViewController, View {
         sampleBuyButtonBottomSeparatorView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
         
         ratingView.translatesAutoresizingMaskIntoConstraints = false
-        ratingView.topAnchor.constraint(equalTo: sampleBuyButtonBottomSeparatorView.bottomAnchor, constant: 12).isActive = true
+        ratingView.topAnchor.constraint(equalTo: sampleBuyButtonBottomSeparatorView.bottomAnchor, constant: 16).isActive = true
         ratingView.leadingAnchor.constraint(equalTo: bookMainInfoStackView.leadingAnchor).isActive = true
         ratingView.trailingAnchor.constraint(equalTo: bookMainInfoStackView.trailingAnchor).isActive = true
         
