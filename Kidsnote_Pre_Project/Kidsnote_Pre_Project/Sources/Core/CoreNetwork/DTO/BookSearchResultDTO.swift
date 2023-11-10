@@ -28,6 +28,7 @@ extension BookSearchResultDTO.BookDTO {
     struct VolumeInfo: Decodable {
         let title: String?
         let authors: [String]?
+        let publisher: String?
         let publishedDate, description: String?
         let industryIdentifiers: [IndustryIdentifier]?
         let pageCount: Int?
