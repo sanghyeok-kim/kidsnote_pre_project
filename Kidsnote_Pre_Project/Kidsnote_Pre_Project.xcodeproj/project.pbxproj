@@ -103,6 +103,8 @@
 		1ECE00AC2AFDEA280054CEDF /* BookDetailInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00AB2AFDEA280054CEDF /* BookDetailInfoDTO.swift */; };
 		1ECE00AE2AFDEAC50054CEDF /* BookDetailInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00AD2AFDEAC50054CEDF /* BookDetailInfoEntity.swift */; };
 		1ECE00B42AFDEBAA0054CEDF /* BookDetailInfoEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00B32AFDEBAA0054CEDF /* BookDetailInfoEntityMapper.swift */; };
+		1ECE00B82AFDEC7C0054CEDF /* BookDetailInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00B72AFDEC7C0054CEDF /* BookDetailInfoRepository.swift */; };
+		1ECE00BA2AFDECD20054CEDF /* BookDetailInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00B92AFDECD20054CEDF /* BookDetailInfoUseCase.swift */; };
 		2F5BFB33E4E4243A7E767759 /* Pods_Kidsnote_Pre_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -205,6 +207,10 @@
 		1ECE00AB2AFDEA280054CEDF /* BookDetailInfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailInfoDTO.swift; sourceTree = "<group>"; };
 		1ECE00AD2AFDEAC50054CEDF /* BookDetailInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailInfoEntity.swift; sourceTree = "<group>"; };
 		1ECE00B32AFDEBAA0054CEDF /* BookDetailInfoEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailInfoEntityMapper.swift; sourceTree = "<group>"; };
+		1ECE00B52AFDEBFF0054CEDF /* DetaultBookDetailInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaultBookDetailInfoRepository.swift; sourceTree = "<group>"; };
+		1ECE00B72AFDEC7C0054CEDF /* BookDetailInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailInfoRepository.swift; sourceTree = "<group>"; };
+		1ECE00B92AFDECD20054CEDF /* BookDetailInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailInfoUseCase.swift; sourceTree = "<group>"; };
+		1ECE00BB2AFDECE60054CEDF /* DetaultBookDetailInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaultBookDetailInfoUseCase.swift; sourceTree = "<group>"; };
 		535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kidsnote_Pre_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7346A071D1F3E63762B06374 /* Pods-Kidsnote_Pre_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kidsnote_Pre_Project.debug.xcconfig"; path = "Target Support Files/Pods-Kidsnote_Pre_Project/Pods-Kidsnote_Pre_Project.debug.xcconfig"; sourceTree = "<group>"; };
 		DF6B6C6C4CF80A08420DC458 /* Pods-Kidsnote_Pre_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kidsnote_Pre_Project.release.xcconfig"; path = "Target Support Files/Pods-Kidsnote_Pre_Project/Pods-Kidsnote_Pre_Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -251,6 +257,7 @@
 				1E825F102AF7A23C00AC1AAA /* Interface */,
 				1E825F002AF799A400AC1AAA /* RepositoryInterface */,
 				1E825F0C2AF79EA200AC1AAA /* DefaultSearchBookUseCase.swift */,
+				1ECE00BB2AFDECE60054CEDF /* DetaultBookDetailInfoUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -259,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				1E825F012AF799B800AC1AAA /* SearchBookRepository.swift */,
+				1ECE00B72AFDEC7C0054CEDF /* BookDetailInfoRepository.swift */,
 			);
 			path = RepositoryInterface;
 			sourceTree = "<group>";
@@ -293,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				1E825F0E2AF7A23700AC1AAA /* SearchBookUseCase.swift */,
+				1ECE00B92AFDECD20054CEDF /* BookDetailInfoUseCase.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -662,6 +671,7 @@
 			isa = PBXGroup;
 			children = (
 				1E86BB032AF4DD3300469B6E /* DefaultSearchBookRepository.swift */,
+				1ECE00B52AFDEBFF0054CEDF /* DetaultBookDetailInfoRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -883,6 +893,7 @@
 				1E86BADC2AF4C6D000469B6E /* TargetType.swift in Sources */,
 				1EADE46F2AFCEA0E00EFC051 /* SearchHomeCoordinator.swift in Sources */,
 				1E825F3F2AF895D600AC1AAA /* BookSearchSection.swift in Sources */,
+				1ECE00B82AFDEC7C0054CEDF /* BookDetailInfoRepository.swift in Sources */,
 				1E86BAD12AF4B92800469B6E /* Literal.swift in Sources */,
 				1E86BACB2AF4B88E00469B6E /* OSLog+category.swift in Sources */,
 				1E54D2CA2AF9CE38005B6C1E /* URLSessionURLDataService.swift in Sources */,
@@ -938,7 +949,9 @@
 				1E825F052AF799E500AC1AAA /* DIContainer.swift in Sources */,
 				1E825F552AF8FFD300AC1AAA /* FileManagerDiskCacheStorageService.swift in Sources */,
 				1E86BB012AF4CFB700469B6E /* BookSearchResultDTO.swift in Sources */,
+				1ECE00B62AFDEBFF0054CEDF /* DetaultBookDetailInfoRepository.swift in Sources */,
 				1E86BAEC2AF4C98D00469B6E /* URLSessionNetworkService.swift in Sources */,
+				1ECE00BC2AFDECE60054CEDF /* DetaultBookDetailInfoUseCase.swift in Sources */,
 				1E825F3B2AF7EF2300AC1AAA /* PaddingLabel.swift in Sources */,
 				1E825EFE2AF78F7A00AC1AAA /* BookSearchTypeCollectionHeaderView.swift in Sources */,
 				1E86BAD52AF4B9A500469B6E /* BaseViewController.swift in Sources */,
