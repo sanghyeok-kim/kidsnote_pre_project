@@ -340,7 +340,6 @@ private extension BookDetailViewController {
             .map { Reactor.Action.descriptonViewDidTap }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
     }
     
     func bindState(reactor: BookDetailReactor) {
@@ -405,9 +404,8 @@ private extension BookDetailViewController {
         reactor.state.compactMap { $0.reviewRank }
             .distinctUntilChanged()
             .observe(on: MainScheduler.asyncInstance)
-            .bind {
-                print($0)
-                self.ratingView.rating = $0
+            .bind(with: self) { `self`, reviewRank in
+                self.ratingView.rating = reviewRank
             }
             .disposed(by: disposeBag)
         
