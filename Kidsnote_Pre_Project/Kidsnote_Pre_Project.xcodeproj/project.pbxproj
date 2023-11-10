@@ -97,6 +97,7 @@
 		1EADE4782AFCF8B500EFC051 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EADE4772AFCF8B500EFC051 /* BookDetailViewController.swift */; };
 		1EADE47A2AFCF8BA00EFC051 /* BookDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EADE4792AFCF8BA00EFC051 /* BookDetailReactor.swift */; };
 		1EADE47E2AFCFC2D00EFC051 /* AladinAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EADE47D2AFCFC2D00EFC051 /* AladinAPI.swift */; };
+		1EADE4802AFD3D9400EFC051 /* String+convertToDateFormatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EADE47F2AFD3D9400EFC051 /* String+convertToDateFormatted.swift */; };
 		1EADE4822AFD45B400EFC051 /* AladinBookDetailInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EADE4812AFD45B400EFC051 /* AladinBookDetailInfoDTO.swift */; };
 		1ECE00A42AFDC08B0054CEDF /* Rx+decodeJsonStringMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00A32AFDC08B0054CEDF /* Rx+decodeJsonStringMap.swift */; };
 		2F5BFB33E4E4243A7E767759 /* Pods_Kidsnote_Pre_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */; };
@@ -195,6 +196,7 @@
 		1EADE4772AFCF8B500EFC051 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		1EADE4792AFCF8BA00EFC051 /* BookDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailReactor.swift; sourceTree = "<group>"; };
 		1EADE47D2AFCFC2D00EFC051 /* AladinAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinAPI.swift; sourceTree = "<group>"; };
+		1EADE47F2AFD3D9400EFC051 /* String+convertToDateFormatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+convertToDateFormatted.swift"; sourceTree = "<group>"; };
 		1EADE4812AFD45B400EFC051 /* AladinBookDetailInfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinBookDetailInfoDTO.swift; sourceTree = "<group>"; };
 		1ECE00A32AFDC08B0054CEDF /* Rx+decodeJsonStringMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+decodeJsonStringMap.swift"; sourceTree = "<group>"; };
 		535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kidsnote_Pre_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -498,6 +500,7 @@
 			children = (
 				1E54D2D82AFA2ADF005B6C1E /* URL+lastPathComponentWithQuery.swift */,
 				1E86BAD22AF4B98300469B6E /* Rx+ */,
+				1EADE47F2AFD3D9400EFC051 /* String+convertToDateFormatted.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -900,6 +903,7 @@
 				1E825EF42AF696D400AC1AAA /* Reactive+BookSearchBar.swift in Sources */,
 				1E825F572AF8FFFC00AC1AAA /* DiskCacheStorageService.swift in Sources */,
 				1E825F072AF799F700AC1AAA /* Injected.swift in Sources */,
+				1EADE4802AFD3D9400EFC051 /* String+convertToDateFormatted.swift in Sources */,
 				1E825F0F2AF7A23700AC1AAA /* SearchBookUseCase.swift in Sources */,
 				1E825F452AF898CE00AC1AAA /* ShadowImageView.swift in Sources */,
 				1E86BAA92AF4A6CC00469B6E /* SceneDelegate.swift in Sources */,
