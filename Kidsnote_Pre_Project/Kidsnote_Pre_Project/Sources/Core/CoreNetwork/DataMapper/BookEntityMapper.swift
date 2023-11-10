@@ -20,17 +20,31 @@ struct BookEntityMapper: DataMapper {
                 id: dtoItem.id,
                 title: dtoItem.volumeInfo?.title ?? "",
                 authors: dtoItem.volumeInfo?.authors?.joined(separator: ", ") ?? "",
+                publisher: dtoItem.volumeInfo?.publisher ?? "",
                 publishedDate: dtoItem.volumeInfo?.publishedDate ?? "",
                 description: dtoItem.volumeInfo?.description ?? "",
                 isbn13Identifier: isbn13Identifier ?? "",
                 pageCount: dtoItem.volumeInfo?.pageCount ?? .zero,
-                shareURL: dtoItem.volumeInfo?.canonicalVolumeLink,
+                shareURL: URL(string: dtoItem.volumeInfo?.canonicalVolumeLink ?? ""),
                 smallThumbnailURL: URL(string: smallThumbnailURL ?? ""),
                 thumbnailURL: URL(string: thumbnailURL ?? ""),
                 isEbook: isEbook ?? false,
-                buyLink: buyLink,
+                buyURL: URL(string: buyLink ?? ""),
                 sampleURL: URL(string: sampleURL ?? "")
             )
         } ?? []
+    }
+}
+
+struct BookDetailInfoEntity {
+    let customerReviewRank: Int
+}
+
+struct AladinBookDetailInfoMapper: DataMapper {
+    func transform(_ dto: AladinBookDetailInfoDTO) throws -> BookDetailInfoEntity {
+        guard let dtoItem = dto.item.first, let customerReviewRank = dtoItem.customerReviewRank else {
+            throw NetworkError.dataMappingError
+        }
+        return BookDetailInfoEntity(customerReviewRank: customerReviewRank)
     }
 }
