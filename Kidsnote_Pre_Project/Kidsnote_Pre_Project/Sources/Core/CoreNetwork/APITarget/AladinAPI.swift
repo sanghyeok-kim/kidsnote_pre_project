@@ -8,7 +8,7 @@
 import Foundation
 
 enum AladinAPI {
-    case fetchBookRating(bookId: String)
+    case fetchBookRating(isbn13Id: String)
 }
 
 extension AladinAPI: TargetType {
@@ -36,10 +36,10 @@ extension AladinAPI: TargetType {
     
     var parameters: [String: Any]? {
         switch self {
-        case .fetchBookRating(let bookId):
+        case .fetchBookRating(let isbn13Id):
             return [
                 "TTBKEY": "ttbslsnsi1745001",
-                "itemId": bookId,
+                "itemId": isbn13Id,
                 "ItemIdType": "ISBN13",
                 "output": "JS",
                 "OptResult": "ratingInfo,reviewList"
