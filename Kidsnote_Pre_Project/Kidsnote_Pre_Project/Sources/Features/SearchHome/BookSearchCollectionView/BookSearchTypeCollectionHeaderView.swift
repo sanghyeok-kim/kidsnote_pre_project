@@ -17,7 +17,7 @@ final class BookSearchTypeCollectionHeaderView: UICollectionReusableView, View {
     
     private let searchResultLabel: UILabel = {
         let label = UILabel()
-        label.text = Literal.Text.googlePlaySearchResult
+        label.text = Literal.Text.googlePlaySearchResult.appString
         label.font = .systemFont(ofSize: 18, weight: .medium)
         return label
     }()

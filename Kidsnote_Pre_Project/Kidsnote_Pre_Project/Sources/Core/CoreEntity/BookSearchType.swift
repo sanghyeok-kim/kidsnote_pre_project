@@ -18,9 +18,9 @@ enum BookSearchType: Int, CaseIterable {
     var title: String {
         switch self {
         case .allEbooks:
-            return Literal.Text.allEbooks
+            return Literal.Text.allEbooks.appString
         case .freeEbooks:
-            return Literal.Text.freeEbooks
+            return Literal.Text.freeEbooks.appString
         }
     }
     

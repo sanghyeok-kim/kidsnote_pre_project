@@ -23,11 +23,29 @@ extension Literal {
 
 extension Literal {
     enum Text {
-        static let eBook = "ebook"
-        static let allEbooks = "전체 eBook"
-        static let freeEbooks = "무료 eBook"
-        static let sarchInPlayBook = "Play 북에서 검색"
-        static let googlePlaySearchResult = "Google Play 검색결과"
-        static let searchResultEmpty = "검색결과 없음"
+        case eBook
+        case allEbooks
+        case freeEbooks
+        case sarchInPlayBook
+        case googlePlaySearchResult
+        case searchResultEmpty
+        
+        
+        var appString: String {
+            switch self {
+            case .eBook:
+                return "ebook"
+            case .allEbooks:
+                return "전체 eBook"
+            case .freeEbooks:
+                return "무료 eBook"
+            case .sarchInPlayBook:
+                return "Play 북에서 검색"
+            case .googlePlaySearchResult:
+                return "Google Play 검색결과"
+            case .searchResultEmpty:
+                return "검색결과 없음"
+            }
+        }
     }
 }

@@ -27,7 +27,7 @@ final class SearchBookTextField: UITextField {
             NSAttributedString.Key.foregroundColor: UIColor.darkGray
         ]
         attributedPlaceholder = NSAttributedString(
-            string: Literal.Text.sarchInPlayBook,
+            string: Literal.Text.sarchInPlayBook.appString,
             attributes: textAttributedString
         )
     }
