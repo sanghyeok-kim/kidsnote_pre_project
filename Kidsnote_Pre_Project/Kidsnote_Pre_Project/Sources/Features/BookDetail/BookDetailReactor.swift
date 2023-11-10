@@ -181,7 +181,15 @@ private extension BookDetailReactor {
     
     func openSmapleURL(_ url: URL?) -> Observable<Mutation> {
         guard let url else {
-            return .empty() // TODO: url 열 수 없을 때에 대한 mutation 리턴
+            return .just(.setToastMessage(ToastMessage.bookDetail(.failOpenSampleURL).text))
+        }
+        coordinator?.coordinate(by: .openURL(url))
+        return .empty()
+    }
+    
+    func openDownloadURL(_ url: URL?) -> Observable<Mutation> {
+        guard let url else {
+            return .just(.setToastMessage(ToastMessage.bookDetail(.failOpenDownloadURL).text))
         }
         coordinator?.coordinate(by: .openURL(url))
         return .empty()
@@ -189,7 +197,7 @@ private extension BookDetailReactor {
     
     func openActivityViewController(url: URL?) -> Observable<Mutation> {
         guard let url else {
-            return .empty() // TODO: url 열 수 없을 때에 대한 mutation 리턴
+            return .empty()
         }
         coordinator?.coordinate(by: .openActivityViewController([url]))
         return .empty()
