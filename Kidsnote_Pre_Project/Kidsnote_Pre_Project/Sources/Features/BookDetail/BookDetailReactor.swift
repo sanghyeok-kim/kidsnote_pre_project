@@ -157,8 +157,6 @@ private extension BookDetailReactor {
             .fetchBookRating(isbn13Id: isbn13Id)
             .flatMap { reviewInfo -> Observable<Mutation> in
                 let reviewRank = Double(reviewInfo.customerReviewRank) / 2.0
-                print(reviewRank)
-                print(reviewRank == .zero)
                 return .concat(
                     .just(.setIsReviewRankLoaded(true)),
                     .just(.setReviewRank(reviewRank)),
