@@ -100,6 +100,13 @@ final class SearchHomeViewController: BaseViewController, View {
     
     var disposeBag = DisposeBag()
     
+    // MARK: - LifeCycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     // MARK: - Bind Reactor
     
     func bind(reactor: SearchHomeReactor) {
@@ -111,7 +118,7 @@ final class SearchHomeViewController: BaseViewController, View {
     
     override func configureUI() {
         super.configureUI()
-        navigationController?.isNavigationBarHidden = true
+        
     }
     
     // MARK: - Layout UI
@@ -205,6 +212,11 @@ private extension SearchHomeViewController {
         bookSearchCollectionView.rx.willDisplayCell
             .map { $0.at }
             .map { Reactor.Action.bookSearchCollectionViewWillDisplay($0) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        bookSearchCollectionView.rx.itemSelected
+            .map { Reactor.Action.bookSearchCollectionViewItemDidTap($0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
     }

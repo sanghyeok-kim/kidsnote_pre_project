@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
+    var rootCoordiantor: SearchHomeCoordinator?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -17,12 +18,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         AppDIContainer.shared.registerDependencies()
         
-        let searchHomeViewController = SearchHomeViewController()
-        let searchHomeReactor = SearchHomeReactor()
-        searchHomeViewController.reactor = searchHomeReactor
+        let rootNavigationController = UINavigationController()
+        rootCoordiantor = DefaultSearchHomeCoordinator(navigationController: rootNavigationController)
+        rootCoordiantor?.start()
         
-        let rootNavigationViewController = UINavigationController(rootViewController: searchHomeViewController)
-        window?.rootViewController = rootNavigationViewController
+        window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()
     }
 }

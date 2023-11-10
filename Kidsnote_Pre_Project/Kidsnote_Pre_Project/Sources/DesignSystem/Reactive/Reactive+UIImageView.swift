@@ -11,7 +11,7 @@ import RxSwift
 extension Reactive where Base: UIImageView {
     var resizedWidthImage: Binder<UIImage?> {
         return Binder(self.base) { imageView, image in
-            imageView.image = image?.resizeAspectFit(width: imageView.frame.width)
+            imageView.image = image?.resizedAspect(width: imageView.frame.width)
         }
     }
 }

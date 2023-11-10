@@ -19,6 +19,7 @@ final class SearchHomeReactor: Reactor {
         case searchTextFieldDidEdit(String)
         case searchTextFieldDidEndEditing
         case bookSearchCollectionViewWillDisplay(IndexPath)
+        case bookSearchCollectionViewItemDidTap(IndexPath)
     }
     
     enum Mutation {
@@ -77,6 +78,13 @@ final class SearchHomeReactor: Reactor {
     }
     
     @Injected(AppDIContainer.shared) private var searchBookUseCase: SearchBookUseCase
+    private weak var coordinator: SearchHomeCoordinator?
+    
+    init(coordinator: SearchHomeCoordinator?) {
+        self.coordinator = coordinator
+    }
+    
+    // MARK: - Mutate
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
@@ -186,8 +194,14 @@ final class SearchHomeReactor: Reactor {
             } else {
                 return .empty()
             }
+        case .bookSearchCollectionViewItemDidTap(let indexPath):
+            let currentBookItems = currentState.searchResultBookItemsToShow
+            let selectedBookEntity = currentBookItems[indexPath.item].bookEntity
+            return pushBookDetailViewController(bookEntity: selectedBookEntity)
         }
     }
+    
+    // MARK: - Reduce
     
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
@@ -340,5 +354,10 @@ private extension SearchHomeReactor {
                 .setFetchResultEmptyLabelHidden(true),
                 .setSearchKeywordIsEdited(false)
             )
+    }
+    
+    func pushBookDetailViewController(bookEntity: BookEntity) -> Observable<Mutation> {
+        coordinator?.coordinate(by: .pushBookDetailViewController(bookEntity))
+        return .empty()
     }
 }

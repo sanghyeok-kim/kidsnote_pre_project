@@ -10,6 +10,7 @@ import Foundation
 enum GoogleBooksAPI {
     case searchAllEbooks(keyword: String, startIndex: Int, maxResults: Int)
     case searchFreeEbooks(keyword: String, startIndex: Int, maxResults: Int)
+    case fetchBookDetailInfo(bookId: String)
 }
 
 extension GoogleBooksAPI: TargetType {
@@ -21,19 +22,21 @@ extension GoogleBooksAPI: TargetType {
         switch self {
         case .searchAllEbooks, .searchFreeEbooks:
             return "books/v1/volumes"
+        case .fetchBookDetailInfo(let bookId):
+            return "books/v1/volumes/\(bookId)"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .searchAllEbooks, .searchFreeEbooks:
+        case .searchAllEbooks, .searchFreeEbooks, .fetchBookDetailInfo:
             return .get
         }
     }
     
     var headers: [String: String]? {
         switch self {
-        case .searchAllEbooks, .searchFreeEbooks:
+        case .searchAllEbooks, .searchFreeEbooks, .fetchBookDetailInfo:
             return nil
         }
     }
@@ -54,6 +57,8 @@ extension GoogleBooksAPI: TargetType {
                 "startIndex": startIndex,
                 "maxResults": maxResults,
             ]
+        case .fetchBookDetailInfo:
+            return nil
         }
     }
 }

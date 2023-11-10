@@ -11,14 +11,15 @@ struct BookEntity {
     let id: String
     let title: String
     let authors: String
+    let publisher: String
     let publishedDate: String
     let description: String
     let isbn13Identifier: String
     let pageCount: Int
-    let shareURL: String?
+    let shareURL: URL?
     let smallThumbnailURL: URL?
     let thumbnailURL: URL?
     let isEbook: Bool
-    let buyLink: String?
+    let buyURL: URL?
     let sampleURL: URL?
 }
