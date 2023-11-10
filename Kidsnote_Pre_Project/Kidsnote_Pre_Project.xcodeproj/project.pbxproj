@@ -729,28 +729,12 @@
 		1E86BB122AF65C9F00469B6E /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				1ECE00D12AFE4E2D0054CEDF /* Components */,
 				1E54D2DC2AFA2C4E005B6C1E /* Asset */,
 				1E825F462AF8998000AC1AAA /* Extension */,
 				1E825F412AF8962000AC1AAA /* Protocol */,
 				1E825F352AF7EEEE00AC1AAA /* Enum */,
 				1E825EF22AF696C800AC1AAA /* Reactive */,
-				1E86BB132AF65CCB00469B6E /* BookSearchBar.swift */,
-				1ECE00C52AFE21FA0054CEDF /* DotSeparatorLabel.swift */,
-				1ECE00C72AFE22100054CEDF /* GooplePlayReadableNoticeStackView.swift */,
-				1ECE00CF2AFE42E60054CEDF /* StarView.swift */,
-				1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */,
-				1E86BB152AF65CEC00469B6E /* BookTypeSegmentControl.swift */,
-				1E86BB172AF65D1200469B6E /* SeparatorView.swift */,
-				1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */,
-				1E825F442AF898CE00AC1AAA /* ShadowImageView.swift */,
-				1ECE00CD2AFE42D70054CEDF /* StarRatingView.swift */,
-				1E825EF52AF6B16B00AC1AAA /* SearchView.swift */,
-				1E825F332AF7EE8F00AC1AAA /* ToastLabel.swift */,
-				1E825F382AF7EF0500AC1AAA /* RoundedPaddingLabel.swift */,
-				1E825F3A2AF7EF2300AC1AAA /* PaddingLabel.swift */,
-				1E825F4B2AF8C30700AC1AAA /* SearchResultEmptyLabel.swift */,
-				1ECE00BD2AFE21970054CEDF /* EbookInfoDescriptionView.swift */,
-				1ECE00C12AFE21C60054CEDF /* TapInteractiveView.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -799,6 +783,30 @@
 				1ECE00CB2AFE42C50054CEDF /* FullDescriptionViewController.swift */,
 			);
 			path = FullDescription;
+			sourceTree = "<group>";
+		};
+		1ECE00D12AFE4E2D0054CEDF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1E86BB132AF65CCB00469B6E /* BookSearchBar.swift */,
+				1ECE00C52AFE21FA0054CEDF /* DotSeparatorLabel.swift */,
+				1ECE00C72AFE22100054CEDF /* GooplePlayReadableNoticeStackView.swift */,
+				1ECE00CF2AFE42E60054CEDF /* StarView.swift */,
+				1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */,
+				1E86BB152AF65CEC00469B6E /* BookTypeSegmentControl.swift */,
+				1E86BB172AF65D1200469B6E /* SeparatorView.swift */,
+				1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */,
+				1E825F442AF898CE00AC1AAA /* ShadowImageView.swift */,
+				1ECE00CD2AFE42D70054CEDF /* StarRatingView.swift */,
+				1E825EF52AF6B16B00AC1AAA /* SearchView.swift */,
+				1E825F332AF7EE8F00AC1AAA /* ToastLabel.swift */,
+				1E825F382AF7EF0500AC1AAA /* RoundedPaddingLabel.swift */,
+				1E825F3A2AF7EF2300AC1AAA /* PaddingLabel.swift */,
+				1E825F4B2AF8C30700AC1AAA /* SearchResultEmptyLabel.swift */,
+				1ECE00BD2AFE21970054CEDF /* EbookInfoDescriptionView.swift */,
+				1ECE00C12AFE21C60054CEDF /* TapInteractiveView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		2488D96014EC40E6B2C33D51 /* Frameworks */ = {
