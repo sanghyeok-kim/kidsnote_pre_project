@@ -114,7 +114,7 @@ final class BookDetailViewController: BaseViewController, View {
     
     private let sampleButton: UIButton = {
         let button = UIButton()
-        button.setTitle("샘플 읽기", for: .normal)
+        button.setTitle(Literal.Text.readSample.appString, for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.layer.borderColor = UIColor.systemGray4.cgColor
         button.layer.cornerRadius = 6
@@ -125,7 +125,7 @@ final class BookDetailViewController: BaseViewController, View {
     
     private let downloadButton: UIButton = {
         let button = UIButton()
-        button.setTitle("다운로드", for: .normal)
+        button.setTitle(Literal.Text.download.appString, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemBlue
         button.layer.cornerRadius = 6
@@ -139,7 +139,7 @@ final class BookDetailViewController: BaseViewController, View {
     
     private let notReviewedYetLabel: UILabel = {
         let label = UILabel()
-        label.text = "아직 평점이 기록되지 않았어요"
+        label.text = Literal.Text.notReviewedYet.appString
         label.textColor = .darkGray
         label.font = .systemFont(ofSize: 18, weight: .medium)
         label.isHidden = true
@@ -162,7 +162,7 @@ final class BookDetailViewController: BaseViewController, View {
     
     private let publishInfoLabel: UILabel = {
         let label = UILabel()
-        label.text = "게시일"
+        label.text = Literal.Text.publishDate.appString
         label.font = .systemFont(ofSize: 20, weight: .medium)
         return label
     }()
@@ -400,7 +400,7 @@ private extension BookDetailViewController {
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.pageCount }
-            .map { "\($0) 페이지" }
+            .map { Literal.Text.page($0).appString }
             .distinctUntilChanged()
             .bind(to: pageCountLabel.rx.text)
             .disposed(by: disposeBag)
@@ -419,7 +419,7 @@ private extension BookDetailViewController {
         
         reactor.state.map { $0.isEbook }
             .filter { $0 }
-            .map { _ in "eBook" }
+            .map { _ in Literal.Text.eBook.appString }
             .distinctUntilChanged()
             .bind(to: isEbookLabel.rx.text)
             .disposed(by: disposeBag)
