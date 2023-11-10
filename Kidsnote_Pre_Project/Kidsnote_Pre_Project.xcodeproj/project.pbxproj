@@ -116,6 +116,8 @@
 		1ECE00C62AFE21FA0054CEDF /* DotSeparatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00C52AFE21FA0054CEDF /* DotSeparatorLabel.swift */; };
 		1ECE00C82AFE22100054CEDF /* GooplePlayReadableNoticeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00C72AFE22100054CEDF /* GooplePlayReadableNoticeStackView.swift */; };
 		1ECE00CC2AFE42C50054CEDF /* FullDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00CB2AFE42C50054CEDF /* FullDescriptionViewController.swift */; };
+		1ECE00CE2AFE42D70054CEDF /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00CD2AFE42D70054CEDF /* StarRatingView.swift */; };
+		1ECE00D02AFE42E60054CEDF /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE00CF2AFE42E60054CEDF /* StarView.swift */; };
 		2F5BFB33E4E4243A7E767759 /* Pods_Kidsnote_Pre_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -231,6 +233,8 @@
 		1ECE00C52AFE21FA0054CEDF /* DotSeparatorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSeparatorLabel.swift; sourceTree = "<group>"; };
 		1ECE00C72AFE22100054CEDF /* GooplePlayReadableNoticeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooplePlayReadableNoticeStackView.swift; sourceTree = "<group>"; };
 		1ECE00CB2AFE42C50054CEDF /* FullDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDescriptionViewController.swift; sourceTree = "<group>"; };
+		1ECE00CD2AFE42D70054CEDF /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		1ECE00CF2AFE42E60054CEDF /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		535DD3038063C613BB8490AB /* Pods_Kidsnote_Pre_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kidsnote_Pre_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7346A071D1F3E63762B06374 /* Pods-Kidsnote_Pre_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kidsnote_Pre_Project.debug.xcconfig"; path = "Target Support Files/Pods-Kidsnote_Pre_Project/Pods-Kidsnote_Pre_Project.debug.xcconfig"; sourceTree = "<group>"; };
 		DF6B6C6C4CF80A08420DC458 /* Pods-Kidsnote_Pre_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kidsnote_Pre_Project.release.xcconfig"; path = "Target Support Files/Pods-Kidsnote_Pre_Project/Pods-Kidsnote_Pre_Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -723,11 +727,13 @@
 				1E86BB132AF65CCB00469B6E /* BookSearchBar.swift */,
 				1ECE00C52AFE21FA0054CEDF /* DotSeparatorLabel.swift */,
 				1ECE00C72AFE22100054CEDF /* GooplePlayReadableNoticeStackView.swift */,
+				1ECE00CF2AFE42E60054CEDF /* StarView.swift */,
 				1E825EF02AF67DC500AC1AAA /* SearchBookTextField.swift */,
 				1E86BB152AF65CEC00469B6E /* BookTypeSegmentControl.swift */,
 				1E86BB172AF65D1200469B6E /* SeparatorView.swift */,
 				1E825EEE2AF67DB300AC1AAA /* ShadowView.swift */,
 				1E825F442AF898CE00AC1AAA /* ShadowImageView.swift */,
+				1ECE00CD2AFE42D70054CEDF /* StarRatingView.swift */,
 				1E825EF52AF6B16B00AC1AAA /* SearchView.swift */,
 				1E825F332AF7EE8F00AC1AAA /* ToastLabel.swift */,
 				1E825F382AF7EF0500AC1AAA /* RoundedPaddingLabel.swift */,
@@ -1016,10 +1022,12 @@
 				1E825EF82AF71F0800AC1AAA /* BookSearchCollectionViewDiffableDataSource.swift in Sources */,
 				1E825F0B2AF79C1F00AC1AAA /* AppDIContainer.swift in Sources */,
 				1E86BAF62AF4CA6A00469B6E /* Rx+extractData.swift in Sources */,
+				1ECE00CE2AFE42D70054CEDF /* StarRatingView.swift in Sources */,
 				1E86BAC92AF4B86A00469B6E /* Logger.swift in Sources */,
 				1E54D2C82AF9CDC6005B6C1E /* CachedImageLoadService.swift in Sources */,
 				1E86BAFE2AF4CAEB00469B6E /* Rx+transformMap.swift in Sources */,
 				1E86BAE62AF4C7D900469B6E /* EmptyBody.swift in Sources */,
+				1ECE00D02AFE42E60054CEDF /* StarView.swift in Sources */,
 				1E825F372AF7EEFA00AC1AAA /* Padding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
