@@ -14,6 +14,9 @@ enum ColorAsset {
     
     enum TapInteractionView {
         static let tapHighlighted = UIColor(red: 227 / 255, green: 225 / 255, blue: 228 / 255, alpha: 1.0)
-        
+    }
+    
+    enum BookDetail {
+        static let blue = UIColor(red: 25 / 255, green: 115 / 255, blue: 231 / 255, alpha: 1.0)
     }
 }

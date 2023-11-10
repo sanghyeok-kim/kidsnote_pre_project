@@ -105,7 +105,7 @@ final class BookDetailViewController: BaseViewController, View {
     private let sampleButton: UIButton = {
         let button = UIButton()
         button.setTitle(Literal.Text.readSample.appString, for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
+        button.setTitleColor(ColorAsset.BookDetail.blue, for: .normal)
         button.layer.borderColor = UIColor.systemGray4.cgColor
         button.layer.cornerRadius = 6
         button.layer.borderWidth = 1
@@ -117,7 +117,7 @@ final class BookDetailViewController: BaseViewController, View {
         let button = UIButton()
         button.setTitle(Literal.Text.download.appString, for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = ColorAsset.BookDetail.blue
         button.layer.cornerRadius = 6
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         return button
